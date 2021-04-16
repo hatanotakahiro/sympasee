@@ -1,0 +1,41 @@
+<%# CSS・・・assets/stylesheets/shared/header.css %>
+<header class='top-page-header, container-fluid'>
+  <div class='row align-items-center justify-content-center'>
+    <div class='search-bar-contents, col'>
+      <div class='row align-items-center justify-content-center'>
+        <div class='col'> 
+          <%= link_to image_tag("sympasee_logo.png", size: '300x100', class:"furima-icon"), "/" %>
+        </div>
+        <div class='col'> 
+          <form class="search-form" action="#">
+            <div class='row align-items-center'>
+              <input class='input-box col-9' placeholder='キーワードから探す'>
+              <button class="search-button col-3">
+                <%= image_tag "search.png", size: '30x30', class:"search-icon" %>
+              </button>
+            </div>
+          </form>
+        </div> 
+      </div>
+    </div>
+  <%# コンポーネントを追加 %>
+    <div class='nav, col'>
+      <div class='lists-left, row align-items-center justify-content-center'>
+        <div class='col'>
+        </div> 
+        <div class='col text-center'> 
+          <%= link_to 'ブランド', "#", class: "brand-list" %>
+        </div> 
+        <%# deviseを導入できたら、ログインの有無で表示が変わるように分岐しましょう%>
+        <%# <li><%= link_to current_user.nickname, "#", class: "user-nickname" </li> %>
+        <%# <li><%= link_to 'ログアウト', "#", method: :delete, class: "logout" </li> %>
+        <div class='col text-center'> 
+          <%= link_to 'ログイン', new_user_session_path, class: "login" %>
+        </div> 
+        <div class='col text-center'> 
+          <%= link_to '新規登録', new_user_registration_path, class: "sign-up" %>
+        </div> 
+        <%# //deviseを導入できたら、ログインの有無で表示が変わるように分岐しましょう%>
+    </div>
+  </div>
+</header>
