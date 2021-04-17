@@ -21,7 +21,7 @@
 | nickname           | string   | null: false |
 | email              | string   | null: false, unique:true |
 | encrypted_password | string   | null: false |
-| profile            | string   | null: false |
+| profile            | string   |
 | profile_image      | 
 | deleted_at         | datetime |
 

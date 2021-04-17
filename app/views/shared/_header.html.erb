@@ -4,13 +4,13 @@
     <div class='search-bar-contents, col'>
       <div class='row align-items-center justify-content-center'>
         <div class='col'> 
-          <%= link_to image_tag("sympasee_logo.png", size: '300x100', class:"furima-icon"), "/" %>
+          <%= link_to image_tag("sympasee_logo.png", size: '300x100', class:"sympasee-icon"), "/" %>
         </div>
         <div class='col'> 
           <form class="search-form" action="#">
             <div class='row align-items-center'>
-              <input class='input-box col-9' placeholder='キーワードから探す'>
-              <button class="search-button col-3">
+              <input class='input-box col-10' placeholder='キーワードから探す'>
+              <button class="search-button col-2">
                 <%= image_tag "search.png", size: '30x30', class:"search-icon" %>
               </button>
             </div>
@@ -24,18 +24,27 @@
         <div class='col'>
         </div> 
         <div class='col text-center'> 
-          <%= link_to 'ブランド', "#", class: "brand-list" %>
+          <%= link_to 'ブランド', "#", class: "brand-list, text-white" %>
         </div> 
-        <%# deviseを導入できたら、ログインの有無で表示が変わるように分岐しましょう%>
-        <%# <li><%= link_to current_user.nickname, "#", class: "user-nickname" </li> %>
-        <%# <li><%= link_to 'ログアウト', "#", method: :delete, class: "logout" </li> %>
-        <div class='col text-center'> 
-          <%= link_to 'ログイン', new_user_session_path, class: "login" %>
-        </div> 
-        <div class='col text-center'> 
-          <%= link_to '新規登録', new_user_registration_path, class: "sign-up" %>
-        </div> 
-        <%# //deviseを導入できたら、ログインの有無で表示が変わるように分岐しましょう%>
+        <% if user_signed_in? %>
+          <div class='col text-center'> 
+            <%= link_to "#", class: "text-white" do %>
+              <%= current_user.nickname %>
+              <%= image_tag current_user.profile_image.variant(resize: '80x80'), class: "user-image" if current_user.profile_image.attached? %>
+              <%= image_tag "user_nil.png" , size: "70x70" unless current_user.profile_image.attached?  %>
+            <% end %>
+          </div> 
+          <div class='col text-center'> 
+            <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout, text-white" %>
+          </div> 
+        <% else %>
+          <div class='col text-center'> 
+            <%= link_to 'ログイン', new_user_session_path, class: "login, text-white" %>
+          </div> 
+          <div class='col text-center'> 
+            <%= link_to '新規登録', new_user_registration_path, class: "sign-up, text-white" %>
+          </div> 
+        <% end %>  
     </div>
   </div>
 </header>
