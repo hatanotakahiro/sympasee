@@ -16,8 +16,8 @@
 
 - has_many :likes
 - has_many :bookmarks
-- has_many :work_reviews
-- has_many :works
+- has_many :movie_reviews
+- has_many :movies
 - has_one :user_status
 
 
@@ -43,13 +43,13 @@
 - belongs_to :user
 
 
-## work テーブル
+## movie テーブル
 
 | Column       | Type       | Options     |
 | ------------ | ---------- | ----------- |
-| work_title   | string     | null: false |
-| work_text    | text       | null: false |
-| work_image   |            | null: false |
+| movie_title   | string     | null: false |
+| movie_text    | text       | null: false |
+| movie_image   |            | null: false |
 | long         | string     | null: false |
 | release_date | date       |
 | producer     | string     | null: false |
@@ -70,14 +70,14 @@
 | review_text | integer    |
 | favorite    | integer    |
 | want        | integer    |
-| work        | references | null: false, foreign_key: true |
+| movie        | references | null: false, foreign_key: true |
 | user        | references | null: false, foreign_key: true |
 
 ### Association
 
 - has_many :likes
 - belongs_to :user
-- belongs_to :work
+- belongs_to :movie
 - has_one :review_statues
 
 
