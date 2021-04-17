@@ -5,5 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_one_attached :profile_image
+  has_many :works
   acts_as_paranoid
+
+  validates :nickname, presence: true
 end
