@@ -62,6 +62,10 @@ gem 'devise'
 gem 'mini_magick'
 gem 'image_processing', '~> 1.2'
 
+# ↓論理削除
 gem 'paranoia'
 
 gem 'pry-rails'
+
+# ↓エラーメッセージの日本語化
+gem 'rails-i18n'

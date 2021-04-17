@@ -1,19 +1,5 @@
 # テーブル設計
 
-## admins テーブル
-
-| Column             | Type     | Options     |
-| ------------------ | -------- | ----------- |
-| admin_name         | string   | null: false |
-| email              | string   | null: false, unique:true |
-| encrypted_password | string   | null: false |
-| deleted_at         | datetime |
-
-### Association
-
-- has_many :works
-
-
 ## users テーブル
 
 | Column             | Type     | Options     |
@@ -23,6 +9,7 @@
 | encrypted_password | string   | null: false |
 | profile            | string   |
 | profile_image      | 
+| admin              | boolean  |
 | deleted_at         | datetime |
 
 ### Association
@@ -30,6 +17,7 @@
 - has_many :likes
 - has_many :bookmarks
 - has_many :work_reviews
+- has_many :works
 - has_one :user_status
 
 
@@ -60,19 +48,19 @@
 | Column       | Type       | Options     |
 | ------------ | ---------- | ----------- |
 | work_title   | string     | null: false |
-| work_text    | string     | null: false |
+| work_text    | text       | null: false |
 | work_image   |            | null: false |
 | long         | string     | null: false |
-| release_date | date       | null: false |
+| release_date | date       |
 | producer     | string     | null: false |
 | deleted_at   | datetime   |
-| admin        | references | null: false, foreign_key: true |
+| user        | references | null: false, foreign_key: true |
 
 ### Association
 
 - has_many :reviews
 - has_many :bookmarks
-- belongs_to :admin
+- belongs_to :user
 
 
 ## review テーブル
