@@ -23,7 +23,7 @@
       <div class='lists-left, row align-items-center justify-content-center'>
         <div class='col text-center'>
           <% if user_signed_in? && current_user.admin? %>
-            <%= link_to '作品の追加', new_work_path, class: "brand-list, text-white" %>
+            <%= link_to '作品の追加', new_movie_path, class: "brand-list, text-white" %>
           <% end %>
         </div> 
         <div class='col text-center'> 
