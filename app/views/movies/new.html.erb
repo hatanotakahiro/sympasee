@@ -26,41 +26,63 @@
     <%# 商品名と商品説明 %>
     <div class="new-items">
       <div class="weight-bold-text">
-        商品名
+          作品名
         <span class="indispensable">必須</span>
       </div>
-      <%= f.text_area :hoge, class:"items-text", id:"item-name", placeholder:"商品名（必須 40文字まで)", maxlength:"40" %>
-      <div class="items-explain">
+      <%= f.text_field :movie_title, class:"movies-text", id:"movie-title", placeholder:"商品名（必須 50文字まで)", maxlength:"50" %>
+      <div class="movie-form">
         <div class="weight-bold-text">
-          商品の説明
+          作品の説明
           <span class="indispensable">必須</span>
         </div>
-        <%= f.text_area :hoge, class:"items-text", id:"item-info", placeholder:"商品の説明（必須 1,000文字まで）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。" ,rows:"7" ,maxlength:"1000" %>
+        <%= f.text_area :movie_text, class:"movies-text", id:"movie-text", placeholder:"作品の説明（必須 500文字まで）", rows:"7" ,maxlength:"500" %>
       </div>
-    </div>
+      <div class="movie-form">
+        <div class="weight-bold-text">
+          動画の長さ
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_field :long, class:"movies-short-text", id:"movie-long", placeholder:"（例）120", maxlength:"3" %>
+        <span class="weight-bold-text">&nbsp;&nbsp;分</span>
+      </div>
+      <div class="movie-form">
+        <div class="weight-bold-text">
+          制作者
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :producer, class:"movies-text", id:"movie-producer", placeholder:"制作者（必須 50文字まで）", rows:"1" ,maxlength:"50" %>
+      </div>
+      <div class="movie-form">
+        <div class="weight-bold-text">
+          演者
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :character, class:"movies-text", id:"movie-character", placeholder:"制作者（必須 50文字まで）", rows:"2" ,maxlength:"50" %>
+      </div>
+      <div class="movie-form">
+        <div class="weight-bold-text">
+          作品の公開日
+          <span class="indispensable">必須</span>
+        </div>
+        <div class='input-release-wrap'>
+          <%= raw sprintf(
+                      f.date_select(
+                        :release_date,
+                        class:'select-release',
+                        id:"release-date",
+                        use_month_numbers: true,
+                        prompt:'--',
+                        start_year: 1930,
+                        end_year: (Time.now.year + 5),
+                        date_separator: '%s'),
+                      "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
+        </div>
+      </div>
     <%# /商品名と商品説明 %>
-
-    <%# 商品の詳細 %>
-    <div class="items-detail">
-      <div class="weight-bold-text">商品の詳細</div>
-      <div class="form">
-        <div class="weight-bold-text">
-          カテゴリー
-          <span class="indispensable">必須</span>
-        </div>
-        <%= f.collection_select(:hoge, [], :hoge, :hoge, {}, {class:"select-box", id:"item-category"}) %>
-        <div class="weight-bold-text">
-          商品の状態
-          <span class="indispensable">必須</span>
-        </div>
-        <%= f.collection_select(:hoge, [], :hoge, :hoge, {}, {class:"select-box", id:"item-sales-status"}) %>
-      </div>
-    </div>
-    <%# /商品の詳細 %>
 
     <%# 下部ボタン %>
     <div class="sell-btn-contents">
-      <%= f.submit "出品する" ,class:"sell-btn" %>
+      <%= f.submit "作品を追加する" ,class:"sell-btn" %>
       <%=link_to 'もどる', root_path, class:"back-btn" %>
     </div>
     <%# /下部ボタン %>

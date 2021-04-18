@@ -96,7 +96,7 @@
   padding: 2vh 0;
 }
 
-.items-text {
+.movies-text {
   width: 100%;
   padding: 16px 16px 8px;
   border-radius: 4px;
@@ -105,7 +105,15 @@
   resize: none;
 }
 
-.items-explain {
+.movies-short-text {
+  width: 20%;
+  padding: 16px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.movie-form {
   margin-top: 2vh;
 }
 
@@ -197,6 +205,28 @@
   color: #fff;
   padding: 15px 35%;
   text-decoration: none;
+}
+
+.input-release-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.input-release-wrap select {
+  width: 75px;
+  margin-top: 5px;
+  height: 45px;
+  padding-left: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.input-release-wrap p {
+  line-height: 60px;
+  padding: 0 5px;
 }
 
 /* /下部ボタン */

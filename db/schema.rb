@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 2021_04_17_070238) do
     t.string "long", null: false
     t.date "release_date"
     t.string "producer", null: false
+    t.string "character", null: false
     t.date "deleted_at"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false

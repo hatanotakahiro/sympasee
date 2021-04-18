@@ -6,6 +6,7 @@ class CreateMovies < ActiveRecord::Migration[6.0]
       t.string :long, null: false
       t.date   :release_date
       t.string :producer, null: false
+      t.string :character, null: false
       t.date   :deleted_at
       t.references :user, foreign_key: true
 
