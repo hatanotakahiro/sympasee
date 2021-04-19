@@ -109,3 +109,51 @@ Movie.create!(
 )
 movie7 = Movie.find_by(movie_title: "3idiots")
 movie7.movie_image.attach(io: File.open('app/assets/images/movie7.png'), filename: 'movie7.png')
+
+Movie.create!(
+  movie_title:  "ジュラシック・パーク",
+  movie_text: "コスタリカ沖の孤島につくられたテーマパーク「ジュラシック・パーク」。そこでは太古の琥珀に閉じ込められたDNAを使い、恐竜たちを蘇らせていた。前代未聞の夢の大テーマパークになる予定だったが、ある夜、安全装置が解除され、恐竜たちが柵の外へ脱走、次々と人間たちを襲っていく。島に残された人間は、島からの脱出を目指すのだが……。",
+  long:  "128分",
+  release_date: "1993-07-24",
+  producer:  "スティーヴン・スピルバーグ",
+  character: "アラン・グラント（サム・ニール・富山敬）、エリー・サトラー（ローラ・ダーン・弥永和子）、イアン・マルコム（ジェフ・ゴールドブラム・大塚芳忠）",
+  user_id: "1"
+)
+movie8 = Movie.find_by(movie_title: "ジュラシック・パーク")
+movie8.movie_image.attach(io: File.open('app/assets/images/movie8.jpeg'), filename: 'movie8.jpeg')
+
+Movie.create!(
+  movie_title:  "ロード・オブ・ザ・リング/王の帰還",
+  movie_text: "とうとうモルドールへとたどり着いたフロド達。しかし、悪の魔の手もまた、彼らへと迫っていた。彼らの旅の行方は果たして。映画史に名を残す名作、ここに完結。",
+  long:  "201分",
+  release_date: "2003-12-01",
+  producer:  "ピーター・ジャクソン",
+  character: "フロド・バギンズ : イライジャ・ウッド（日本語吹替版：浪川大輔）、サムワイズ・ギャムジー（サム） : ショーン・アスティン（谷田真吾）、アラゴルン : ヴィゴ・モーテンセン（大塚芳忠）、ガンダルフ : イアン・マッケラン（有川博）",
+  user_id: "1"
+)
+movie9 = Movie.find_by(movie_title: "ロード・オブ・ザ・リング/王の帰還")
+movie9.movie_image.attach(io: File.open('app/assets/images/movie9.jpg'), filename: 'movie9.jpg')
+
+Movie.create!(
+  movie_title:  "おおかみこどもの雨と雪",
+  movie_text: "大学生の花は“おおかみおとこ”に恋をし、愛しあい、ふたつの新しい命を授かった。雪の日に生まれた姉は≪雪≫、雨の日に生まれた弟は≪雨≫と名づけられた二人には、大きなヒミツがあった。人間とおおかみのふたつの顔を持つ≪おおかみこども≫として生を受けたのだ。雪と雨が≪おおかみこども≫であることを隠すため、家族4人は、都会の片隅でひっそりとつつましくも幸せに暮らしていた。永遠に続くと思われた日々は、父である“おおかみおとこ”の死によって突然奪われる。取り残された、花と雪と雨の3人。幼いふたりの子供と幸せに生きるため、母は決断する。都会の人の目を離れて、厳しくも豊かな自然に囲まれた田舎町に移り住むことを・・",
+  long:  "117分",
+  release_date: "2012-07-21",
+  producer:  "細田守",
+  character: "声：宮崎あおい、大沢たかお",
+  user_id: "1"
+)
+movie10 = Movie.find_by(movie_title: "おおかみこどもの雨と雪")
+movie10.movie_image.attach(io: File.open('app/assets/images/movie10.jpg'), filename: 'movie10.jpg')
+
+Movie.create!(
+  movie_title:  "バイオハザード",
+  movie_text: "ある日、アリスは記憶が曖昧な状態で目覚める。さ迷っていると、突然謎の特殊舞台に拘束され、地下施設に連れて行かれる。そこはアメリカ最大の製薬会社アンブレラの地下研究所「ハイブ」だった。研究所では、人類をアンデッド化（ゾンビ化）してしまう恐ろしい生物兵器T-ウィルスが漏洩するバイオハザードが発生---",
+  long:  "100分",
+  release_date: "2002-08-31",
+  producer:  "ポール・W・S・アンダーソン",
+  character: "アリス・アバーナシー：ミラ・ジョヴォヴィッチ(本田貴子)、マット・アディソン：エリック・メビウス(宮本充)、レイン・オカンポ：ミシェル・ロドリゲス(朴璐美)",
+  user_id: "1"
+)
+movie11 = Movie.find_by(movie_title: "バイオハザード")
+movie11.movie_image.attach(io: File.open('app/assets/images/movie11.jpeg'), filename: 'movie11.jpeg')
