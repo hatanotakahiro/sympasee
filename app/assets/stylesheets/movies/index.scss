@@ -11,44 +11,72 @@ a {
 }
 
 .pickup_title {
-  text-align: center;
-  color: #fff;
-  position: relative;
-  padding-left: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.pickup_title:before {
-  position: absolute;
-  font-family: "Font Awesome 5 Free";
-  content: "\f0eb";
-  background: #ffca2c;
-  color: white;
-  font-weight: 900;
-  font-size: 15px;
-  border-radius: 50%;
-  left: 0;
-  width: 25px;
-  height: 25px;
-  line-height: 25px;
+.title {
   text-align: center;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
+  width: 40vw;
+  position: relative;
+  margin: 30px;
+  color: #fff;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+  font-family: "YuGothic","Yu Gothic","Meiryo","ヒラギノ角ゴ","sans-serif";
 }
-.pickup_title:after {
-  /*吹き出しのちょこんと出た部分*/
-  content: '';
-  display: block;
+
+.title:before,
+.title:after {
   position: absolute;
-  left: 20px;
-  height: 0;
-  width: 0;
-  border-top: 7px solid transparent;
-  border-bottom: 7px solid transparent;
-  border-left: 12px solid #ffca2c;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
+  z-index: 0;
+  bottom: -10px;
+  display: block;
+  content: '';
+  border: 1em solid #d90606;
+}
+
+.title:before {
+  left: -30px;
+  border-left-width: 15px;
+  border-left-color: transparent;
+}
+
+.title:after {
+  right: -30px;
+  border-right-width: 15px;
+  border-right-color: transparent;
+}
+
+.title span {
+  position: relative;
+  z-index: 1;
+  display: block;
+  padding: 1rem 2rem;
+  color: #fff;
+  background: #fa4141;
+}
+
+.title span:before,
+.title span:after {
+  position: absolute;
+  bottom: -10px;
+  display: block;
+  width: 10px;
+  height: 10px;
+  content: '';
+  border-style: solid;
+  border-color: #b70505 transparent transparent transparent;
+}
+
+.title span:before {
+  left: 0;
+  border-width: 10px 0 0 10px;
+}
+
+.title span:after {
+  right: 0;
+  border-width: 10px 10px 0 0;
 }
 
 /* 画面上部の「人生を変えるフリマアプリ」帯部分 */
@@ -169,7 +197,7 @@ a {
 /* 画面中央の「会員数日本一位」帯部分*/
 .ad-contents {
   width: 100vw;
-  background-image: image-url('furima-header02.png');
+  background-image: image-url('furima-header01.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
