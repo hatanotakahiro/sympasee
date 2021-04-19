@@ -22,8 +22,8 @@ User.create!(nickname:  "さとじろ",
   password_confirmation: "bbb222",
   profile: "アニメ大好きです。今までだとパプリカとかが一番かなー"
   )
-# # user2 = User.find_by(email: "bbb@bbb")
-# # user2.profile_image.attach(io: File.open('public/images/user2.jpeg'), filename: 'user2.jpeg')
+user2 = User.find_by(email: "bbb@bbb")
+user2.profile_image.attach(io: File.open('public/images/user2.jpeg'), filename: 'user2.jpeg')
 
 # # ここから作品
 # Movie.create!(
