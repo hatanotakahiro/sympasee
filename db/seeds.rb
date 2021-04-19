@@ -14,7 +14,7 @@ User.create!(nickname:  "やまたろ",
   )
 # ActivStorage の画像添付
 user1 = User.find_by(email: "aaa@aaa")
-user1.profile_image.attach(io: File.open('app/assets/images/katouken2.jpeg'), filename: 'katouken2.jpeg')
+user1.profile_image.attach(io: File.open('public/assets/user1.jpeg'), filename: 'user1.jpeg')
 
 User.create!(nickname:  "さとじろ",
   email: "bbb@bbb",
@@ -23,7 +23,7 @@ User.create!(nickname:  "さとじろ",
   profile: "アニメ大好きです。今までだとパプリカとかが一番かなー"
   )
 user2 = User.find_by(email: "bbb@bbb")
-user2.profile_image.attach(io: File.open('app/assets/images/neko.jpeg'), filename: 'neko.jpeg')
+user2.profile_image.attach(io: File.open('public/assets/user2.jpeg'), filename: 'user2.jpeg')
 
 # ここから作品
 Movie.create!(
