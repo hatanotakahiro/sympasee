@@ -13,8 +13,8 @@ User.create!(nickname:  "やまたろ",
   profile: "やまたろと申します。海外ドラマ大好きです"
   )
 # # ActivStorage の画像添付
-# user1 = User.find_by(email: "aaa@aaa")
-# user1.profile_image.attach(io: File.open('public/images/user1.jpeg'), filename: 'user1.jpeg')
+user1 = User.find_by(email: "aaa@aaa")
+user1.profile_image.attach(io: File.open('public/images/user1.jpeg'), filename: 'user1.jpeg')
 
 User.create!(nickname:  "さとじろ",
   email: "bbb@bbb",
