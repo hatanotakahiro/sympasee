@@ -42,8 +42,7 @@
           動画の長さ
           <span class="indispensable">必須</span>
         </div>
-        <%= f.text_field :long, class:"movies-short-text", id:"movie-long", placeholder:"（例）120", maxlength:"3" %>
-        <span class="weight-bold-text">&nbsp;&nbsp;分</span>
+        <%= f.text_field :long, class:"movies-short-text", id:"movie-long", placeholder:"（例）120分、全13話", maxlength:"15" %>
       </div>
       <div class="movie-form">
         <div class="weight-bold-text">
@@ -57,7 +56,7 @@
           演者
           <span class="indispensable">必須</span>
         </div>
-        <%= f.text_area :character, class:"movies-text", id:"movie-character", placeholder:"制作者（必須 50文字まで）", rows:"2" ,maxlength:"50" %>
+        <%= f.text_area :character, class:"movies-text", id:"movie-character", placeholder:"制作者（必須 200文字まで）", rows:"2" ,maxlength:"200" %>
       </div>
       <div class="movie-form">
         <div class="weight-bold-text">
