@@ -1,5 +1,5 @@
 # 管理者
-User.create!(nickname:  "管理者",
+user = User.create!(nickname:  "管理者",
   email: "admin@admin",
   password:  "katouken",
   password_confirmation: "katouken",
@@ -26,7 +26,7 @@ user2 = User.find_by(email: "bbb@bbb")
 user2.profile_image.attach(io: File.open('public/images/user2.jpeg'), filename: 'user2.jpeg')
 
 # ここから作品
-Movie.create!(
+user.movies.create!(
   movie_title:  "MONSTER HUNTER",
   movie_text: "砂漠で偵察中のアルテミス（ミラ・ジョヴォヴィッチ）と彼女のエリート部隊は、突如起こった超巨大な砂嵐に遭遇し、必死に逃げるものの一瞬にして巻き込まれてしまう。 強烈な突風と、激しい稲光の中で気を失うアルテミス。そして目を覚ました場所は、我々の住む世界とは、全く異なる世界だった―",
   long:  "104分",
