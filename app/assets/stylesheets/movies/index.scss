@@ -3,7 +3,52 @@ a {
 }
 
 .main {
-  background: #f8f8f8;
+  // background-color: #486d46;            /* 背景色 */
+  background-image: image-url('red-curtain.jpeg'); /* 画像 */
+  background-size: cover;               /* 全画面 */
+  // background-attachment: fixed;         /* 固定 */
+  background-position: center center;   /* 縦横中央 */
+}
+
+.pickup_title {
+  text-align: center;
+  color: #fff;
+  position: relative;
+  padding-left: 35px;
+}
+
+.pickup_title:before {
+  position: absolute;
+  font-family: "Font Awesome 5 Free";
+  content: "\f0eb";
+  background: #ffca2c;
+  color: white;
+  font-weight: 900;
+  font-size: 15px;
+  border-radius: 50%;
+  left: 0;
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  text-align: center;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.pickup_title:after {
+  /*吹き出しのちょこんと出た部分*/
+  content: '';
+  display: block;
+  position: absolute;
+  left: 20px;
+  height: 0;
+  width: 0;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  border-left: 12px solid #ffca2c;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
 /* 画面上部の「人生を変えるフリマアプリ」帯部分 */

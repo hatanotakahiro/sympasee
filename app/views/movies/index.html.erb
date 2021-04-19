@@ -1,120 +1,54 @@
 <%= render "shared/header" %>
 <div class='main'>
-
+  <h2 class='pickup_title'>ピックアップカテゴリー</h2>
   <%# 画面上部の「人生を変えるフリマアプリ」帯部分 %>
-	<div id="test-carousel" class="carousel slide" data-ride="carousel" data-interval="4000">
-	  <!-- 何枚目かの画像かを表すインディケーター -->
-	  <ol class="carousel-indicators">
-	    <li data-target="#test-carousel" data-slide-to="0" class="active"></li>
-	    <li data-target="#test-carousel" data-slide-to="1" class=""></li>
-	    <li data-target="#test-carousel" data-slide-to="2" class=""></li>
-	    <li data-target="#test-carousel" data-slide-to="3" class=""></li>
-	  </ol>
-
-
-  <!-- 実際の画像の表示処理 -->
-  <div class="carousel-inner">
-  	<span class="item active">    <!-- activeをつけたものがページ表示時に表示される -->
-	    <span1>
-	    	<%= image_tag 'sympasee_logo.png', :size =>'1008x470' %>
-	    </span1>
-	</span>
-	<span class="item">
-	    <span1>
-	      	<%= image_tag 'sympasee_logo.png', :size =>'1008x470' %>
-	    </span1>
-	</span>
-	<span class="item">
-	      <span1>
-	      	<%= image_tag 'sympasee_logo.png', :size =>'1008x470' %>
-	      </span1>
-	</span>
-	<span class="item">
-	      <span1>
-	      	<%= image_tag 'sympasee_logo.png', :size =>'1008x470' %>
-	      </span1>
-	</span>
-  </div>
-
-		  <!-- 前の画像へ戻るための矢印ポインタ -->
-		    <div class="left">
-				<a class="left carousel-control" href="#test-carousel" data-slide="prev">
-				    <span class="glyphicon glyphicon-chevron-left"></span>
-				</a>
-		    </div>
-
-		  <!-- 次の画像へ進むための矢印ポインタ -->
-		  	<div class="right">
-		        <a class="right carousel-control" href="#test-carousel" data-slide="next">
-		            <span class="glyphicon glyphicon-chevron-right"></span>
-		        </a>
-		    </div>
-	</div>
-</div>
-  <%# /画面上部の「人生を変えるフリマアプリ」帯部分  %>
-
-  <%# FURIMAが選ばれる3つの理由部分 %>
-  <div class='select-reason-contents'>
-    <h2 class='title'>
-      FURIMAが選ばれる3つの理由
-    </h2>
-    <ul class='reason-lists'>
-      <li class='list'>
-        <%= image_tag "furima-intro01.png", class:"list-pict" %>
-        <span class='reason-list-number'>1</span>
-        <h3 class='reason-list-text'>
-          <span class='reason-list-blue-text'>3分</span>
-          ですぐに出品
-        </h3>
-        <p class='reason-list-description'>
-          スマホで入力するだけで簡単に出品できる！
-        </p>
-      </li>
-      <li class='list'>
-        <%= image_tag "furima-intro02.png", class:"list-pict" %>
-        <span class='reason-list-number'>2</span>
-        <h3 class='reason-list-text'>
-          <span class='reason-list-blue-text'>シンプル</span>
-          で使いやすい
-        </h3>
-        <p class='reason-list-description'>
-          めんどくさい入力は必要なく、検索も購入もスムーズ！
-        </p>
-      </li>
-      <li class='list'>
-        <%= image_tag "furima-intro03.png", class:"list-pict" %>
-        <span class='reason-list-number'>3</span>
-        <h3 class='reason-list-text'>
-          手数料
-          <span class='reason-list-blue-text'>業界最安</span>
-        </h3>
-        <p class='reason-list-description'>
-          10%でお得に出品&購入！
-        </p>
-      </li>
-    </ul>
-  </div>
-  <%# /FURIMAが選ばれる3つの理由部分 %>
-
-  <%# 画面中央の「会員数日本一位」帯部分 %>
-  <div class='ad-contents'>
-    <h2 class='ad-title'>
-      会員数日本一位
-    </h2>
-    <p class='ad-explain'>
-      FURIMAは、フリマアプリで最も人気。
-    </p>
-    <p class='ad-explain'>
-      出品・購入回数も業界最多です！
-    </p>
-    <p class='ad-explain'>
-      ほしかったあの商品に出会えるかもしれません。
-    </p>
-    <div class='store-btn'>
-      <%= link_to image_tag("https://linkmaker.itunes.apple.com/ja-jp/badge-lrg.svg?releaseDate=2011-09-21&kind=iossoftware&bubble=ios_apps", class:"apple-btn"), "#" %>
-      <%= link_to image_tag("dl-android.png", class:"google-btn"), "#" %>
+  <div id="carousel-2" class="carousel slide" data-interval="5000">
+    <ol class="carousel-indicators">
+      <li data-target="#carousel-2" data-slide-to="0" class="active"></li>
+      <li data-target="#carousel-2" data-slide-to="1"></li>
+      <li data-target="#carousel-2" data-slide-to="2"></li>
+    </ol>
+    <div class="container carousel-inner">
+      <div class="carousel-item active">
+        <%= link_to image_tag("pickup1.jpeg", size: '1000x600', alt: 'First slide', class:"d-block w-100"), "/" %>
+      </div>
+      <div class="carousel-item">
+        <%= link_to image_tag("pickup2.jpeg", size: '1000x600', alt: 'Second slide', class:"d-block w-100"), "/" %>
+      </div>
+      <div class="carousel-item">
+        <%= link_to image_tag("pickup3.jpeg", size: '1000x600', alt: 'Third slide', class:"d-block w-100"), "/" %>
+      </div>
     </div>
+    <a class="carousel-control-prev" href="#carousel-2" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carousel-2" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
   </div>
+    <%# /FURIMAが選ばれる3つの理由部分 %>
+
+    <%# 画面中央の「会員数日本一位」帯部分 %>
+    <div class='ad-contents'>
+      <h2 class='ad-title'>
+        会員数日本一位
+      </h2>
+      <p class='ad-explain'>
+        FURIMAは、フリマアプリで最も人気。
+      </p>
+      <p class='ad-explain'>
+        出品・購入回数も業界最多です！
+      </p>
+      <p class='ad-explain'>
+        ほしかったあの商品に出会えるかもしれません。
+      </p>
+      <div class='store-btn'>
+        <%= link_to image_tag("https://linkmaker.itunes.apple.com/ja-jp/badge-lrg.svg?releaseDate=2011-09-21&kind=iossoftware&bubble=ios_apps", class:"apple-btn"), "#" %>
+        <%= link_to image_tag("dl-android.png", class:"google-btn"), "#" %>
+      </div>
+    </div>
   <%# /画面中央の「会員数日本一位」帯部分 %>
 
   <%# FURIMAの特徴 %>
@@ -156,7 +90,6 @@
 
   <%# 商品一覧 %>
   <div class='item-contents'>
-    <h2 class='title'>ピックアップカテゴリー</h2>
     <%= link_to '新規投稿商品', "#", class: "subtitle" %>
     <ul class='item-lists'>
 
