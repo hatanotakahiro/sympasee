@@ -157,3 +157,15 @@ Movie.create!(
 )
 movie11 = Movie.find_by(movie_title: "バイオハザード")
 movie11.movie_image.attach(io: File.open('app/assets/images/movie11.jpeg'), filename: 'movie11.jpeg')
+
+Movie.create!(
+  movie_title:  "THE GREATEST SHOWMAN",
+  movie_text: "主人公のP.T.バーナムは＜ショービジネス＞の概念を生み出した男。誰もがオンリーワンになれる場所をエンターテインメントの世界に作り出し、人々の人生を勇気と希望で照らした実在の人物だ。そんなバーナムを支えたのは、どんな時も彼の味方であり続けた幼なじみの妻チャリティ。彼女の愛を心の糧に、仲間たちの友情を原動力に、バーナムはショーの成功に向かってひたむきに歩む。",
+  long:  "104",
+  release_date: "2018-02-16",
+  producer:  "マイケル・グレイシー",
+  character: "ヒュー・ジャックマン、ザック・エフロン、ミシェル・ウィリアムズ、レベッカ・ファーガソン、ゼンデイヤ",
+  user_id: "1"
+)
+movie12 = Movie.find_by(movie_title: "THE GREATEST SHOWMAN")
+movie12.movie_image.attach(io: File.open('app/assets/images/movie12.jpg'), filename: 'movie12.jpg')

@@ -4,7 +4,8 @@ class MoviesController < ApplicationController
   before_action :admin?, only: [:new, :create, :edit, :update, :destroy]
   
   def index
-    @movies = Movie.includes(:user).order("created_at DESC")
+    movies = Movie.includes(:user).order("created_at DESC")
+    @movies = movies.page(params[:page]).per(8)
   end
 
   def new

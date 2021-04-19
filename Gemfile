@@ -71,3 +71,5 @@ gem 'pry-rails'
 gem 'rails-i18n'
 
 gem 'font-awesome-sass'
+
+gem 'kaminari'
