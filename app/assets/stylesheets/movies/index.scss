@@ -3,10 +3,91 @@ a {
 }
 
 .main {
-  background: #f8f8f8;
+  // background-color: #486d46;            /* 背景色 */
+  background-image: image-url('red-curtain.jpeg'); /* 画像 */
+  background-size: cover;               /* 全画面 */
+  // background-attachment: fixed;         /* 固定 */
+  background-position: center center;   /* 縦横中央 */
+  padding-bottom: 10vh;
+}
+
+.pickup_title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  text-align: center;
+  width: 40vw;
+  position: relative;
+  margin: 30px;
+  color: #fff;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+  font-family: "YuGothic","Yu Gothic","Meiryo","ヒラギノ角ゴ","sans-serif";
+}
+
+.title:before,
+.title:after {
+  position: absolute;
+  z-index: 0;
+  bottom: -10px;
+  display: block;
+  content: '';
+  border: 1em solid #d90606;
+}
+
+.title:before {
+  left: -30px;
+  border-left-width: 15px;
+  border-left-color: transparent;
+}
+
+.title:after {
+  right: -30px;
+  border-right-width: 15px;
+  border-right-color: transparent;
+}
+
+.title span {
+  position: relative;
+  z-index: 1;
+  display: block;
+  padding: 1rem 2rem;
+  color: #fff;
+  background: #fa4141;
+}
+
+.title span:before,
+.title span:after {
+  position: absolute;
+  bottom: -10px;
+  display: block;
+  width: 10px;
+  height: 10px;
+  content: '';
+  border-style: solid;
+  border-color: #b70505 transparent transparent transparent;
+}
+
+.title span:before {
+  left: 0;
+  border-width: 10px 0 0 10px;
+}
+
+.title span:after {
+  right: 0;
+  border-width: 10px 10px 0 0;
 }
 
 /* 画面上部の「人生を変えるフリマアプリ」帯部分 */
+
+.movie-contents.container-fluid {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 90vw; //例えば
+}
+
 .title-contents {
   width: 100vw;
   background-image: image-url('furima-header01.png');
@@ -124,7 +205,7 @@ a {
 /* 画面中央の「会員数日本一位」帯部分*/
 .ad-contents {
   width: 100vw;
-  background-image: image-url('furima-header02.png');
+  background-image: image-url('furima-header01.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
@@ -215,49 +296,70 @@ a {
 
 /* 商品一覧 */
 
-.item-contents {
+.movie-contents {
   background-color: #FFF;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 10vh 0;
+  padding: 5vh 0;
+  margin-top: 5vh;
+  border-radius: 10px;
 }
 
-.item-contents>.title {
+.movie-contents>.title {
   font-size: 5vh;
   line-height: 1.4;
   font-weight: bold;
 }
 
-.item-contents>.subtitle {
-  font-size: 3vh;
+.movie-contents>.subtitle {
+  font-size: 4vh;
   margin: 1vh 0;
-  text-decoration: none;
-  color: #3ccace;
   font-weight: bold;
+  position: relative;
+  padding-left: 35px;
 }
 
-.item-lists {
+.movie-contents>.subtitle:before {
+  position: absolute;
+  font-family: "Font Awesome 5 Free";
+  content: "\f06a";
+  background: #ffca2c;
+  color: white;
+  font-weight: 1000;
+  font-size: 25px;
+  border-radius: 50%;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.movie-lists {
   width: 100vw;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.item-lists>.list {
+.movie-lists>.list {
   width: 37vh;
   padding: 1vw;
   background-color: #FFF;
 }
 
 
-.item-img-content {
+.movie-img-content {
   position: relative;
 }
 
-.item-img {
+.movie-img {
   width: 33vh;
-  height: 33vh;
+  height: auto;
 }
 
 .sold-out {
@@ -276,17 +378,17 @@ a {
 }
 
 
-.item-info {
+.movie-info {
   background-color: #FFF;
   color: black;
   padding: 1vw;
 }
 
-.item-name {
+.movie-name {
   font-size: 2.5vh;
 }
 
-.item-price {
+.movie-price {
   font-size: 1.5vh;
   display: flex;
   justify-content: space-between;
@@ -308,4 +410,8 @@ a {
   font-size: 2vh;
 }
 
+.pagination {
+  display: flex;
+  justify-content: center;
+}
 /* //商品一覧 */
