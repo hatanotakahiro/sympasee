@@ -25,18 +25,18 @@ User.create!(nickname:  "さとじろ",
 user2 = User.find_by(email: "bbb@bbb")
 user2.profile_image.attach(io: File.open('public/images/user2.jpeg'), filename: 'user2.jpeg')
 
-# # ここから作品
-# Movie.create!(
-#   movie_title:  "MONSTER HUNTER",
-#   movie_text: "砂漠で偵察中のアルテミス（ミラ・ジョヴォヴィッチ）と彼女のエリート部隊は、突如起こった超巨大な砂嵐に遭遇し、必死に逃げるものの一瞬にして巻き込まれてしまう。 強烈な突風と、激しい稲光の中で気を失うアルテミス。そして目を覚ました場所は、我々の住む世界とは、全く異なる世界だった―",
-#   long:  "104分",
-#   release_date: "2021-03-26",
-#   producer:  "ポール・Ｗ・Ｓ・アンダーソン",
-#   character: "ミラ・ジョヴォヴィッチ、トニー・ジャー、ティップ・“Ｔ．Ｉ．”・ハリス、ミーガン・グッド、ディエゴ・ボネータ、山崎紘菜、ロン・パールマン",
-#   user_id: "1"
-# )
-# movie1 = Movie.find_by(movie_title: "MONSTER HUNTER")
-# movie1.movie_image.attach(io: File.open('public/images/movie1.jpeg'), filename: 'movie1.jpeg')
+# ここから作品
+Movie.create!(
+  movie_title:  "MONSTER HUNTER",
+  movie_text: "砂漠で偵察中のアルテミス（ミラ・ジョヴォヴィッチ）と彼女のエリート部隊は、突如起こった超巨大な砂嵐に遭遇し、必死に逃げるものの一瞬にして巻き込まれてしまう。 強烈な突風と、激しい稲光の中で気を失うアルテミス。そして目を覚ました場所は、我々の住む世界とは、全く異なる世界だった―",
+  long:  "104分",
+  release_date: "2021-03-26",
+  producer:  "ポール・Ｗ・Ｓ・アンダーソン",
+  character: "ミラ・ジョヴォヴィッチ、トニー・ジャー、ティップ・“Ｔ．Ｉ．”・ハリス、ミーガン・グッド、ディエゴ・ボネータ、山崎紘菜、ロン・パールマン",
+  user_id: "1"
+)
+movie1 = Movie.find_by(movie_title: "MONSTER HUNTER")
+movie1.movie_image.attach(io: File.open('public/images/movie1.jpeg'), filename: 'movie1.jpeg')
 
 # Movie.create!(
 #   movie_title:  "約束のネバーランド",
