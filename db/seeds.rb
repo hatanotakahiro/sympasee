@@ -14,7 +14,7 @@ User.create!(nickname:  "やまたろ",
   )
 # ActivStorage の画像添付
 user1 = User.find_by(email: "aaa@aaa")
-user1.profile_image.attach(io: File.open('app/assets/images/user1.jpeg'), filename: 'user1.jpeg')
+user1.profile_image.attach(io: File.open('public/images/user1.jpeg'), filename: 'user1.jpeg')
 
 User.create!(nickname:  "さとじろ",
   email: "bbb@bbb",
@@ -23,7 +23,7 @@ User.create!(nickname:  "さとじろ",
   profile: "アニメ大好きです。今までだとパプリカとかが一番かなー"
   )
 user2 = User.find_by(email: "bbb@bbb")
-user2.profile_image.attach(io: File.open('app/assets/images/user2.jpeg'), filename: 'user2.jpeg')
+user2.profile_image.attach(io: File.open('public/images/user2.jpeg'), filename: 'user2.jpeg')
 
 # ここから作品
 Movie.create!(
@@ -36,7 +36,7 @@ Movie.create!(
   user_id: "1"
 )
 movie1 = Movie.find_by(movie_title: "MONSTER HUNTER")
-movie1.movie_image.attach(io: File.open('app/assets/images/movie1.jpeg'), filename: 'movie1.jpeg')
+movie1.movie_image.attach(io: File.open('public/images/movie1.jpeg'), filename: 'movie1.jpeg')
 
 Movie.create!(
   movie_title:  "約束のネバーランド",
