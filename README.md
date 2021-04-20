@@ -47,12 +47,13 @@
 
 | Column       | Type       | Options     |
 | ------------ | ---------- | ----------- |
-| movie_title   | string     | null: false |
-| movie_text    | text       | null: false |
-| movie_image   |            | null: false |
+| movie_title  | string     | null: false |
+| movie_text   | text       | null: false |
+| movie_image  |            | null: false |
 | long         | string     | null: false |
 | release_date | date       |
 | producer     | string     | null: false |
+| character    | string     | null: false |
 | deleted_at   | datetime   |
 | user        | references | null: false, foreign_key: true |
 
