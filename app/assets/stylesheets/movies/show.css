@@ -1,15 +1,22 @@
 /* 商品の概要 */
 
-.item-show {
-  background-color: #f8f8f8;
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 5vh 0;
+a {
+  text-decoration: none;
 }
 
-.item-box {
+.movie-show {
+  background-image: image-url('red-curtain.jpeg'); /* 画像 */
+  background-size: cover;               /* 全画面 */
+  /* background-attachment: fixed;         固定 */
+  background-position: center center;   /* 縦横中央 */
+  padding: 10vh 0;
+}
+
+.margin {
+  height: 4vw;
+}
+
+.movie-box {
   background-color: #FFF;
   width: 70vw;
   min-width: 1200px;
@@ -17,40 +24,54 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-radius: 10px;
 }
 
-.item-box>.name {
+.movie-box>.name {
   text-align: center;
   font-weight: bold;
   font-size: 25px;
 }
 
-.item-box-img {
-  height: 50vh;
-  width: 60vw;
+.movie-box-img {
+  height: auto;
+  width: 30vw;
   min-height: 500px;
-  background-color: rgb(205, 202, 202);
+  margin-left: 3vw;
   object-fit: contain;
 }
 
-.item-price-box {
+.movie-price-box {
   margin: 25px 0px;
   display: flex;
   align-items: center;
   flex-direction: column;
 }
 
-.item-price-box>.item-price {
+.movie-price-box>.movie-price {
   font-size: 4vh;
   font-weight: bold;
 }
 
-.item-price-box>.item-postage {
+.movie-price-box>.movie-postage {
   font-size: 16px;
 }
 
+.movie-show-content {
+  font-size: 20px;
+}
 
-.item-red-btn {
+.movie-show-content>table th{
+  padding : 20px 10px;
+  width: 20%;
+}
+
+.movie-show-content>table td{
+  padding : 20px 10px;
+  width: 80%;
+}
+
+.movie-red-btn {
   text-align: center;
   background-color: #ea352d;
   font-size: 24px;
@@ -64,7 +85,7 @@
   font-size: 20px;
 }
 
-.item-destroy {
+.movie-destroy {
   background-color: lightgray;
   text-align: center;
   font-size: 24px;
@@ -73,7 +94,7 @@
   padding: 2vh 10vw;
 }
 
-.item-explain-box {
+.movie-explain-box {
   font-size: 18px;
   margin: 40px 0px;
   overflow-wrap: anywhere;
@@ -84,7 +105,7 @@
   width: 100%;
 }
 
-.detail-item {
+.detail-movie {
   width: 20%;
   background-color: #eee;
   border: 1px solid #dedede;
@@ -191,13 +212,13 @@
 
 }
 
-.change-item-btn {
+.change-movie-btn {
   font-size: 30px;
   text-decoration: none;
   color: #3CCACE;
 }
 
-.another-item {
+.another-movie {
   display: block;
   margin: 30px 0px 8px;
   color: #3CCACE;
