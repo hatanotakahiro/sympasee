@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: sympasee_production
-  username: sympasee
-  password: <%= ENV['SYMPASEE_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
