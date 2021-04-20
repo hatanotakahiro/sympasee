@@ -5,9 +5,8 @@ a {
 }
 
 .movie-show {
-  background-image: image-url('red-curtain.jpeg'); /* 画像 */
   background-size: cover;               /* 全画面 */
-  /* background-attachment: fixed;         固定 */
+  background-attachment: fixed;         /* 固定 */
   background-position: center center;   /* 縦横中央 */
   padding: 10vh 0;
 }
