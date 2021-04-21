@@ -1,0 +1,49 @@
+.new-review {
+  // background-color: #486d46;            /* 背景色 */
+  background-image: image-url('back_ground2.jpeg'); /* 画像 */
+  background-size: cover;               /* 全画面 */
+  background-attachment: fixed;         /* 固定 */
+  background-position: center center;   /* 縦横中央 */
+  padding: 15vh 0;
+}
+
+.review.container-fluid {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 90vw;
+}
+.review{
+background-color: #FFF;
+display: flex;
+flex-direction: column;
+padding: 5vh 0;
+border-radius: 10px;
+}
+
+.review-form-text{
+  margin: 2vh auto;
+  font-size: 6vh;
+  line-height: 1.4;
+  font-weight: bold;
+  position: relative;
+  padding-left: 35px;
+}
+
+.review-form-text:before {
+  position: absolute;
+  font-family: "Font Awesome 5 Free";
+  content: "\f305";
+  background: #2cbcff;
+  color: white;
+  font-weight: 1000;
+  font-size: 20px;
+  border-radius: 50%;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}

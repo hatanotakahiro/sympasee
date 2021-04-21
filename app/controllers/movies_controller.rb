@@ -22,6 +22,7 @@ class MoviesController < ApplicationController
   end
 
   def show
+    @reviews = @movie.reviews.includes(:user).order("created_at DESC")
   end
 
   def edit

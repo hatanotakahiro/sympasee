@@ -16,7 +16,7 @@
 
 - has_many :likes
 - has_many :bookmarks
-- has_many :movie_reviews
+- has_many :reviews
 - has_many :movies
 - has_one :user_status
 

@@ -1,0 +1,98 @@
+<% render 'shared/error_messages', model: f.object %>
+  <p class="is-size-4 mb-3">レビューを書く</p>
+
+  <div class="rating-box mt-3">
+    <%# ストーリーレビュー %>
+      <div class="main-rating">
+        <div class="story_ratings mb-3">
+          <span class="fa fa-star-o" id="story_star"></span>
+          <span class="fa fa-star-o" id="story_star"></span>
+          <span class="fa fa-star-o" id="story_star"></span>
+          <span class="fa fa-star-o" id="story_star"></span>
+          <span class="fa fa-star-o" id="story_star"></span>
+        </div>
+        <div class="ml-3 rating-value-display"><span id="story_rating-value-display">0</span>/5</div>
+        <%= f.hidden_field :review_story, id: "story_rating-value" %>
+      </div>
+    <%# ストーリーレビュー %>
+    <%# インパクトレビュー %>
+      <div class="main-rating">
+        <div class="impact_ratings mb-3">
+          <span class="fa fa-star-o" id="impact_star"></span>
+          <span class="fa fa-star-o" id="impact_star"></span>
+          <span class="fa fa-star-o" id="impact_star"></span>
+          <span class="fa fa-star-o" id="impact_star"></span>
+          <span class="fa fa-star-o" id="impact_star"></span>
+        </div>
+        <div class="ml-3 rating-value-display"><span id="impact_rating-value-display">0</span>/5</div>
+        <%= f.hidden_field :review_impact, id: "impact_rating-value" %>
+      </div>
+    <%# インパクトレビュー %>
+    <%# 感動レビュー %>
+      <div class="main-rating">
+        <div class="impressed_ratings mb-3">
+          <span class="fa fa-star-o" id="impressed_star"></span>
+          <span class="fa fa-star-o" id="impressed_star"></span>
+          <span class="fa fa-star-o" id="impressed_star"></span>
+          <span class="fa fa-star-o" id="impressed_star"></span>
+          <span class="fa fa-star-o" id="impressed_star"></span>
+        </div>
+        <div class="ml-3 rating-value-display"><span id="impressed_rating-value-display">0</span>/5</div>
+        <%= f.hidden_field :review_impressed, id: "impressed_rating-value" %>
+      </div>
+    <%# 感動レビュー %>
+    <%# ハッピーレビュー %>
+      <div class="main-rating">
+        <div class="happy_ratings mb-3">
+          <span class="fa fa-star-o" id="happy_star"></span>
+          <span class="fa fa-star-o" id="happy_star"></span>
+          <span class="fa fa-star-o" id="happy_star"></span>
+          <span class="fa fa-star-o" id="happy_star"></span>
+          <span class="fa fa-star-o" id="happy_star"></span>
+        </div>
+        <div class="ml-3 rating-value-display"><span id="happy_rating-value-display">0</span>/5</div>
+        <%= f.hidden_field :review_happy, id: "happy_rating-value" %>
+      </div>
+    <%# ハッピーレビュー %>
+    <%# キャラクターレビュー %>
+      <div class="main-rating">
+        <div class="character_ratings mb-3">
+          <span class="fa fa-star-o" id="character_star"></span>
+          <span class="fa fa-star-o" id="character_star"></span>
+          <span class="fa fa-star-o" id="character_star"></span>
+          <span class="fa fa-star-o" id="character_star"></span>
+          <span class="fa fa-star-o" id="character_star"></span>
+        </div>
+        <div class="ml-3 rating-value-display"><span id="character_rating-value-display">0</span>/5</div>
+        <%= f.hidden_field :review_character, id: "character_rating-value" %>
+      </div>
+    <%# キャラクターレビュー %>
+    <%# 美しさレビュー %>
+      <div class="main-rating">
+        <div class="beautiful_ratings mb-3">
+          <span class="fa fa-star-o" id="beautiful_star"></span>
+          <span class="fa fa-star-o" id="beautiful_star"></span>
+          <span class="fa fa-star-o" id="beautiful_star"></span>
+          <span class="fa fa-star-o" id="beautiful_star"></span>
+          <span class="fa fa-star-o" id="beautiful_star"></span>
+        </div>
+        <div class="ml-3 rating-value-display"><span id="beautiful_rating-value-display">0</span>/5</div>
+        <%= f.hidden_field :review_beautiful, id: "beautiful_rating-value" %>
+      </div>
+    <%# 美しさレビュー %>
+      <%= f.hidden_field :movie_id, value: movie.id %>
+  </div>
+  <div class="movie-form">
+    <div class="weight-bold-text">
+      総合点
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.number_field :review_score, class:"movies-short-text", id:"movie-long", placeholder:"0~100", value: 50, min: 0, max: 100, step: 10  %>
+  </div>
+  <div class="movie-form">
+    <div class="weight-bold-text">
+      感想
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.text_area :review_text, class:"movies-text", id:"movie-text", placeholder:"作品の説明（必須 500文字まで）", rows:"7" ,maxlength:"500" %>
+  </div>

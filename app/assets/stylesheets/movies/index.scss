@@ -1,8 +1,4 @@
-a {
-  text-decoration: none;
-}
-
-.main {
+.movie-main {
   // background-color: #486d46;            /* 背景色 */
   background-image: image-url('red-curtain.jpeg'); /* 画像 */
   background-size: cover;               /* 全画面 */
@@ -85,7 +81,7 @@ a {
 .movie-contents.container-fluid {
   margin-right: auto;
   margin-left: auto;
-  max-width: 90vw; //例えば
+  max-width: 90vw;
 }
 
 .title-contents {
