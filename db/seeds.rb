@@ -214,7 +214,7 @@ movie9.reviews.create!(
   movie_id: "9",
   user_id: "4"
 )
-review1 = Review.find(1)
+review1 = Review.find_by(id: 1)
 
 review1.create_review_status!(
   review_story:  "2",
@@ -226,7 +226,7 @@ review1.create_review_status!(
   review_score: "30",
   review_id: "1"
 )
-review_status1 = ReviewStatus.find(1)
+review_status1 = ReviewStatus.find_by(id: 1)
 
 user4.create_user_status!(
   user_story:  (review_status1.review_story.to_i - 5).abs,
