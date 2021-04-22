@@ -1,14 +1,4 @@
-/* 商品の概要 */
-
-a {
-  text-decoration: none;
-}
-
 .movie-show {
-  background-size: cover;               /* 全画面 */
-  background-attachment: fixed;         /* 固定 */
-  background-position: center center;   /* 縦横中央 */
-  padding: 10vh 0;
 }
 
 .margin {

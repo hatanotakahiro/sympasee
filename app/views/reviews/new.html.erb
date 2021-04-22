@@ -1,0 +1,31 @@
+<%= render "shared/header" %>
+  <div class="new-review">
+    <div class="review container-fluid">
+      <div class="row review-form">
+        <h2 class="review-form-text">レビュー入力</h2>
+      </div>
+      <%= form_with model: @review_process, url: movie_reviews_path, local: true do |f| %>
+        <div class="row">
+          <div class="movie-img col-5">
+            <%= image_tag @movie.movie_image ,class:"movie-box-img" %>
+          </div>
+          <div class="movie-review col-6">
+            <%# ステータス評価 %>
+            <%= render 'status', f: f, movie: @movie %>
+            <%# /ステータス評価 %>
+          </div>
+          <div class="col-1"></div>
+          </div>
+        <%# 下部ボタン %>
+        </div>
+        </div>
+        <div class="review-btn-contents">
+          <%= f.submit "レビューを投稿する" ,class:"review-btn" %>
+          <%=link_to 'もどる', movie_path(@movie.id), class:"review-back-btn" %>
+        </div>
+        <%# /下部ボタン %>
+      <% end %>
+    </div>
+  </div>
+</div>
+<%= render "shared/footer" %>

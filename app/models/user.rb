@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
   has_one_attached :profile_image
   has_many :movies
+  has_many :reviews
+  has_many :bookmarks
   acts_as_paranoid
 
   validates :nickname, presence: true

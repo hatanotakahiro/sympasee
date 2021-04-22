@@ -1,5 +1,5 @@
 <%= render "shared/header" %>
-<div class='main'>
+<div class='movie-show' style="background: url(../assets/red-curtain2.jpeg); background-size: cover; background-attachment: fixed; background-position: center center; padding: 10vh 0;">
   <div class='margin'></div>
   <%# 商品の概要 %>
   <div class="movie-box container">
@@ -15,8 +15,8 @@
           <tr>
           <tr>
             <th><%= "あらすじ" %></th>
-            <td width="500" height="240">
-              <div style="height:240px; width:500px; overflow-y:auto;">
+            <td width="500" height="200">
+              <div style="height:200px; width:500px; overflow-y:auto;">
                 <%= @movie.movie_text %>
               </div>
             </td>
@@ -40,22 +40,29 @@
         </table>
       </div>
     </div>
-
+    <div class="row">
       <% if user_signed_in? && current_user.admin? %>
           <%= link_to "商品の編集", edit_movie_path(@movie.id), method: :get, class: "movie-red-btn" %>
-          <%= link_to "削除", movie_path(@movie.id), method: :delete, class:"movie-destroy" %>
+          <%= link_to "削除", movie_reviews_path(@movie.id), method: :delete, class:"movie-destroy" %>
       <% end %>
-
-      <div class="option">
-        <div class="favorite-btn">
-          <%= image_tag "star.png" ,class:"favorite-star-icon" ,width:"20",height:"20"%>
-          <span>お気に入り 0</span>
-        </div>
-        <div class="report-btn">
-          <%= image_tag "flag.png" ,class:"report-flag-icon" ,width:"20",height:"20"%>
-          <span>不適切な商品の通報</span>
-        </div>
+    </div>
+    <div class="row">
+      <%= link_to "レビューを書く", new_movie_review_path(@movie.id), method: :get, class: "movie-red-btn" %>
+    </div>
+    <div class="row">
+      <table>
+      <div class="star-rating mb-2">
+        <div class="star-rating-front" style="width: <%= @movie.review_story_percentage %>%">★★★★★★★★★★</div>
+        <div class="star-rating-back">★★★★★★★★★★</div>
       </div>
+      <div class="average-score-display ml-3 pt-2">
+        <%= @movie.avg_score %>点（<%= @movie.reviews.count %>件のレビュー）
+      </div>
+      </table>
+    </div>
+    <div class="row">
+      <%= link_to "他のレビューを見る", movie_reviews_path(@movie.id), method: :get, class: "movie-red-btn" %>
+    </div>
   </div>
 </div>
 <%= render "shared/footer" %>

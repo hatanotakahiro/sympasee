@@ -16,27 +16,23 @@
 
 - has_many :likes
 - has_many :bookmarks
-- has_many :movie_reviews
+- has_many :reviews
 - has_many :movies
 - has_one :user_status
 
 
 ## user_statues テーブル
 
-| Column     | Type       | Options     |
-| ---------- | ---------- | ----------- |
-| story      | integer    |
-| impact     | integer    |
-| unexpected | integer    |
-| impressed  | integer    |
-| thrill     | integer    |
-| laugh      | integer    |
-| character  | integer    |
-| happy      | integer    |
-| beautiful  | integer    |
-| heal       | integer    |
-| total      | integer    | null: false |
-| user       | references | null: false, foreign_key: true |
+| Column            | Type       | Options     |
+| ----------------- | ---------- | ----------- |
+| user_story        | integer    | null: false |
+| user_impact       | integer    | null: false |
+| user_impressed    | integer    | null: false |
+| user_happy        | integer    | null: false |
+| user_character    | integer    | null: false |
+| user_beautiful    | integer    | null: false |
+| user_score        | integer    | null: false |
+| user              | references | null: false, foreign_key: true |
 
 ### Association
 
@@ -68,10 +64,9 @@
 
 | Column      | Type       | Options     |
 | ----------  | ---------- | ----------- |
-| review_text | integer    |
-| favorite    | integer    |
-| want        | integer    |
-| movie        | references | null: false, foreign_key: true |
+| review_text | integer    | null: false |
+| deleted_at  | datetime   |
+| movie       | references | null: false, foreign_key: true |
 | user        | references | null: false, foreign_key: true |
 
 ### Association
@@ -84,20 +79,16 @@
 
 ## review_statues テーブル
 
-| Column     | Type       | Options     |
-| ---------- | ---------- | ----------- |
-| story      | integer    |
-| impact     | integer    |
-| unexpected | integer    |
-| impressed  | integer    |
-| thrill     | integer    |
-| laugh      | integer    |
-| character  | integer    |
-| happy      | integer    |
-| beautiful  | integer    |
-| heal       | integer    |
-| total      | integer    | null: false |
-| review      | references | null: false, foreign_key: true |
+| Column            | Type       | Options     |
+| ----------------- | ---------- | ----------- |
+| review_story      | integer    | null: false |
+| review_impact     | integer    | null: false |
+| review_impressed  | integer    | null: false |
+| review_happy      | integer    | null: false |
+| review_character  | integer    | null: false |
+| review_beautiful  | integer    | null: false |
+| review_score      | integer    | null: false |
+| review            | references | null: false, foreign_key: true |
 
 ### Association
 

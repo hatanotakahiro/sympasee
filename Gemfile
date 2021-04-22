@@ -84,3 +84,5 @@ gem 'font-awesome-sass'
 gem 'kaminari'
 
 gem "aws-sdk-s3", require: false
+
+gem "bulma-rails"
