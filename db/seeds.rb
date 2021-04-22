@@ -209,32 +209,32 @@ movie12.movie_image.attach(io: File.open('app/assets/images/movie12.jpg'), filen
 
 
 # ここからレビュー
-# movie9.reviews.create!(
-#   review_text: "指輪物語ファンで見ていたが、余計な部分を深掘りしすぎている感が否めない",
-#   movie_id: "9",
-#   user_id: "4"
-# )
-# review1 = Review.find_by(id: 1)
+movie9.reviews.create!(
+  review_text: "指輪物語ファンで見ていたが、余計な部分を深掘りしすぎている感が否めない",
+  movie_id: "9",
+  user_id: "4"
+)
+review1 = Review.find_by(id: 1)
 
-# review1.create_review_status!(
-#   review_story:  "2",
-#   review_impact: "4",
-#   review_impressed:  "3",
-#   review_happy: "5",
-#   review_character:  "7",
-#   review_beautiful: "6",
-#   review_score: "30",
-#   review_id: "1"
-# )
-# review_status1 = ReviewStatus.find_by(id: 1)
+review1.create_review_status!(
+  review_story:  "2",
+  review_impact: "4",
+  review_impressed:  "3",
+  review_happy: "5",
+  review_character:  "7",
+  review_beautiful: "6",
+  review_score: "30",
+  review_id: "1"
+)
+review_status1 = ReviewStatus.find_by(id: 1)
 
-# user4.create_user_status!(
-#   user_story:  (review_status1.review_story.to_i - 5).abs,
-#   user_impact: (review_status1.review_impact.to_i - 5).abs,
-#   user_impressed: (review_status1.review_impressed.to_i - 5).abs,
-#   user_happy: (review_status1.review_happy.to_i - 5).abs,
-#   user_character: (review_status1.review_character.to_i - 5).abs,
-#   user_beautiful: (review_status1.review_beautiful.to_i - 5).abs,
-#   user_score: review_status1.review_score.to_i,
-#   user_id: "4"
-# )
+user4.create_user_status!(
+  user_story:  (review_status1.review_story.to_i - 5).abs,
+  user_impact: (review_status1.review_impact.to_i - 5).abs,
+  user_impressed: (review_status1.review_impressed.to_i - 5).abs,
+  user_happy: (review_status1.review_happy.to_i - 5).abs,
+  user_character: (review_status1.review_character.to_i - 5).abs,
+  user_beautiful: (review_status1.review_beautiful.to_i - 5).abs,
+  user_score: review_status1.review_score.to_i,
+  user_id: "4"
+)
