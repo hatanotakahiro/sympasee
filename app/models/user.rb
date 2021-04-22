@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :movies
   has_many :reviews
   has_many :bookmarks
+  has_one :user_status
   acts_as_paranoid
 
   validates :nickname, presence: true
