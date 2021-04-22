@@ -238,3 +238,65 @@ user4.create_user_status!(
   user_score: review_status1.review_score.to_i,
   user_id: "4"
 )
+
+
+movie6.reviews.create!(
+  review_text: "最後の展開わかりにくすぎ、結局霊媒師がどうなったのか描写するべき！！",
+  movie_id: "6",
+  user_id: "4"
+)
+review2 = Review.find_by(id: 2)
+
+review2.create_review_status!(
+  review_story:  "3",
+  review_impact: "6",
+  review_impressed:  "6",
+  review_happy: "5",
+  review_character:  "8",
+  review_beautiful: "5",
+  review_score: "20",
+  review_id: "2"
+)
+review_status2 = ReviewStatus.find_by(id: 2)
+
+user4.create_user_status!(
+  user_story:  (review_status2.review_story.to_i - 5).abs,
+  user_impact: (review_status2.review_impact.to_i - 5).abs,
+  user_impressed: (review_status2.review_impressed.to_i - 5).abs,
+  user_happy: (review_status2.review_happy.to_i - 5).abs,
+  user_character: (review_status2.review_character.to_i - 5).abs,
+  user_beautiful: (review_status2.review_beautiful.to_i - 5).abs,
+  user_score: review_status2.review_score.to_i,
+  user_id: "4"
+)
+
+
+movie5.reviews.create!(
+  review_text: "うーん、ダースベーダーの代わりは難しい。そしてスターデストロイヤー量産は冷めた",
+  movie_id: "5",
+  user_id: "4"
+)
+review3 = Review.find_by(id: 3)
+
+review3.create_review_status!(
+  review_story:  "5",
+  review_impact: "4",
+  review_impressed:  "2",
+  review_happy: "4",
+  review_character:  "1",
+  review_beautiful: "8",
+  review_score: "30",
+  review_id: "3"
+)
+review_status3 = ReviewStatus.find_by(id: 3)
+
+user4.create_user_status!(
+  user_story:  (review_status3.review_story.to_i - 5).abs,
+  user_impact: (review_status3.review_impact.to_i - 5).abs,
+  user_impressed: (review_status3.review_impressed.to_i - 5).abs,
+  user_happy: (review_status3.review_happy.to_i - 5).abs,
+  user_character: (review_status3.review_character.to_i - 5).abs,
+  user_beautiful: (review_status3.review_beautiful.to_i - 5).abs,
+  user_score: review_status3.review_score.to_i,
+  user_id: "4"
+)
