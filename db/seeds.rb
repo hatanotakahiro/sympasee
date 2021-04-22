@@ -216,7 +216,7 @@ movie9.reviews.create!(
 )
 review1 = Review.find_by(id: 1)
 
-review1.create_review_status!(
+review1.review_status.create!(
   review_story:  "2",
   review_impact: "4",
   review_impressed:  "3",
@@ -228,7 +228,7 @@ review1.create_review_status!(
 )
 review_status1 = ReviewStatus.find_by(id: 1)
 
-user4.create_user_status!(
+user4.user_status.create!(
   user_story:  (review_status1.review_story.to_i - 5).abs,
   user_impact: (review_status1.review_impact.to_i - 5).abs,
   user_impressed: (review_status1.review_impressed.to_i - 5).abs,
