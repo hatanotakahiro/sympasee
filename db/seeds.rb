@@ -25,6 +25,43 @@ User.create!(nickname:  "さとじろ",
 user2 = User.find_by(email: "bbb@bbb")
 user2.profile_image.attach(io: File.open('public/images/user2.jpeg'), filename: 'user2.jpeg')
 
+User.create!(nickname:  "辛口ユーザー",
+  email: "ccc@ccc",
+  password:  "ccc333",
+  password_confirmation: "ccc333",
+  profile: "より面白いものを追い求めています！"
+  )
+user3 = User.find_by(email: "ccc@ccc")
+user3.profile_image.attach(io: File.open('public/images/user3.jpeg'), filename: 'user3.jpeg')
+
+User.create!(nickname:  "甘口ユーザー",
+  email: "ddd@ddd",
+  password:  "ddd444",
+  password_confirmation: "ddd444",
+  profile: "大体なんでも面白いと思ってしまいます（笑）  見ること自体が好きなのかな"
+  )
+user4 = User.find_by(email: "ddd@ddd")
+user4.profile_image.attach(io: File.open('public/images/user4.png'), filename: 'user4.png')
+
+User.create!(nickname:  "ストーリー重視",
+  email: "eee@eee",
+  password:  "eee555",
+  password_confirmation: "eee555",
+  profile: "ストーリーがよければ大抵面白い。話題になった作品は大体見てます！"
+  )
+user5 = User.find_by(email: "eee@eee")
+user5.profile_image.attach(io: File.open('public/images/user5.png'), filename: 'user5.png')
+
+User.create!(nickname:  "楽しさ重視",
+  email: "fff@fff",
+  password:  "fff666",
+  password_confirmation: "fff666",
+  profile: "面白いって個人で価値観違うよね…私は満足感重視！そしてミュージカル大好き"
+  )
+user6 = User.find_by(email: "fff@fff")
+user6.profile_image.attach(io: File.open('public/images/user6.jpeg'), filename: 'user6.jpeg')
+
+
 # ここから作品
 admin.movies.create!(
   movie_title:  "MONSTER HUNTER",
@@ -169,3 +206,35 @@ admin.movies.create!(
 )
 movie12 = Movie.find_by(movie_title: "THE GREATEST SHOWMAN")
 movie12.movie_image.attach(io: File.open('app/assets/images/movie12.jpg'), filename: 'movie12.jpg')
+
+
+# ここからレビュー
+movie9.reviews.create!(
+  review_text: "指輪物語ファンで見ていたが、余計な部分を深掘りしすぎている感が否めない",
+  movie_id: "9",
+  user_id: "4"
+)
+review1 = Review.find(1)
+
+review1.create_review_status!(
+  review_story:  "2",
+  review_impact: "4",
+  review_impressed:  "3",
+  review_happy: "5",
+  review_character:  "7",
+  review_beautiful: "6",
+  review_score: "30",
+  review_id: "1"
+)
+review_status1 = ReviewStatus.find(1)
+
+user4.create_user_status!(
+  user_story:  (review_status1.review_story.to_i - 5).abs,
+  user_impact: (review_status1.review_impact.to_i - 5).abs,
+  user_impressed: (review_status1.review_impressed.to_i - 5).abs,
+  user_happy: (review_status1.review_happy.to_i - 5).abs,
+  user_character: (review_status1.review_character.to_i - 5).abs,
+  user_beautiful: (review_status1.review_beautiful.to_i - 5).abs,
+  user_score: review_status1.review_score.to_i,
+  user_id: "4"
+)
