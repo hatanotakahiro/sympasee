@@ -31,8 +31,8 @@ User.create!(nickname:  "辛口ユーザー",
   password_confirmation: "ccc333",
   profile: "より面白いものを追い求めています！"
   )
-user3 = User.find_by(email: "ccc@ccc")
-user3.profile_image.attach(io: File.open('public/images/user3.jpeg'), filename: 'user3.jpeg')
+user4 = User.find_by(email: "ccc@ccc")
+user4.profile_image.attach(io: File.open('public/images/user3.jpeg'), filename: 'user3.jpeg')
 
 User.create!(nickname:  "甘口ユーザー",
   email: "ddd@ddd",
@@ -40,8 +40,8 @@ User.create!(nickname:  "甘口ユーザー",
   password_confirmation: "ddd444",
   profile: "大体なんでも面白いと思ってしまいます（笑）  見ること自体が好きなのかな"
   )
-user4 = User.find_by(email: "ddd@ddd")
-user4.profile_image.attach(io: File.open('public/images/user4.png'), filename: 'user4.png')
+user5 = User.find_by(email: "ddd@ddd")
+user5.profile_image.attach(io: File.open('public/images/user4.png'), filename: 'user4.png')
 
 User.create!(nickname:  "ストーリー重視",
   email: "eee@eee",
@@ -49,8 +49,8 @@ User.create!(nickname:  "ストーリー重視",
   password_confirmation: "eee555",
   profile: "ストーリーがよければ大抵面白い。話題になった作品は大体見てます！"
   )
-user5 = User.find_by(email: "eee@eee")
-user5.profile_image.attach(io: File.open('public/images/user5.png'), filename: 'user5.png')
+user6 = User.find_by(email: "eee@eee")
+user6.profile_image.attach(io: File.open('public/images/user5.png'), filename: 'user5.png')
 
 User.create!(nickname:  "楽しさ重視",
   email: "fff@fff",
@@ -58,8 +58,8 @@ User.create!(nickname:  "楽しさ重視",
   password_confirmation: "fff666",
   profile: "面白いって個人で価値観違うよね…私は満足感重視！そしてミュージカル大好き"
   )
-user6 = User.find_by(email: "fff@fff")
-user6.profile_image.attach(io: File.open('public/images/user6.jpeg'), filename: 'user6.jpeg')
+user7 = User.find_by(email: "fff@fff")
+user7.profile_image.attach(io: File.open('public/images/user6.jpeg'), filename: 'user6.jpeg')
 
 
 # ここから作品
@@ -228,7 +228,7 @@ review1.create_review_status!(
 )
 review_status1 = ReviewStatus.find_by(id: 1)
 
-user4.create_user_status!(
+UserStatus.create!(
   user_story:  (review_status1.review_story.to_i - 5).abs,
   user_impact: (review_status1.review_impact.to_i - 5).abs,
   user_impressed: (review_status1.review_impressed.to_i - 5).abs,
@@ -259,7 +259,7 @@ review2.create_review_status!(
 )
 review_status2 = ReviewStatus.find_by(id: 2)
 
-user4.create_user_status!(
+UserStatus.create!(
   user_story:  (review_status2.review_story.to_i - 5).abs,
   user_impact: (review_status2.review_impact.to_i - 5).abs,
   user_impressed: (review_status2.review_impressed.to_i - 5).abs,
@@ -290,7 +290,7 @@ review3.create_review_status!(
 )
 review_status3 = ReviewStatus.find_by(id: 3)
 
-user4.create_user_status!(
+UserStatus.create!(
   user_story:  (review_status3.review_story.to_i - 5).abs,
   user_impact: (review_status3.review_impact.to_i - 5).abs,
   user_impressed: (review_status3.review_impressed.to_i - 5).abs,
@@ -299,4 +299,128 @@ user4.create_user_status!(
   user_beautiful: (review_status3.review_beautiful.to_i - 5).abs,
   user_score: review_status3.review_score.to_i,
   user_id: "4"
+)
+
+
+movie2.reviews.create!(
+  review_text: "まぁアニメの実写化ってこんなものだよね",
+  movie_id: "2",
+  user_id: "4"
+)
+review4 = Review.find_by(id: 4)
+
+review4.create_review_status!(
+  review_story:  "4",
+  review_impact: "4",
+  review_impressed:  "5",
+  review_happy: "4",
+  review_character:  "7",
+  review_beautiful: "2",
+  review_score: "20",
+  review_id: "4"
+)
+review_status4 = ReviewStatus.find_by(id: 4)
+
+UserStatus.create!(
+  user_story:  (review_status4.review_story.to_i - 5).abs,
+  user_impact: (review_status4.review_impact.to_i - 5).abs,
+  user_impressed: (review_status4.review_impressed.to_i - 5).abs,
+  user_happy: (review_status4.review_happy.to_i - 5).abs,
+  user_character: (review_status4.review_character.to_i - 5).abs,
+  user_beautiful: (review_status4.review_beautiful.to_i - 5).abs,
+  user_score: review_status4.review_score.to_i,
+  user_id: "4"
+)
+
+
+movie11.reviews.create!(
+  review_text: "原作のバイオと登場人物もストーリーもかなり違ったけど、面白かった",
+  movie_id: "11",
+  user_id: "5"
+)
+review5 = Review.find_by(id: 5)
+
+review5.create_review_status!(
+  review_story:  "8",
+  review_impact: "9",
+  review_impressed:  "7",
+  review_happy: "4",
+  review_character:  "6",
+  review_beautiful: "7",
+  review_score: "90",
+  review_id: "5"
+)
+review_status5 = ReviewStatus.find_by(id: 5)
+
+UserStatus.create!(
+  user_story:  (review_status5.review_story.to_i - 5).abs,
+  user_impact: (review_status5.review_impact.to_i - 5).abs,
+  user_impressed: (review_status5.review_impressed.to_i - 5).abs,
+  user_happy: (review_status5.review_happy.to_i - 5).abs,
+  user_character: (review_status5.review_character.to_i - 5).abs,
+  user_beautiful: (review_status5.review_beautiful.to_i - 5).abs,
+  user_score: review_status5.review_score.to_i,
+  user_id: "5"
+)
+
+
+movie10.reviews.create!(
+  review_text: "花が雪を送り出すシーンは泣いた。雨と雪の立場が逆転していくのが面白かった",
+  movie_id: "10",
+  user_id: "5"
+)
+review6 = Review.find_by(id: 6)
+
+review6.create_review_status!(
+  review_story:  "10",
+  review_impact: "7",
+  review_impressed:  "10",
+  review_happy: "6",
+  review_character:  "7",
+  review_beautiful: "9",
+  review_score: "100",
+  review_id: "6"
+)
+review_status6 = ReviewStatus.find_by(id: 6)
+
+UserStatus.create!(
+  user_story:  (review_status6.review_story.to_i - 5).abs,
+  user_impact: (review_status6.review_impact.to_i - 5).abs,
+  user_impressed: (review_status6.review_impressed.to_i - 5).abs,
+  user_happy: (review_status6.review_happy.to_i - 5).abs,
+  user_character: (review_status6.review_character.to_i - 5).abs,
+  user_beautiful: (review_status6.review_beautiful.to_i - 5).abs,
+  user_score: review_status6.review_score.to_i,
+  user_id: "5"
+)
+
+
+movie6.reviews.create!(
+  review_text: "霊媒師の総力戦は面白かった。予想以上に人が死んでビビッた",
+  movie_id: "6",
+  user_id: "5"
+)
+review7 = Review.find_by(id: 7)
+
+review7.create_review_status!(
+  review_story:  "7",
+  review_impact: "9",
+  review_impressed:  "5",
+  review_happy: "7",
+  review_character:  "10",
+  review_beautiful: "3",
+  review_score: "70",
+  review_id: "7"
+)
+review_status7 = ReviewStatus.find_by(id: 7)
+
+UserStatus.create!(
+  user_story:  (review_status7.review_story.to_i - 5).abs,
+  user_impact: (review_status7.review_impact.to_i - 5).abs,
+  user_impressed: (review_status7.review_impressed.to_i - 5).abs,
+  user_happy: (review_status7.review_happy.to_i - 5).abs,
+  user_character: (review_status7.review_character.to_i - 5).abs,
+  user_beautiful: (review_status7.review_beautiful.to_i - 5).abs,
+  user_score: review_status7.review_score.to_i,
+  user_id: "5"
 )
