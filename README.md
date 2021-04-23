@@ -18,7 +18,7 @@
 - has_many :bookmarks
 - has_many :reviews
 - has_many :movies
-- has_one :user_status
+- has_many :user_statues
 
 
 ## user_statues テーブル
