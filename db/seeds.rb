@@ -424,3 +424,344 @@ UserStatus.create!(
   user_score: review_status7.review_score.to_i,
   user_id: "5"
 )
+
+
+movie3.reviews.create!(
+  review_text: "前半ちょっと眠かったけど、とりあえずシリーズ完結して満足。庵野監督お疲れ様！！",
+  movie_id: "3",
+  user_id: "5"
+)
+review8 = Review.find_by(id: 8)
+
+review8.create_review_status!(
+  review_story:  "7",
+  review_impact: "6",
+  review_impressed:  "8",
+  review_happy: "7",
+  review_character:  "9",
+  review_beautiful: "10",
+  review_score: "90",
+  review_id: "8"
+)
+review_status8 = ReviewStatus.find_by(id: 8)
+
+UserStatus.create!(
+  user_story:  (review_status8.review_story.to_i - 5).abs,
+  user_impact: (review_status8.review_impact.to_i - 5).abs,
+  user_impressed: (review_status8.review_impressed.to_i - 5).abs,
+  user_happy: (review_status8.review_happy.to_i - 5).abs,
+  user_character: (review_status8.review_character.to_i - 5).abs,
+  user_beautiful: (review_status8.review_beautiful.to_i - 5).abs,
+  user_score: review_status8.review_score.to_i,
+  user_id: "5"
+)
+
+
+movie1.reviews.create!(
+  review_text: "ゲームの映画化ということでかなりハードル下げて見たら、思ったより面白かった！",
+  movie_id: "1",
+  user_id: "5"
+)
+review9 = Review.find_by(id: 9)
+
+review9.create_review_status!(
+  review_story:  "7",
+  review_impact: "7",
+  review_impressed:  "5",
+  review_happy: "6",
+  review_character:  "3",
+  review_beautiful: "8",
+  review_score: "70",
+  review_id: "9"
+)
+review_status9 = ReviewStatus.find_by(id: 9)
+
+UserStatus.create!(
+  user_story:  (review_status9.review_story.to_i - 5).abs,
+  user_impact: (review_status9.review_impact.to_i - 5).abs,
+  user_impressed: (review_status9.review_impressed.to_i - 5).abs,
+  user_happy: (review_status9.review_happy.to_i - 5).abs,
+  user_character: (review_status9.review_character.to_i - 5).abs,
+  user_beautiful: (review_status9.review_beautiful.to_i - 5).abs,
+  user_score: review_status9.review_score.to_i,
+  user_id: "5"
+)
+
+
+movie12.reviews.create!(
+  review_text: "バーナムさんの史実に基づいてるとはいえ、展開に中だるみがあったと思う。",
+  movie_id: "12",
+  user_id: "6"
+)
+review10 = Review.find_by(id: 10)
+
+review10.create_review_status!(
+  review_story:  "2",
+  review_impact: "7",
+  review_impressed:  "7",
+  review_happy: "8",
+  review_character:  "7",
+  review_beautiful: "7",
+  review_score: "60",
+  review_id: "10"
+)
+review_status10 = ReviewStatus.find_by(id: 10)
+
+UserStatus.create!(
+  user_story:  (review_status10.review_story.to_i - 5).abs,
+  user_impact: (review_status10.review_impact.to_i - 5).abs,
+  user_impressed: (review_status10.review_impressed.to_i - 5).abs,
+  user_happy: (review_status10.review_happy.to_i - 5).abs,
+  user_character: (review_status10.review_character.to_i - 5).abs,
+  user_beautiful: (review_status10.review_beautiful.to_i - 5).abs,
+  user_score: review_status10.review_score.to_i,
+  user_id: "6"
+)
+
+
+movie9.reviews.create!(
+  review_text: "幽霊に助けられるのは予想できたけど、最終盤って感じがしてよかった",
+  movie_id: "9",
+  user_id: "6"
+)
+review11 = Review.find_by(id: 11)
+
+review11.create_review_status!(
+  review_story:  "9",
+  review_impact: "7",
+  review_impressed:  "6",
+  review_happy: "5",
+  review_character:  "8",
+  review_beautiful: "10",
+  review_score: "70",
+  review_id: "11"
+)
+review_status11 = ReviewStatus.find_by(id: 11)
+
+UserStatus.create!(
+  user_story:  (review_status11.review_story.to_i - 5).abs,
+  user_impact: (review_status11.review_impact.to_i - 5).abs,
+  user_impressed: (review_status11.review_impressed.to_i - 5).abs,
+  user_happy: (review_status11.review_happy.to_i - 5).abs,
+  user_character: (review_status11.review_character.to_i - 5).abs,
+  user_beautiful: (review_status11.review_beautiful.to_i - 5).abs,
+  user_score: review_status11.review_score.to_i,
+  user_id: "6"
+)
+
+
+movie8.reviews.create!(
+  review_text: "原点にして頂点。やっぱスティーブンスピルバーグ最高だわ",
+  movie_id: "8",
+  user_id: "6"
+)
+review12 = Review.find_by(id: 12)
+
+review12.create_review_status!(
+  review_story:  "8",
+  review_impact: "8",
+  review_impressed:  "8",
+  review_happy: "7",
+  review_character:  "8",
+  review_beautiful: "9",
+  review_score: "90",
+  review_id: "12"
+)
+review_status12 = ReviewStatus.find_by(id: 12)
+
+UserStatus.create!(
+  user_story:  (review_status12.review_story.to_i - 5).abs,
+  user_impact: (review_status12.review_impact.to_i - 5).abs,
+  user_impressed: (review_status12.review_impressed.to_i - 5).abs,
+  user_happy: (review_status12.review_happy.to_i - 5).abs,
+  user_character: (review_status12.review_character.to_i - 5).abs,
+  user_beautiful: (review_status12.review_beautiful.to_i - 5).abs,
+  user_score: review_status12.review_score.to_i,
+  user_id: "6"
+)
+
+
+movie6.reviews.create!(
+  review_text: "ストーリー自体は面白かった。ただ最後の展開が残念",
+  movie_id: "6",
+  user_id: "6"
+)
+review13 = Review.find_by(id: 13)
+
+review13.create_review_status!(
+  review_story:  "1",
+  review_impact: "8",
+  review_impressed:  "5",
+  review_happy: "4",
+  review_character:  "6",
+  review_beautiful: "3",
+  review_score: "50",
+  review_id: "13"
+)
+review_status13 = ReviewStatus.find_by(id: 13)
+
+UserStatus.create!(
+  user_story:  (review_status13.review_story.to_i - 5).abs,
+  user_impact: (review_status13.review_impact.to_i - 5).abs,
+  user_impressed: (review_status13.review_impressed.to_i - 5).abs,
+  user_happy: (review_status13.review_happy.to_i - 5).abs,
+  user_character: (review_status13.review_character.to_i - 5).abs,
+  user_beautiful: (review_status13.review_beautiful.to_i - 5).abs,
+  user_score: review_status13.review_score.to_i,
+  user_id: "6"
+)
+
+
+movie2.reviews.create!(
+  review_text: "ダイジェスト版かよ。ストーリーになにも重みがなくて頭に入ってこなかった。。。",
+  movie_id: "2",
+  user_id: "6"
+)
+review14 = Review.find_by(id: 14)
+
+review14.create_review_status!(
+  review_story:  "1",
+  review_impact: "7",
+  review_impressed:  "5",
+  review_happy: "5",
+  review_character:  "8",
+  review_beautiful: "4",
+  review_score: "40",
+  review_id: "14"
+)
+review_status14 = ReviewStatus.find_by(id: 14)
+
+UserStatus.create!(
+  user_story:  (review_status14.review_story.to_i - 5).abs,
+  user_impact: (review_status14.review_impact.to_i - 5).abs,
+  user_impressed: (review_status14.review_impressed.to_i - 5).abs,
+  user_happy: (review_status14.review_happy.to_i - 5).abs,
+  user_character: (review_status14.review_character.to_i - 5).abs,
+  user_beautiful: (review_status14.review_beautiful.to_i - 5).abs,
+  user_score: review_status14.review_score.to_i,
+  user_id: "6"
+)
+
+
+movie12.reviews.create!(
+  review_text: "まず劇中歌が最高！！もっと多くの人が見るべき！ララランドと比較にならない",
+  movie_id: "12",
+  user_id: "7"
+)
+review15 = Review.find_by(id: 15)
+
+review15.create_review_status!(
+  review_story:  "7",
+  review_impact: "9",
+  review_impressed:  "9",
+  review_happy: "10",
+  review_character:  "7",
+  review_beautiful: "8",
+  review_score: "100",
+  review_id: "15"
+)
+review_status15 = ReviewStatus.find_by(id: 15)
+
+UserStatus.create!(
+  user_story:  (review_status15.review_story.to_i - 5).abs,
+  user_impact: (review_status15.review_impact.to_i - 5).abs,
+  user_impressed: (review_status15.review_impressed.to_i - 5).abs,
+  user_happy: (review_status15.review_happy.to_i - 5).abs,
+  user_character: (review_status15.review_character.to_i - 5).abs,
+  user_beautiful: (review_status15.review_beautiful.to_i - 5).abs,
+  user_score: review_status15.review_score.to_i,
+  user_id: "7"
+)
+
+
+movie5.reviews.create!(
+  review_text: "まさに大団円という感じ、スターウォーズってだけで楽しい！！",
+  movie_id: "5",
+  user_id: "7"
+)
+review16 = Review.find_by(id: 16)
+
+review16.create_review_status!(
+  review_story:  "8",
+  review_impact: "7",
+  review_impressed:  "7",
+  review_happy: "9",
+  review_character:  "8",
+  review_beautiful: "9",
+  review_score: "70",
+  review_id: "16"
+)
+review_status16 = ReviewStatus.find_by(id: 16)
+
+UserStatus.create!(
+  user_story:  (review_status16.review_story.to_i - 5).abs,
+  user_impact: (review_status16.review_impact.to_i - 5).abs,
+  user_impressed: (review_status16.review_impressed.to_i - 5).abs,
+  user_happy: (review_status16.review_happy.to_i - 5).abs,
+  user_character: (review_status16.review_character.to_i - 5).abs,
+  user_beautiful: (review_status16.review_beautiful.to_i - 5).abs,
+  user_score: review_status16.review_score.to_i,
+  user_id: "7"
+)
+
+
+movie4.reviews.create!(
+  review_text: "トーカイテイオーの史実だけあって、話が全体的に重かった",
+  movie_id: "4",
+  user_id: "7"
+)
+review17 = Review.find_by(id: 17)
+
+review17.create_review_status!(
+  review_story:  "8",
+  review_impact: "6",
+  review_impressed:  "9",
+  review_happy: "1",
+  review_character:  "8",
+  review_beautiful: "8",
+  review_score: "50",
+  review_id: "17"
+)
+review_status17 = ReviewStatus.find_by(id: 17)
+
+UserStatus.create!(
+  user_story:  (review_status17.review_story.to_i - 5).abs,
+  user_impact: (review_status17.review_impact.to_i - 5).abs,
+  user_impressed: (review_status17.review_impressed.to_i - 5).abs,
+  user_happy: (review_status17.review_happy.to_i - 5).abs,
+  user_character: (review_status17.review_character.to_i - 5).abs,
+  user_beautiful: (review_status17.review_beautiful.to_i - 5).abs,
+  user_score: review_status17.review_score.to_i,
+  user_id: "7"
+)
+
+
+movie1.reviews.create!(
+  review_text: "モンハンである必要を感じなかったが、アイルーが可愛かったので全て許せる！",
+  movie_id: "1",
+  user_id: "7"
+)
+review18 = Review.find_by(id: 18)
+
+review18.create_review_status!(
+  review_story:  "8",
+  review_impact: "6",
+  review_impressed:  "5",
+  review_happy: "9",
+  review_character:  "2",
+  review_beautiful: "7",
+  review_score: "60",
+  review_id: "18"
+)
+review_status18 = ReviewStatus.find_by(id: 18)
+
+UserStatus.create!(
+  user_story:  (review_status18.review_story.to_i - 5).abs,
+  user_impact: (review_status18.review_impact.to_i - 5).abs,
+  user_impressed: (review_status18.review_impressed.to_i - 5).abs,
+  user_happy: (review_status18.review_happy.to_i - 5).abs,
+  user_character: (review_status18.review_character.to_i - 5).abs,
+  user_beautiful: (review_status18.review_beautiful.to_i - 5).abs,
+  user_score: review_status18.review_score.to_i,
+  user_id: "7"
+)

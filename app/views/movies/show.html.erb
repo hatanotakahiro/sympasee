@@ -47,18 +47,102 @@
       <% end %>
     </div>
     <div class="row">
-      <%= link_to "レビューを書く", new_movie_review_path(@movie.id), method: :get, class: "movie-red-btn" %>
+      <%= @movie.reviews.count %>件のレビュー
+    </div>
+    <div class="ave-review row">
+      <div class="col-2"></div>
+      <div class="col">
+        <table align="center"  width="100%" class="review-table">
+          <tr class="review-tr">
+            <th class="review-th"><h4>ストーリー：</h4><th>
+            <td class="review-td1">
+              <div class="star-rating">
+                <div class="star-rating-front" style="width: <%= @movie.review_story_percentage %>%">★★★★★★★★★★</div>
+                <div class="star-rating-back">★★★★★★★★★★</div>
+              </div>
+            </td>
+            <td class="review-td2">
+              <div class="average-score-display">
+                <%= @movie.avg_story %>点
+              </div>
+            </td>
+          </tr>
+          <tr class="review-tr">
+            <th class="review-th"><h4>衝撃：</h4><th>
+            <td class="review-td1">
+              <div class="star-rating">
+                <div class="star-rating-front" style="width: <%= @movie.review_impact_percentage %>%">★★★★★★★★★★</div>
+                <div class="star-rating-back">★★★★★★★★★★</div>
+              </div>
+            </td>
+            <td class="review-td2">
+              <div class="average-score-display">
+                <%= @movie.avg_impact %>点
+              </div>
+            </td>
+          </tr>
+          <tr class="review-tr">
+            <th class="review-th"><h4>感動：</h4><th>
+            <td class="review-td1">
+              <div class="star-rating">
+                <div class="star-rating-front" style="width: <%= @movie.review_impressed_percentage %>%">★★★★★★★★★★</div>
+                <div class="star-rating-back">★★★★★★★★★★</div>
+              </div>
+            </td>
+            <td class="review-td2">
+              <div class="average-score-display">
+                <%= @movie.avg_impressed %>点
+              </div>
+            </td>
+          </tr>
+          <tr class="review-tr">
+            <th class="review-th"><h4>楽しさ：</h4><th>
+            <td class="review-td1">
+              <div class="star-rating">
+                <div class="star-rating-front" style="width: <%= @movie.review_happy_percentage %>%">★★★★★★★★★★</div>
+                <div class="star-rating-back">★★★★★★★★★★</div>
+              </div>
+            </td>
+            <td class="review-td2">
+              <div class="average-score-display">
+                <%= @movie.avg_happy %>点
+              </div>
+            </td>
+          </tr>
+          <tr class="review-tr">
+            <th class="review-th"><h4>登場人物：</h4><th>
+            <td class="review-td1">
+              <div class="star-rating">
+                <div class="star-rating-front" style="width: <%= @movie.review_character_percentage %>%">★★★★★★★★★★</div>
+                <div class="star-rating-back">★★★★★★★★★★</div>
+              </div>
+            </td>
+            <td class="review-td2">
+              <div class="average-score-display">
+                <%= @movie.avg_character %>点
+              </div>
+            </td>
+          </tr>
+          <tr class="review-tr">
+            <th class="review-th"><h4>映像美(作画)：</h4><th>
+            <td class="review-td1">
+              <div class="star-rating">
+                <div class="star-rating-front" style="width: <%= @movie.review_beautiful_percentage %>%">★★★★★★★★★★</div>
+                <div class="star-rating-back">★★★★★★★★★★</div>
+              </div>
+            </td>
+            <td class="review-td2">
+              <div class="average-score-display">
+                <%= @movie.avg_beautiful %>点
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="col-2"></div>
     </div>
     <div class="row">
-      <table>
-      <div class="star-rating mb-2">
-        <div class="star-rating-front" style="width: <%= @movie.review_story_percentage %>%">★★★★★★★★★★</div>
-        <div class="star-rating-back">★★★★★★★★★★</div>
-      </div>
-      <div class="average-score-display ml-3 pt-2">
-        <%= @movie.avg_score %>点（<%= @movie.reviews.count %>件のレビュー）
-      </div>
-      </table>
+      <%= link_to "レビューを書く", new_movie_review_path(@movie.id), method: :get, class: "movie-red-btn" %>
     </div>
     <div class="row">
       <%= link_to "他のレビューを見る", movie_reviews_path(@movie.id), method: :get, class: "movie-red-btn" %>
