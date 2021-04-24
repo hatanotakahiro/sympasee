@@ -3,7 +3,7 @@ class ReviewsController < ApplicationController
   before_action :set_movie
 
   def index
-    @review_process = ReviewProcess.new
+    @reviews = Review.where(movie_id: @movie.id).order("created_at DESC")
   end
 
   def new

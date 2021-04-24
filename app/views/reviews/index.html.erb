@@ -1,42 +1,217 @@
-<section class="section mt-6">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-5">
-        <div class="card mb-6">
-          <header class="card-header">
-            <p class="card-header-title">
-              <%= @movie.movie_title %>
-            </p>
-          </header>
-          <div class="card-content">
-            <div class="content average-score">
-              <div class="star-rating mb-2">
-                <div class="star-rating-front" style="width: <%= @movie.review_score_percentage %>%">★★★★★</div>
-                <div class="star-rating-back">★★★★★</div>
+<%= render "shared/header" %>
+<div class="index-review">
+  <div class="index-review-content container-fluid">
+    <div class="row">
+      <div class="movie-img-content col-4">
+        <%= image_tag @movie.movie_image ,class:"review-index-box-img" %>
+      </div>
+      <div class="col-1"></div>
+      <div class="review-index-movie col-6">
+        <table class="review-index-title">
+          <tr class="review-index-tr">
+            <th class="review-index-th"><h4><%= "タイトル：" %></h4></th>
+            <td class="review-index-td1"><h4><%= @movie.movie_title %></h4></td>
+            <td class="review-index-td2"></td>
+          </tr>
+        </table>
+        <table>
+          <tr class="review-index-tr">
+            <th class="review-index-th"><h5>ストーリー：</h5></th>
+            <td class="review-index-td1">
+              <div class="star-rating-index">
+                <div class="star-rating-index-front" style="width: <%= @movie.review_story_percentage %>%">★★★★★★★★★★</div>
+                <div class="star-rating-index-back">★★★★★★★★★★</div>
               </div>
-              <div class="average-score-display ml-3 pt-2">
-                <%= @movie.avg_score %>点（<%= @movie.reviews.count %>件のレビュー）
+            </td>
+            <td class="review-index-td2">
+              <div class="average-score-display">
+                <%= @movie.avg_story %>点
               </div>
-            </div>
-          </div>
-        </div>
-        <table class="table is-fullwidth has-text-centered">
-          <thead>
-            <tr>
-              <th>ユーザー</th><th>点数</th><th>内容</th>
-            </tr>
-          </thead>
-          <tbody>
-            <% @reviews.each do |review| %>
-              <tr>
-                <td><%= review.user.nickname %></td>
-                <td><%= review.score %></td>
-                <td><%= review.content %></td>
-              </tr>
-            <% end %>
-          </tbody>
+            </td>
+          </tr>
+          <tr class="review-index-tr">
+            <th class="review-index-th"><h5>衝撃：</h5></th>
+            <td class="review-index-td1">
+              <div class="star-rating-index">
+                <div class="star-rating-index-front" style="width: <%= @movie.review_impact_percentage %>%">★★★★★★★★★★</div>
+                <div class="star-rating-index-back">★★★★★★★★★★</div>
+              </div>
+            </td>
+            <td class="review-index-td2">
+              <div class="average-score-display">
+                <%= @movie.avg_impact %>点
+              </div>
+            </td>
+          </tr>
+          <tr class="review-index-tr">
+            <th class="review-index-th"><h5>感動：</h5></th>
+            <td class="review-index-td1">
+              <div class="star-rating-index">
+                <div class="star-rating-index-front" style="width: <%= @movie.review_impressed_percentage %>%">★★★★★★★★★★</div>
+                <div class="star-rating-index-back">★★★★★★★★★★</div>
+              </div>
+            </td>
+            <td class="review-index-td2">
+              <div class="average-score-display">
+                <%= @movie.avg_impressed %>点
+              </div>
+            </td>
+          </tr>
+          <tr class="review-index-tr">
+            <th class="review-index-th"><h5>楽しさ：</h5></th>
+            <td class="review-index-td1">
+              <div class="star-rating-index">
+                <div class="star-rating-index-front" style="width: <%= @movie.review_happy_percentage %>%">★★★★★★★★★★</div>
+                <div class="star-rating-index-back">★★★★★★★★★★</div>
+              </div>
+            </td>
+            <td class="review-index-td2">
+              <div class="average-score-display">
+                <%= @movie.avg_happy %>点
+              </div>
+            </td>
+          </tr>
+          <tr class="review-index-tr">
+            <th class="review-index-th"><h5>登場人物：</h5></th>
+            <td class="review-index-td1">
+              <div class="star-rating-index">
+                <div class="star-rating-index-front" style="width: <%= @movie.review_character_percentage %>%">★★★★★★★★★★</div>
+                <div class="star-rating-index-back">★★★★★★★★★★</div>
+              </div>
+            </td>
+            <td class="review-index-td2">
+              <div class="average-score-display">
+                <%= @movie.avg_character %>点
+              </div>
+            </td>
+          </tr>
+          <tr class="review-index-tr">
+            <th class="review-index-th"><h5>映像美(作画)：</h5></th>
+            <td class="review-index-td1">
+              <div class="star-rating-index">
+                <div class="star-rating-index-front" style="width: <%= @movie.review_beautiful_percentage %>%">★★★★★★★★★★</div>
+                <div class="star-rating-index-back">★★★★★★★★★★</div>
+              </div>
+            </td>
+            <td class="review-index-td2">
+              <div class="average-score-display">
+                <%= @movie.avg_beautiful %>点
+              </div>
+            </td>
+          </tr>
+        </table>
+        <table class="review-index-title">
+          <tr class="review-index-tr">
+            <th class="review-index-th"><h4>点数つけるとしたら？</h4></th>
+            <td class="review-index-td1"><h4><%= @movie.avg_score %>点（<%= @movie.reviews.count %>件のレビュー）</h4></td>
+          </tr>
         </table>
       </div>
+      <div class="col-1"></div>
     </div>
   </div>
-</section>
+  <% @reviews.each do |review| %>
+    <div class="index-review-content-each container-fluid">
+        <table class="table is-fullwidth has-text-centered">
+          <thead align="center">
+            <tr>
+              <th class="review-index-user">ユーザー</th>
+              <th class="review-index-score">点数</th>
+              <th class="review-index-text">内容</th>
+              <th class="review-index-status">それぞれの評価</th>
+            </tr>
+          </thead>
+          <tbody align="center">
+            <tr>
+              <td>
+                <%= review.user.nickname %><br>
+                <%= image_tag review.user.profile_image.variant(resize: '100x100'), class: "user-image" if review.user.profile_image.attached? %>
+                <%= image_tag "user_nil.png" , size: "100x100" unless review.user.profile_image.attached?  %>
+              </td>
+              <td><%= review.review_status.review_score %></td>
+              <td align="left"><%= review.review_text %></td>
+              <td>
+                <div class="review-index-content">
+                  <table>
+                    <tr class="review-index-content-tr">
+                      <th class="review-index-content-th"><h6>ストーリー：</h6></th>
+                      <td class="review-index-content-td1">
+                        <div class="star-rating-content-index">
+                          <div class="star-rating-index-front" style="width: <%= review.review_status.review_story * 10 %>%">★★★★★★★★★★</div>
+                          <div class="star-rating-index-back">★★★★★★★★★★</div>
+                        </div>
+                      </td>
+                      <td class="review-index-td2">
+                        <h6><%= review.review_status.review_story %>点</h6>
+                      </td>
+                    </tr>
+                    <tr class="review-index-content-tr">
+                      <th class="review-index-content-th"><h6>衝撃：</h6></th>
+                      <td class="review-index-content-td1">
+                        <div class="star-rating-content-index">
+                          <div class="star-rating-index-front" style="width: <%= review.review_status.review_impact * 10 %>%">★★★★★★★★★★</div>
+                          <div class="star-rating-index-back">★★★★★★★★★★</div>
+                        </div>
+                      </td>
+                      <td class="review-index-td2">
+                        <h6><%= review.review_status.review_impact %>点</h6>
+                      </td>
+                    </tr>
+                    <tr class="review-index-content-tr">
+                      <th class="review-index-content-th"><h6>感動：</h6></th>
+                      <td class="review-index-content-td1">
+                        <div class="star-rating-content-index">
+                          <div class="star-rating-index-front" style="width: <%= review.review_status.review_impressed * 10 %>%">★★★★★★★★★★</div>
+                          <div class="star-rating-index-back">★★★★★★★★★★</div>
+                        </div>
+                      </td>
+                      <td class="review-index-td2">
+                        <h6><%= review.review_status.review_impressed %>点</h6>
+                      </td>
+                    </tr>
+                    <tr class="review-index-content-tr">
+                      <th class="review-index-content-th"><h6>楽しさ：</h6></th>
+                      <td class="review-index-content-td1">
+                        <div class="star-rating-content-index">
+                          <div class="star-rating-index-front" style="width: <%= review.review_status.review_happy * 10 %>%">★★★★★★★★★★</div>
+                          <div class="star-rating-index-back">★★★★★★★★★★</div>
+                        </div>
+                      </td>
+                      <td class="review-index-td2">
+                        <h6><%= review.review_status.review_happy %>点</h6>
+                      </td>
+                    </tr>
+                    <tr class="review-index-content-tr">
+                      <th class="review-index-content-th"><h6>登場人物：</h6></th>
+                      <td class="review-index-content-td1">
+                        <div class="star-rating-content-index">
+                          <div class="star-rating-index-front" style="width: <%= review.review_status.review_character * 10 %>%">★★★★★★★★★★</div>
+                          <div class="star-rating-index-back">★★★★★★★★★★</div>
+                        </div>
+                      </td>
+                      <td class="review-index-td2">
+                        <h6><%= review.review_status.review_character %>点</h6>
+                      </td>
+                    </tr>
+                    <tr class="review-index-content-tr">
+                      <th class="review-index-content-th"><h6>映像美：</h6></th>
+                      <td class="review-index-content-td1">
+                        <div class="star-rating-content-index">
+                          <div class="star-rating-index-front" style="width: <%= review.review_status.review_beautiful * 10 %>%">★★★★★★★★★★</div>
+                          <div class="star-rating-index-back">★★★★★★★★★★</div>
+                        </div>
+                      </td>
+                      <td class="review-index-td2">
+                        <h6><%= review.review_status.review_beautiful %>点</h6>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+  <% end %>
+</div>
+<%= render "shared/footer" %>
