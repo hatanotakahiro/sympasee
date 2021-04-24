@@ -61,6 +61,15 @@ User.create!(nickname:  "楽しさ重視",
 user7 = User.find_by(email: "fff@fff")
 user7.profile_image.attach(io: File.open('public/images/user6.jpeg'), filename: 'user6.jpeg')
 
+User.create!(nickname:  "加藤健",
+  email: "ggg@ggg",
+  password:  "ggg777",
+  password_confirmation: "ggg777",
+  profile: "アニメ、話題になった映画大抵見てます。若干評論家気取りです。"
+  )
+user8 = User.find_by(email: "ggg@ggg")
+user8.profile_image.attach(io: File.open('public/images/user7.jpeg'), filename: 'user7.jpeg')
+
 
 # ここから作品
 admin.movies.create!(
@@ -764,4 +773,364 @@ UserStatus.create!(
   user_beautiful: (review_status18.review_beautiful.to_i - 5).abs,
   user_score: review_status18.review_score.to_i,
   user_id: "7"
+)
+
+
+Review.create!(
+  review_text: "もともとゲームのファンだったが、ゲームの要素がほぼほぼなくてちょっとがっかりした。",
+  movie_id: "1",
+  user_id: "8"
+)
+
+ReviewStatus.create!(
+  review_story:  "8",
+  review_impact: "9",
+  review_impressed:  "4",
+  review_happy: "5",
+  review_character:  "3",
+  review_beautiful: "8",
+  review_score: "70",
+  review_id: "19"
+)
+review_status19 = ReviewStatus.find_by(id: 19)
+
+UserStatus.create!(
+  user_story:  (review_status19.review_story.to_i - 5).abs,
+  user_impact: (review_status19.review_impact.to_i - 5).abs,
+  user_impressed: (review_status19.review_impressed.to_i - 5).abs,
+  user_happy: (review_status19.review_happy.to_i - 5).abs,
+  user_character: (review_status19.review_character.to_i - 5).abs,
+  user_beautiful: (review_status19.review_beautiful.to_i - 5).abs,
+  user_score: review_status19.review_score.to_i,
+  user_id: "8"
+)
+
+
+Review.create!(
+  review_text: "原作、アニメを見ていたが、この実写映画が一番出来が悪い。所詮アニメの実写化は成功確率低い",
+  movie_id: "2",
+  user_id: "8"
+)
+
+ReviewStatus.create!(
+  review_story:  "7",
+  review_impact: "3",
+  review_impressed:  "2",
+  review_happy: "3",
+  review_character:  "8",
+  review_beautiful: "1",
+  review_score: "30",
+  review_id: "20"
+)
+review_status20 = ReviewStatus.find_by(id: 20)
+
+UserStatus.create!(
+  user_story:  (review_status20.review_story.to_i - 5).abs,
+  user_impact: (review_status20.review_impact.to_i - 5).abs,
+  user_impressed: (review_status20.review_impressed.to_i - 5).abs,
+  user_happy: (review_status20.review_happy.to_i - 5).abs,
+  user_character: (review_status20.review_character.to_i - 5).abs,
+  user_beautiful: (review_status20.review_beautiful.to_i - 5).abs,
+  user_score: review_status20.review_score.to_i,
+  user_id: "8"
+)
+
+
+Review.create!(
+  review_text: "庵野監督20年以上のエヴァの呪縛お疲れ様でした。満点という出来ではなかったけど、それだけで満足です。",
+  movie_id: "3",
+  user_id: "8"
+)
+
+ReviewStatus.create!(
+  review_story:  "6",
+  review_impact: "9",
+  review_impressed:  "10",
+  review_happy: "7",
+  review_character:  "9",
+  review_beautiful: "9",
+  review_score: "90",
+  review_id: "21"
+)
+review_status21 = ReviewStatus.find_by(id: 21)
+
+UserStatus.create!(
+  user_story:  (review_status21.review_story.to_i - 5).abs,
+  user_impact: (review_status21.review_impact.to_i - 5).abs,
+  user_impressed: (review_status21.review_impressed.to_i - 5).abs,
+  user_happy: (review_status21.review_happy.to_i - 5).abs,
+  user_character: (review_status21.review_character.to_i - 5).abs,
+  user_beautiful: (review_status21.review_beautiful.to_i - 5).abs,
+  user_score: review_status21.review_score.to_i,
+  user_id: "8"
+)
+
+
+Review.create!(
+  review_text: "２話のナイスネイチャが「テイオーがいたらなんて言わせない！！」というセリフで全部持って行かれた！！感動のシーンが多いのが印象的",
+  movie_id: "4",
+  user_id: "8"
+)
+
+ReviewStatus.create!(
+  review_story:  "9",
+  review_impact: "8",
+  review_impressed:  "10",
+  review_happy: "8",
+  review_character:  "9",
+  review_beautiful: "7",
+  review_score: "80",
+  review_id: "22"
+)
+review_status22 = ReviewStatus.find_by(id: 22)
+
+UserStatus.create!(
+  user_story:  (review_status22.review_story.to_i - 5).abs,
+  user_impact: (review_status22.review_impact.to_i - 5).abs,
+  user_impressed: (review_status22.review_impressed.to_i - 5).abs,
+  user_happy: (review_status22.review_happy.to_i - 5).abs,
+  user_character: (review_status22.review_character.to_i - 5).abs,
+  user_beautiful: (review_status22.review_beautiful.to_i - 5).abs,
+  user_score: review_status22.review_score.to_i,
+  user_id: "8"
+)
+
+
+Review.create!(
+  review_text: "パルパティーン議員との関連性を無理矢理つなげすぎ。ちょっと展開が強引だった。",
+  movie_id: "5",
+  user_id: "8"
+)
+
+ReviewStatus.create!(
+  review_story:  "2",
+  review_impact: "6",
+  review_impressed:  "3",
+  review_happy: "5",
+  review_character:  "7",
+  review_beautiful: "9",
+  review_score: "40",
+  review_id: "23"
+)
+review_status23 = ReviewStatus.find_by(id: 23)
+
+UserStatus.create!(
+  user_story:  (review_status23.review_story.to_i - 5).abs,
+  user_impact: (review_status23.review_impact.to_i - 5).abs,
+  user_impressed: (review_status23.review_impressed.to_i - 5).abs,
+  user_happy: (review_status23.review_happy.to_i - 5).abs,
+  user_character: (review_status23.review_character.to_i - 5).abs,
+  user_beautiful: (review_status23.review_beautiful.to_i - 5).abs,
+  user_score: review_status23.review_score.to_i,
+  user_id: "8"
+)
+
+
+Review.create!(
+  review_text: "最後のオムライスのシーンで、やっとボギワンを追い払ったなんて原作未読の人何人わかるよ。。。ちょっと最後の描写が酷かった。",
+  movie_id: "6",
+  user_id: "8"
+)
+
+ReviewStatus.create!(
+  review_story:  "3",
+  review_impact: "8",
+  review_impressed:  "4",
+  review_happy: "2",
+  review_character:  "9",
+  review_beautiful: "1",
+  review_score: "30",
+  review_id: "24"
+)
+review_status24 = ReviewStatus.find_by(id: 24)
+
+UserStatus.create!(
+  user_story:  (review_status24.review_story.to_i - 5).abs,
+  user_impact: (review_status24.review_impact.to_i - 5).abs,
+  user_impressed: (review_status24.review_impressed.to_i - 5).abs,
+  user_happy: (review_status24.review_happy.to_i - 5).abs,
+  user_character: (review_status24.review_character.to_i - 5).abs,
+  user_beautiful: (review_status24.review_beautiful.to_i - 5).abs,
+  user_score: review_status24.review_score.to_i,
+  user_id: "8"
+)
+
+
+Review.create!(
+  review_text: "all is wellという言葉が好きになった。ストーリーは完璧。面白いし度肝を抜かれた。ただ、少し長かった。",
+  movie_id: "7",
+  user_id: "8"
+)
+
+ReviewStatus.create!(
+  review_story:  "9",
+  review_impact: "9",
+  review_impressed:  "7",
+  review_happy: "10",
+  review_character:  "8",
+  review_beautiful: "3",
+  review_score: "90",
+  review_id: "25"
+)
+review_status25 = ReviewStatus.find_by(id: 25)
+
+UserStatus.create!(
+  user_story:  (review_status25.review_story.to_i - 5).abs,
+  user_impact: (review_status25.review_impact.to_i - 5).abs,
+  user_impressed: (review_status25.review_impressed.to_i - 5).abs,
+  user_happy: (review_status25.review_happy.to_i - 5).abs,
+  user_character: (review_status25.review_character.to_i - 5).abs,
+  user_beautiful: (review_status25.review_beautiful.to_i - 5).abs,
+  user_score: review_status25.review_score.to_i,
+  user_id: "8"
+)
+
+
+Review.create!(
+  review_text: "不朽の名作。初めてのCG映画にしてはクオリティ高すぎ。そして迫力ストーリーまで完璧",
+  movie_id: "8",
+  user_id: "8"
+)
+
+ReviewStatus.create!(
+  review_story:  "8",
+  review_impact: "9",
+  review_impressed:  "6",
+  review_happy: "5",
+  review_character:  "7",
+  review_beautiful: "10",
+  review_score: "80",
+  review_id: "26"
+)
+review_status26 = ReviewStatus.find_by(id: 26)
+
+UserStatus.create!(
+  user_story:  (review_status26.review_story.to_i - 5).abs,
+  user_impact: (review_status26.review_impact.to_i - 5).abs,
+  user_impressed: (review_status26.review_impressed.to_i - 5).abs,
+  user_happy: (review_status26.review_happy.to_i - 5).abs,
+  user_character: (review_status26.review_character.to_i - 5).abs,
+  user_beautiful: (review_status26.review_beautiful.to_i - 5).abs,
+  user_score: review_status26.review_score.to_i,
+  user_id: "8"
+)
+
+
+Review.create!(
+  review_text: "ロードオブザリングは二つの塔あたりから、迷走して気がする。まあ完結したからよし",
+  movie_id: "9",
+  user_id: "8"
+)
+
+ReviewStatus.create!(
+  review_story:  "2",
+  review_impact: "6",
+  review_impressed:  "6",
+  review_happy: "6",
+  review_character:  "8",
+  review_beautiful: "9",
+  review_score: "40",
+  review_id: "27"
+)
+review_status27 = ReviewStatus.find_by(id: 27)
+
+UserStatus.create!(
+  user_story:  (review_status27.review_story.to_i - 5).abs,
+  user_impact: (review_status27.review_impact.to_i - 5).abs,
+  user_impressed: (review_status27.review_impressed.to_i - 5).abs,
+  user_happy: (review_status27.review_happy.to_i - 5).abs,
+  user_character: (review_status27.review_character.to_i - 5).abs,
+  user_beautiful: (review_status27.review_beautiful.to_i - 5).abs,
+  user_score: review_status27.review_score.to_i,
+  user_id: "8"
+)
+
+
+Review.create!(
+  review_text: "雨を生んでいきなり父親がいなくなるシーンは驚いたが、全体的にストーリーが最高。正直、最後泣いた",
+  movie_id: "10",
+  user_id: "8"
+)
+
+ReviewStatus.create!(
+  review_story:  "9",
+  review_impact: "7",
+  review_impressed:  "10",
+  review_happy: "8",
+  review_character:  "9",
+  review_beautiful: "10",
+  review_score: "100",
+  review_id: "28"
+)
+review_status28 = ReviewStatus.find_by(id: 28)
+
+UserStatus.create!(
+  user_story:  (review_status28.review_story.to_i - 5).abs,
+  user_impact: (review_status28.review_impact.to_i - 5).abs,
+  user_impressed: (review_status28.review_impressed.to_i - 5).abs,
+  user_happy: (review_status28.review_happy.to_i - 5).abs,
+  user_character: (review_status28.review_character.to_i - 5).abs,
+  user_beautiful: (review_status28.review_beautiful.to_i - 5).abs,
+  user_score: review_status28.review_score.to_i,
+  user_id: "8"
+)
+
+
+Review.create!(
+  review_text: "やっぱ原作とかなり設定が違ったのがファンがゲンナリしてもったいないとは思ったが、ストーリー自体は面白かった。",
+  movie_id: "11",
+  user_id: "8"
+)
+
+ReviewStatus.create!(
+  review_story:  "8",
+  review_impact: "9",
+  review_impressed:  "6",
+  review_happy: "5",
+  review_character:  "6",
+  review_beautiful: "8",
+  review_score: "60",
+  review_id: "29"
+)
+review_status29 = ReviewStatus.find_by(id: 29)
+
+UserStatus.create!(
+  user_story:  (review_status29.review_story.to_i - 5).abs,
+  user_impact: (review_status29.review_impact.to_i - 5).abs,
+  user_impressed: (review_status29.review_impressed.to_i - 5).abs,
+  user_happy: (review_status29.review_happy.to_i - 5).abs,
+  user_character: (review_status29.review_character.to_i - 5).abs,
+  user_beautiful: (review_status29.review_beautiful.to_i - 5).abs,
+  user_score: review_status29.review_score.to_i,
+  user_id: "8"
+)
+
+
+Review.create!(
+  review_text: "迫力とミュージカルのシーンは良かった。ただストーリーがありきたりなのが気になった。",
+  movie_id: "12",
+  user_id: "8"
+)
+
+ReviewStatus.create!(
+  review_story:  "1",
+  review_impact: "9",
+  review_impressed:  "7",
+  review_happy: "10",
+  review_character:  "8",
+  review_beautiful: "9",
+  review_score: "60",
+  review_id: "30"
+)
+review_status30 = ReviewStatus.find_by(id: 30)
+
+UserStatus.create!(
+  user_story:  (review_status30.review_story.to_i - 5).abs,
+  user_impact: (review_status30.review_impact.to_i - 5).abs,
+  user_impressed: (review_status30.review_impressed.to_i - 5).abs,
+  user_happy: (review_status30.review_happy.to_i - 5).abs,
+  user_character: (review_status30.review_character.to_i - 5).abs,
+  user_beautiful: (review_status30.review_beautiful.to_i - 5).abs,
+  user_score: review_status30.review_score.to_i,
+  user_id: "8"
 )
