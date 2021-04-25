@@ -3,7 +3,8 @@ class ReviewsController < ApplicationController
   before_action :set_movie
 
   def index
-    @reviews = Review.where(movie_id: @movie.id).order("created_at DESC")
+    reviews = Review.where(movie_id: @movie.id).order("created_at DESC")
+    @reviews = reviews.page(params[:page]).per(4)
   end
 
   def new

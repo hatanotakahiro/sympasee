@@ -1,113 +1,21 @@
 <%= render "shared/header" %>
 <div class="index-review">
-  <div class="index-review-content container-fluid">
+  <div class="user-show-content container-fluid">
     <div class="row">
-      <div class="movie-img-content col-4">
-        <%= image_tag @movie.movie_image ,class:"review-index-box-img" %>
+      <div class="col-4">
+        <%= @user.nickname %><br>
+        <%= image_tag @user.profile_image.variant(resize: '100x100'), class: "user-image" if @user.profile_image.attached? %>
+        <%= image_tag "user_nil.png" , size: "100x100" unless @user.profile_image.attached?  %>
       </div>
-      <div class="col-1"></div>
-      <div class="review-index-movie col-6">
-        <table class="review-index-title">
-          <tr class="review-index-tr">
-            <th class="review-index-th"><h4><%= "タイトル：" %></h4></th>
-            <td class="review-index-td1"><h4><%= @movie.movie_title %></h4></td>
-            <td class="review-index-td2"></td>
-          </tr>
-        </table>
-        <table>
-          <tr class="review-index-tr">
-            <th class="review-index-th"><h5>ストーリー：</h5></th>
-            <td class="review-index-td1">
-              <div class="star-rating-index">
-                <div class="star-rating-index-front" style="width: <%= @movie.review_story_percentage %>%">★★★★★★★★★★</div>
-                <div class="star-rating-index-back">★★★★★★★★★★</div>
-              </div>
-            </td>
-            <td class="review-index-td2">
-              <div class="average-score-display">
-                <%= @movie.avg_story %>点
-              </div>
-            </td>
-          </tr>
-          <tr class="review-index-tr">
-            <th class="review-index-th"><h5>衝撃：</h5></th>
-            <td class="review-index-td1">
-              <div class="star-rating-index">
-                <div class="star-rating-index-front" style="width: <%= @movie.review_impact_percentage %>%">★★★★★★★★★★</div>
-                <div class="star-rating-index-back">★★★★★★★★★★</div>
-              </div>
-            </td>
-            <td class="review-index-td2">
-              <div class="average-score-display">
-                <%= @movie.avg_impact %>点
-              </div>
-            </td>
-          </tr>
-          <tr class="review-index-tr">
-            <th class="review-index-th"><h5>感動：</h5></th>
-            <td class="review-index-td1">
-              <div class="star-rating-index">
-                <div class="star-rating-index-front" style="width: <%= @movie.review_impressed_percentage %>%">★★★★★★★★★★</div>
-                <div class="star-rating-index-back">★★★★★★★★★★</div>
-              </div>
-            </td>
-            <td class="review-index-td2">
-              <div class="average-score-display">
-                <%= @movie.avg_impressed %>点
-              </div>
-            </td>
-          </tr>
-          <tr class="review-index-tr">
-            <th class="review-index-th"><h5>楽しさ：</h5></th>
-            <td class="review-index-td1">
-              <div class="star-rating-index">
-                <div class="star-rating-index-front" style="width: <%= @movie.review_happy_percentage %>%">★★★★★★★★★★</div>
-                <div class="star-rating-index-back">★★★★★★★★★★</div>
-              </div>
-            </td>
-            <td class="review-index-td2">
-              <div class="average-score-display">
-                <%= @movie.avg_happy %>点
-              </div>
-            </td>
-          </tr>
-          <tr class="review-index-tr">
-            <th class="review-index-th"><h5>登場人物：</h5></th>
-            <td class="review-index-td1">
-              <div class="star-rating-index">
-                <div class="star-rating-index-front" style="width: <%= @movie.review_character_percentage %>%">★★★★★★★★★★</div>
-                <div class="star-rating-index-back">★★★★★★★★★★</div>
-              </div>
-            </td>
-            <td class="review-index-td2">
-              <div class="average-score-display">
-                <%= @movie.avg_character %>点
-              </div>
-            </td>
-          </tr>
-          <tr class="review-index-tr">
-            <th class="review-index-th"><h5>映像美(作画)：</h5></th>
-            <td class="review-index-td1">
-              <div class="star-rating-index">
-                <div class="star-rating-index-front" style="width: <%= @movie.review_beautiful_percentage %>%">★★★★★★★★★★</div>
-                <div class="star-rating-index-back">★★★★★★★★★★</div>
-              </div>
-            </td>
-            <td class="review-index-td2">
-              <div class="average-score-display">
-                <%= @movie.avg_beautiful %>点
-              </div>
-            </td>
-          </tr>
-        </table>
-        <table class="review-index-title">
-          <tr class="review-index-tr">
-            <th class="review-index-th"><h4>点数つけるとしたら？</h4></th>
-            <td class="review-index-td1"><h4><%= @movie.avg_score %>点（<%= @movie.reviews.count %>件のレビュー）</h4></td>
-          </tr>
-        </table>
+      <div class="col-8">
+        <%= @user.avg_user_story %>
+        <%= @user.avg_user_impact %>
+        <%= @user.avg_user_impressed %>
+        <%= @user.avg_user_happy %>
+        <%= @user.avg_user_character %>
+        <%= @user.avg_user_beautiful %>
+
       </div>
-      <div class="col-1"></div>
     </div>
   </div>
   <% @reviews.each do |review| %>
@@ -115,7 +23,7 @@
         <table class="table is-fullwidth has-text-centered">
           <thead align="center">
             <tr>
-              <th class="review-index-user">ユーザー</th>
+              <th class="review-index-user">評価した作品</th>
               <th class="review-index-score">点数</th>
               <th class="review-index-text">内容</th>
               <th class="review-index-status">それぞれの評価</th>
@@ -124,10 +32,10 @@
           <tbody align="center">
             <tr>
               <td>
-                <%= link_to user_path(review.user.id) do %>
-                  <%= review.user.nickname %><br>
-                  <%= image_tag review.user.profile_image.variant(resize: '100x100'), class: "user-image" if review.user.profile_image.attached? %>
-                  <%= image_tag "user_nil.png" , size: "100x100" unless review.user.profile_image.attached?  %>
+                <%= link_to movie_path(review.movie.id) do %>
+                  <%= review.movie.movie_title %><br>
+                  <%= image_tag review.movie.movie_image.variant(resize: '300x300'), class: "user-image" if review.user.profile_image.attached? %>
+                  <%= image_tag "../images/no_image.jpeg" , size: "100x100" unless review.movie.movie_image.attached?  %>
                 <% end %>
               </td>
               <td><%= review.review_status.review_score %></td>

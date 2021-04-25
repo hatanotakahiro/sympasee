@@ -238,12 +238,12 @@ review1.create_review_status!(
 review_status1 = ReviewStatus.find_by(id: 1)
 
 UserStatus.create!(
-  user_story:  (review_status1.review_story.to_i - 5).abs,
-  user_impact: (review_status1.review_impact.to_i - 5).abs,
-  user_impressed: (review_status1.review_impressed.to_i - 5).abs,
-  user_happy: (review_status1.review_happy.to_i - 5).abs,
-  user_character: (review_status1.review_character.to_i - 5).abs,
-  user_beautiful: (review_status1.review_beautiful.to_i - 5).abs,
+  user_story:  (review_status1.review_story.to_i - 5).abs * 2,
+  user_impact: (review_status1.review_impact.to_i - 5).abs * 2,
+  user_impressed: (review_status1.review_impressed.to_i - 5).abs * 2,
+  user_happy: (review_status1.review_happy.to_i - 5).abs * 2,
+  user_character: (review_status1.review_character.to_i - 5).abs * 2,
+  user_beautiful: (review_status1.review_beautiful.to_i - 5).abs * 2,
   user_score: review_status1.review_score.to_i,
   user_id: "4"
 )
@@ -269,12 +269,12 @@ review2.create_review_status!(
 review_status2 = ReviewStatus.find_by(id: 2)
 
 UserStatus.create!(
-  user_story:  (review_status2.review_story.to_i - 5).abs,
-  user_impact: (review_status2.review_impact.to_i - 5).abs,
-  user_impressed: (review_status2.review_impressed.to_i - 5).abs,
-  user_happy: (review_status2.review_happy.to_i - 5).abs,
-  user_character: (review_status2.review_character.to_i - 5).abs,
-  user_beautiful: (review_status2.review_beautiful.to_i - 5).abs,
+  user_story:  (review_status2.review_story.to_i - 5).abs * 2,
+  user_impact: (review_status2.review_impact.to_i - 5).abs * 2,
+  user_impressed: (review_status2.review_impressed.to_i - 5).abs * 2,
+  user_happy: (review_status2.review_happy.to_i - 5).abs * 2,
+  user_character: (review_status2.review_character.to_i - 5).abs * 2,
+  user_beautiful: (review_status2.review_beautiful.to_i - 5).abs * 2,
   user_score: review_status2.review_score.to_i,
   user_id: "4"
 )
@@ -300,12 +300,12 @@ review3.create_review_status!(
 review_status3 = ReviewStatus.find_by(id: 3)
 
 UserStatus.create!(
-  user_story:  (review_status3.review_story.to_i - 5).abs,
-  user_impact: (review_status3.review_impact.to_i - 5).abs,
-  user_impressed: (review_status3.review_impressed.to_i - 5).abs,
-  user_happy: (review_status3.review_happy.to_i - 5).abs,
-  user_character: (review_status3.review_character.to_i - 5).abs,
-  user_beautiful: (review_status3.review_beautiful.to_i - 5).abs,
+  user_story:  (review_status3.review_story.to_i - 5).abs * 2,
+  user_impact: (review_status3.review_impact.to_i - 5).abs * 2,
+  user_impressed: (review_status3.review_impressed.to_i - 5).abs * 2,
+  user_happy: (review_status3.review_happy.to_i - 5).abs * 2,
+  user_character: (review_status3.review_character.to_i - 5).abs * 2,
+  user_beautiful: (review_status3.review_beautiful.to_i - 5).abs * 2,
   user_score: review_status3.review_score.to_i,
   user_id: "4"
 )
@@ -331,12 +331,12 @@ review4.create_review_status!(
 review_status4 = ReviewStatus.find_by(id: 4)
 
 UserStatus.create!(
-  user_story:  (review_status4.review_story.to_i - 5).abs,
-  user_impact: (review_status4.review_impact.to_i - 5).abs,
-  user_impressed: (review_status4.review_impressed.to_i - 5).abs,
-  user_happy: (review_status4.review_happy.to_i - 5).abs,
-  user_character: (review_status4.review_character.to_i - 5).abs,
-  user_beautiful: (review_status4.review_beautiful.to_i - 5).abs,
+  user_story:  (review_status4.review_story.to_i - 5).abs * 2,
+  user_impact: (review_status4.review_impact.to_i - 5).abs * 2,
+  user_impressed: (review_status4.review_impressed.to_i - 5).abs * 2,
+  user_happy: (review_status4.review_happy.to_i - 5).abs * 2,
+  user_character: (review_status4.review_character.to_i - 5).abs * 2,
+  user_beautiful: (review_status4.review_beautiful.to_i - 5).abs * 2,
   user_score: review_status4.review_score.to_i,
   user_id: "4"
 )
@@ -362,12 +362,12 @@ review5.create_review_status!(
 review_status5 = ReviewStatus.find_by(id: 5)
 
 UserStatus.create!(
-  user_story:  (review_status5.review_story.to_i - 5).abs,
-  user_impact: (review_status5.review_impact.to_i - 5).abs,
-  user_impressed: (review_status5.review_impressed.to_i - 5).abs,
-  user_happy: (review_status5.review_happy.to_i - 5).abs,
-  user_character: (review_status5.review_character.to_i - 5).abs,
-  user_beautiful: (review_status5.review_beautiful.to_i - 5).abs,
+  user_story:  (review_status5.review_story.to_i - 5).abs * 2,
+  user_impact: (review_status5.review_impact.to_i - 5).abs * 2,
+  user_impressed: (review_status5.review_impressed.to_i - 5).abs * 2,
+  user_happy: (review_status5.review_happy.to_i - 5).abs * 2,
+  user_character: (review_status5.review_character.to_i - 5).abs * 2,
+  user_beautiful: (review_status5.review_beautiful.to_i - 5).abs * 2,
   user_score: review_status5.review_score.to_i,
   user_id: "5"
 )
@@ -393,12 +393,12 @@ review6.create_review_status!(
 review_status6 = ReviewStatus.find_by(id: 6)
 
 UserStatus.create!(
-  user_story:  (review_status6.review_story.to_i - 5).abs,
-  user_impact: (review_status6.review_impact.to_i - 5).abs,
-  user_impressed: (review_status6.review_impressed.to_i - 5).abs,
-  user_happy: (review_status6.review_happy.to_i - 5).abs,
-  user_character: (review_status6.review_character.to_i - 5).abs,
-  user_beautiful: (review_status6.review_beautiful.to_i - 5).abs,
+  user_story:  (review_status6.review_story.to_i - 5).abs * 2,
+  user_impact: (review_status6.review_impact.to_i - 5).abs * 2,
+  user_impressed: (review_status6.review_impressed.to_i - 5).abs * 2,
+  user_happy: (review_status6.review_happy.to_i - 5).abs * 2,
+  user_character: (review_status6.review_character.to_i - 5).abs * 2,
+  user_beautiful: (review_status6.review_beautiful.to_i - 5).abs * 2,
   user_score: review_status6.review_score.to_i,
   user_id: "5"
 )
@@ -424,12 +424,12 @@ review7.create_review_status!(
 review_status7 = ReviewStatus.find_by(id: 7)
 
 UserStatus.create!(
-  user_story:  (review_status7.review_story.to_i - 5).abs,
-  user_impact: (review_status7.review_impact.to_i - 5).abs,
-  user_impressed: (review_status7.review_impressed.to_i - 5).abs,
-  user_happy: (review_status7.review_happy.to_i - 5).abs,
-  user_character: (review_status7.review_character.to_i - 5).abs,
-  user_beautiful: (review_status7.review_beautiful.to_i - 5).abs,
+  user_story:  (review_status7.review_story.to_i - 5).abs * 2,
+  user_impact: (review_status7.review_impact.to_i - 5).abs * 2,
+  user_impressed: (review_status7.review_impressed.to_i - 5).abs * 2,
+  user_happy: (review_status7.review_happy.to_i - 5).abs * 2,
+  user_character: (review_status7.review_character.to_i - 5).abs * 2,
+  user_beautiful: (review_status7.review_beautiful.to_i - 5).abs * 2,
   user_score: review_status7.review_score.to_i,
   user_id: "5"
 )
@@ -455,12 +455,12 @@ review8.create_review_status!(
 review_status8 = ReviewStatus.find_by(id: 8)
 
 UserStatus.create!(
-  user_story:  (review_status8.review_story.to_i - 5).abs,
-  user_impact: (review_status8.review_impact.to_i - 5).abs,
-  user_impressed: (review_status8.review_impressed.to_i - 5).abs,
-  user_happy: (review_status8.review_happy.to_i - 5).abs,
-  user_character: (review_status8.review_character.to_i - 5).abs,
-  user_beautiful: (review_status8.review_beautiful.to_i - 5).abs,
+  user_story:  (review_status8.review_story.to_i - 5).abs * 2,
+  user_impact: (review_status8.review_impact.to_i - 5).abs * 2,
+  user_impressed: (review_status8.review_impressed.to_i - 5).abs * 2,
+  user_happy: (review_status8.review_happy.to_i - 5).abs * 2,
+  user_character: (review_status8.review_character.to_i - 5).abs * 2,
+  user_beautiful: (review_status8.review_beautiful.to_i - 5).abs * 2,
   user_score: review_status8.review_score.to_i,
   user_id: "5"
 )
@@ -486,12 +486,12 @@ review9.create_review_status!(
 review_status9 = ReviewStatus.find_by(id: 9)
 
 UserStatus.create!(
-  user_story:  (review_status9.review_story.to_i - 5).abs,
-  user_impact: (review_status9.review_impact.to_i - 5).abs,
-  user_impressed: (review_status9.review_impressed.to_i - 5).abs,
-  user_happy: (review_status9.review_happy.to_i - 5).abs,
-  user_character: (review_status9.review_character.to_i - 5).abs,
-  user_beautiful: (review_status9.review_beautiful.to_i - 5).abs,
+  user_story:  (review_status9.review_story.to_i - 5).abs * 2,
+  user_impact: (review_status9.review_impact.to_i - 5).abs * 2,
+  user_impressed: (review_status9.review_impressed.to_i - 5).abs * 2,
+  user_happy: (review_status9.review_happy.to_i - 5).abs * 2,
+  user_character: (review_status9.review_character.to_i - 5).abs * 2,
+  user_beautiful: (review_status9.review_beautiful.to_i - 5).abs * 2,
   user_score: review_status9.review_score.to_i,
   user_id: "5"
 )
@@ -517,12 +517,12 @@ review10.create_review_status!(
 review_status10 = ReviewStatus.find_by(id: 10)
 
 UserStatus.create!(
-  user_story:  (review_status10.review_story.to_i - 5).abs,
-  user_impact: (review_status10.review_impact.to_i - 5).abs,
-  user_impressed: (review_status10.review_impressed.to_i - 5).abs,
-  user_happy: (review_status10.review_happy.to_i - 5).abs,
-  user_character: (review_status10.review_character.to_i - 5).abs,
-  user_beautiful: (review_status10.review_beautiful.to_i - 5).abs,
+  user_story:  (review_status10.review_story.to_i - 5).abs * 2,
+  user_impact: (review_status10.review_impact.to_i - 5).abs * 2,
+  user_impressed: (review_status10.review_impressed.to_i - 5).abs * 2,
+  user_happy: (review_status10.review_happy.to_i - 5).abs * 2,
+  user_character: (review_status10.review_character.to_i - 5).abs * 2,
+  user_beautiful: (review_status10.review_beautiful.to_i - 5).abs * 2,
   user_score: review_status10.review_score.to_i,
   user_id: "6"
 )
@@ -548,12 +548,12 @@ review11.create_review_status!(
 review_status11 = ReviewStatus.find_by(id: 11)
 
 UserStatus.create!(
-  user_story:  (review_status11.review_story.to_i - 5).abs,
-  user_impact: (review_status11.review_impact.to_i - 5).abs,
-  user_impressed: (review_status11.review_impressed.to_i - 5).abs,
-  user_happy: (review_status11.review_happy.to_i - 5).abs,
-  user_character: (review_status11.review_character.to_i - 5).abs,
-  user_beautiful: (review_status11.review_beautiful.to_i - 5).abs,
+  user_story:  (review_status11.review_story.to_i - 5).abs * 2,
+  user_impact: (review_status11.review_impact.to_i - 5).abs * 2,
+  user_impressed: (review_status11.review_impressed.to_i - 5).abs * 2,
+  user_happy: (review_status11.review_happy.to_i - 5).abs * 2,
+  user_character: (review_status11.review_character.to_i - 5).abs * 2,
+  user_beautiful: (review_status11.review_beautiful.to_i - 5).abs * 2,
   user_score: review_status11.review_score.to_i,
   user_id: "6"
 )
@@ -579,12 +579,12 @@ review12.create_review_status!(
 review_status12 = ReviewStatus.find_by(id: 12)
 
 UserStatus.create!(
-  user_story:  (review_status12.review_story.to_i - 5).abs,
-  user_impact: (review_status12.review_impact.to_i - 5).abs,
-  user_impressed: (review_status12.review_impressed.to_i - 5).abs,
-  user_happy: (review_status12.review_happy.to_i - 5).abs,
-  user_character: (review_status12.review_character.to_i - 5).abs,
-  user_beautiful: (review_status12.review_beautiful.to_i - 5).abs,
+  user_story:  (review_status12.review_story.to_i - 5).abs * 2,
+  user_impact: (review_status12.review_impact.to_i - 5).abs * 2,
+  user_impressed: (review_status12.review_impressed.to_i - 5).abs * 2,
+  user_happy: (review_status12.review_happy.to_i - 5).abs * 2,
+  user_character: (review_status12.review_character.to_i - 5).abs * 2,
+  user_beautiful: (review_status12.review_beautiful.to_i - 5).abs * 2,
   user_score: review_status12.review_score.to_i,
   user_id: "6"
 )
@@ -610,12 +610,12 @@ review13.create_review_status!(
 review_status13 = ReviewStatus.find_by(id: 13)
 
 UserStatus.create!(
-  user_story:  (review_status13.review_story.to_i - 5).abs,
-  user_impact: (review_status13.review_impact.to_i - 5).abs,
-  user_impressed: (review_status13.review_impressed.to_i - 5).abs,
-  user_happy: (review_status13.review_happy.to_i - 5).abs,
-  user_character: (review_status13.review_character.to_i - 5).abs,
-  user_beautiful: (review_status13.review_beautiful.to_i - 5).abs,
+  user_story:  (review_status13.review_story.to_i - 5).abs * 2,
+  user_impact: (review_status13.review_impact.to_i - 5).abs * 2,
+  user_impressed: (review_status13.review_impressed.to_i - 5).abs * 2,
+  user_happy: (review_status13.review_happy.to_i - 5).abs * 2,
+  user_character: (review_status13.review_character.to_i - 5).abs * 2,
+  user_beautiful: (review_status13.review_beautiful.to_i - 5).abs * 2,
   user_score: review_status13.review_score.to_i,
   user_id: "6"
 )
@@ -641,12 +641,12 @@ review14.create_review_status!(
 review_status14 = ReviewStatus.find_by(id: 14)
 
 UserStatus.create!(
-  user_story:  (review_status14.review_story.to_i - 5).abs,
-  user_impact: (review_status14.review_impact.to_i - 5).abs,
-  user_impressed: (review_status14.review_impressed.to_i - 5).abs,
-  user_happy: (review_status14.review_happy.to_i - 5).abs,
-  user_character: (review_status14.review_character.to_i - 5).abs,
-  user_beautiful: (review_status14.review_beautiful.to_i - 5).abs,
+  user_story:  (review_status14.review_story.to_i - 5).abs * 2,
+  user_impact: (review_status14.review_impact.to_i - 5).abs * 2,
+  user_impressed: (review_status14.review_impressed.to_i - 5).abs * 2,
+  user_happy: (review_status14.review_happy.to_i - 5).abs * 2,
+  user_character: (review_status14.review_character.to_i - 5).abs * 2,
+  user_beautiful: (review_status14.review_beautiful.to_i - 5).abs * 2,
   user_score: review_status14.review_score.to_i,
   user_id: "6"
 )
@@ -672,12 +672,12 @@ review15.create_review_status!(
 review_status15 = ReviewStatus.find_by(id: 15)
 
 UserStatus.create!(
-  user_story:  (review_status15.review_story.to_i - 5).abs,
-  user_impact: (review_status15.review_impact.to_i - 5).abs,
-  user_impressed: (review_status15.review_impressed.to_i - 5).abs,
-  user_happy: (review_status15.review_happy.to_i - 5).abs,
-  user_character: (review_status15.review_character.to_i - 5).abs,
-  user_beautiful: (review_status15.review_beautiful.to_i - 5).abs,
+  user_story:  (review_status15.review_story.to_i - 5).abs * 2,
+  user_impact: (review_status15.review_impact.to_i - 5).abs * 2,
+  user_impressed: (review_status15.review_impressed.to_i - 5).abs * 2,
+  user_happy: (review_status15.review_happy.to_i - 5).abs * 2,
+  user_character: (review_status15.review_character.to_i - 5).abs * 2,
+  user_beautiful: (review_status15.review_beautiful.to_i - 5).abs * 2,
   user_score: review_status15.review_score.to_i,
   user_id: "7"
 )
@@ -703,12 +703,12 @@ review16.create_review_status!(
 review_status16 = ReviewStatus.find_by(id: 16)
 
 UserStatus.create!(
-  user_story:  (review_status16.review_story.to_i - 5).abs,
-  user_impact: (review_status16.review_impact.to_i - 5).abs,
-  user_impressed: (review_status16.review_impressed.to_i - 5).abs,
-  user_happy: (review_status16.review_happy.to_i - 5).abs,
-  user_character: (review_status16.review_character.to_i - 5).abs,
-  user_beautiful: (review_status16.review_beautiful.to_i - 5).abs,
+  user_story:  (review_status16.review_story.to_i - 5).abs * 2,
+  user_impact: (review_status16.review_impact.to_i - 5).abs * 2,
+  user_impressed: (review_status16.review_impressed.to_i - 5).abs * 2,
+  user_happy: (review_status16.review_happy.to_i - 5).abs * 2,
+  user_character: (review_status16.review_character.to_i - 5).abs * 2,
+  user_beautiful: (review_status16.review_beautiful.to_i - 5).abs * 2,
   user_score: review_status16.review_score.to_i,
   user_id: "7"
 )
@@ -734,12 +734,12 @@ review17.create_review_status!(
 review_status17 = ReviewStatus.find_by(id: 17)
 
 UserStatus.create!(
-  user_story:  (review_status17.review_story.to_i - 5).abs,
-  user_impact: (review_status17.review_impact.to_i - 5).abs,
-  user_impressed: (review_status17.review_impressed.to_i - 5).abs,
-  user_happy: (review_status17.review_happy.to_i - 5).abs,
-  user_character: (review_status17.review_character.to_i - 5).abs,
-  user_beautiful: (review_status17.review_beautiful.to_i - 5).abs,
+  user_story:  (review_status17.review_story.to_i - 5).abs * 2,
+  user_impact: (review_status17.review_impact.to_i - 5).abs * 2,
+  user_impressed: (review_status17.review_impressed.to_i - 5).abs * 2,
+  user_happy: (review_status17.review_happy.to_i - 5).abs * 2,
+  user_character: (review_status17.review_character.to_i - 5).abs * 2,
+  user_beautiful: (review_status17.review_beautiful.to_i - 5).abs * 2,
   user_score: review_status17.review_score.to_i,
   user_id: "7"
 )
@@ -765,12 +765,12 @@ review18.create_review_status!(
 review_status18 = ReviewStatus.find_by(id: 18)
 
 UserStatus.create!(
-  user_story:  (review_status18.review_story.to_i - 5).abs,
-  user_impact: (review_status18.review_impact.to_i - 5).abs,
-  user_impressed: (review_status18.review_impressed.to_i - 5).abs,
-  user_happy: (review_status18.review_happy.to_i - 5).abs,
-  user_character: (review_status18.review_character.to_i - 5).abs,
-  user_beautiful: (review_status18.review_beautiful.to_i - 5).abs,
+  user_story:  (review_status18.review_story.to_i - 5).abs * 2,
+  user_impact: (review_status18.review_impact.to_i - 5).abs * 2,
+  user_impressed: (review_status18.review_impressed.to_i - 5).abs * 2,
+  user_happy: (review_status18.review_happy.to_i - 5).abs * 2,
+  user_character: (review_status18.review_character.to_i - 5).abs * 2,
+  user_beautiful: (review_status18.review_beautiful.to_i - 5).abs * 2,
   user_score: review_status18.review_score.to_i,
   user_id: "7"
 )
@@ -795,12 +795,12 @@ ReviewStatus.create!(
 review_status19 = ReviewStatus.find_by(id: 19)
 
 UserStatus.create!(
-  user_story:  (review_status19.review_story.to_i - 5).abs,
-  user_impact: (review_status19.review_impact.to_i - 5).abs,
-  user_impressed: (review_status19.review_impressed.to_i - 5).abs,
-  user_happy: (review_status19.review_happy.to_i - 5).abs,
-  user_character: (review_status19.review_character.to_i - 5).abs,
-  user_beautiful: (review_status19.review_beautiful.to_i - 5).abs,
+  user_story:  (review_status19.review_story.to_i - 5).abs * 2,
+  user_impact: (review_status19.review_impact.to_i - 5).abs * 2,
+  user_impressed: (review_status19.review_impressed.to_i - 5).abs * 2,
+  user_happy: (review_status19.review_happy.to_i - 5).abs * 2,
+  user_character: (review_status19.review_character.to_i - 5).abs * 2,
+  user_beautiful: (review_status19.review_beautiful.to_i - 5).abs * 2,
   user_score: review_status19.review_score.to_i,
   user_id: "8"
 )
@@ -825,12 +825,12 @@ ReviewStatus.create!(
 review_status20 = ReviewStatus.find_by(id: 20)
 
 UserStatus.create!(
-  user_story:  (review_status20.review_story.to_i - 5).abs,
-  user_impact: (review_status20.review_impact.to_i - 5).abs,
-  user_impressed: (review_status20.review_impressed.to_i - 5).abs,
-  user_happy: (review_status20.review_happy.to_i - 5).abs,
-  user_character: (review_status20.review_character.to_i - 5).abs,
-  user_beautiful: (review_status20.review_beautiful.to_i - 5).abs,
+  user_story:  (review_status20.review_story.to_i - 5).abs * 2,
+  user_impact: (review_status20.review_impact.to_i - 5).abs * 2,
+  user_impressed: (review_status20.review_impressed.to_i - 5).abs * 2,
+  user_happy: (review_status20.review_happy.to_i - 5).abs * 2,
+  user_character: (review_status20.review_character.to_i - 5).abs * 2,
+  user_beautiful: (review_status20.review_beautiful.to_i - 5).abs * 2,
   user_score: review_status20.review_score.to_i,
   user_id: "8"
 )
@@ -855,12 +855,12 @@ ReviewStatus.create!(
 review_status21 = ReviewStatus.find_by(id: 21)
 
 UserStatus.create!(
-  user_story:  (review_status21.review_story.to_i - 5).abs,
-  user_impact: (review_status21.review_impact.to_i - 5).abs,
-  user_impressed: (review_status21.review_impressed.to_i - 5).abs,
-  user_happy: (review_status21.review_happy.to_i - 5).abs,
-  user_character: (review_status21.review_character.to_i - 5).abs,
-  user_beautiful: (review_status21.review_beautiful.to_i - 5).abs,
+  user_story:  (review_status21.review_story.to_i - 5).abs * 2,
+  user_impact: (review_status21.review_impact.to_i - 5).abs * 2,
+  user_impressed: (review_status21.review_impressed.to_i - 5).abs * 2,
+  user_happy: (review_status21.review_happy.to_i - 5).abs * 2,
+  user_character: (review_status21.review_character.to_i - 5).abs * 2,
+  user_beautiful: (review_status21.review_beautiful.to_i - 5).abs * 2,
   user_score: review_status21.review_score.to_i,
   user_id: "8"
 )
@@ -885,12 +885,12 @@ ReviewStatus.create!(
 review_status22 = ReviewStatus.find_by(id: 22)
 
 UserStatus.create!(
-  user_story:  (review_status22.review_story.to_i - 5).abs,
-  user_impact: (review_status22.review_impact.to_i - 5).abs,
-  user_impressed: (review_status22.review_impressed.to_i - 5).abs,
-  user_happy: (review_status22.review_happy.to_i - 5).abs,
-  user_character: (review_status22.review_character.to_i - 5).abs,
-  user_beautiful: (review_status22.review_beautiful.to_i - 5).abs,
+  user_story:  (review_status22.review_story.to_i - 5).abs * 2,
+  user_impact: (review_status22.review_impact.to_i - 5).abs * 2,
+  user_impressed: (review_status22.review_impressed.to_i - 5).abs * 2,
+  user_happy: (review_status22.review_happy.to_i - 5).abs * 2,
+  user_character: (review_status22.review_character.to_i - 5).abs * 2,
+  user_beautiful: (review_status22.review_beautiful.to_i - 5).abs * 2,
   user_score: review_status22.review_score.to_i,
   user_id: "8"
 )
@@ -915,12 +915,12 @@ ReviewStatus.create!(
 review_status23 = ReviewStatus.find_by(id: 23)
 
 UserStatus.create!(
-  user_story:  (review_status23.review_story.to_i - 5).abs,
-  user_impact: (review_status23.review_impact.to_i - 5).abs,
-  user_impressed: (review_status23.review_impressed.to_i - 5).abs,
-  user_happy: (review_status23.review_happy.to_i - 5).abs,
-  user_character: (review_status23.review_character.to_i - 5).abs,
-  user_beautiful: (review_status23.review_beautiful.to_i - 5).abs,
+  user_story:  (review_status23.review_story.to_i - 5).abs * 2,
+  user_impact: (review_status23.review_impact.to_i - 5).abs * 2,
+  user_impressed: (review_status23.review_impressed.to_i - 5).abs * 2,
+  user_happy: (review_status23.review_happy.to_i - 5).abs * 2,
+  user_character: (review_status23.review_character.to_i - 5).abs * 2,
+  user_beautiful: (review_status23.review_beautiful.to_i - 5).abs * 2,
   user_score: review_status23.review_score.to_i,
   user_id: "8"
 )
@@ -945,12 +945,12 @@ ReviewStatus.create!(
 review_status24 = ReviewStatus.find_by(id: 24)
 
 UserStatus.create!(
-  user_story:  (review_status24.review_story.to_i - 5).abs,
-  user_impact: (review_status24.review_impact.to_i - 5).abs,
-  user_impressed: (review_status24.review_impressed.to_i - 5).abs,
-  user_happy: (review_status24.review_happy.to_i - 5).abs,
-  user_character: (review_status24.review_character.to_i - 5).abs,
-  user_beautiful: (review_status24.review_beautiful.to_i - 5).abs,
+  user_story:  (review_status24.review_story.to_i - 5).abs * 2,
+  user_impact: (review_status24.review_impact.to_i - 5).abs * 2,
+  user_impressed: (review_status24.review_impressed.to_i - 5).abs * 2,
+  user_happy: (review_status24.review_happy.to_i - 5).abs * 2,
+  user_character: (review_status24.review_character.to_i - 5).abs * 2,
+  user_beautiful: (review_status24.review_beautiful.to_i - 5).abs * 2,
   user_score: review_status24.review_score.to_i,
   user_id: "8"
 )
@@ -975,12 +975,12 @@ ReviewStatus.create!(
 review_status25 = ReviewStatus.find_by(id: 25)
 
 UserStatus.create!(
-  user_story:  (review_status25.review_story.to_i - 5).abs,
-  user_impact: (review_status25.review_impact.to_i - 5).abs,
-  user_impressed: (review_status25.review_impressed.to_i - 5).abs,
-  user_happy: (review_status25.review_happy.to_i - 5).abs,
-  user_character: (review_status25.review_character.to_i - 5).abs,
-  user_beautiful: (review_status25.review_beautiful.to_i - 5).abs,
+  user_story:  (review_status25.review_story.to_i - 5).abs * 2,
+  user_impact: (review_status25.review_impact.to_i - 5).abs * 2,
+  user_impressed: (review_status25.review_impressed.to_i - 5).abs * 2,
+  user_happy: (review_status25.review_happy.to_i - 5).abs * 2,
+  user_character: (review_status25.review_character.to_i - 5).abs * 2,
+  user_beautiful: (review_status25.review_beautiful.to_i - 5).abs * 2,
   user_score: review_status25.review_score.to_i,
   user_id: "8"
 )
@@ -1005,12 +1005,12 @@ ReviewStatus.create!(
 review_status26 = ReviewStatus.find_by(id: 26)
 
 UserStatus.create!(
-  user_story:  (review_status26.review_story.to_i - 5).abs,
-  user_impact: (review_status26.review_impact.to_i - 5).abs,
-  user_impressed: (review_status26.review_impressed.to_i - 5).abs,
-  user_happy: (review_status26.review_happy.to_i - 5).abs,
-  user_character: (review_status26.review_character.to_i - 5).abs,
-  user_beautiful: (review_status26.review_beautiful.to_i - 5).abs,
+  user_story:  (review_status26.review_story.to_i - 5).abs * 2,
+  user_impact: (review_status26.review_impact.to_i - 5).abs * 2,
+  user_impressed: (review_status26.review_impressed.to_i - 5).abs * 2,
+  user_happy: (review_status26.review_happy.to_i - 5).abs * 2,
+  user_character: (review_status26.review_character.to_i - 5).abs * 2,
+  user_beautiful: (review_status26.review_beautiful.to_i - 5).abs * 2,
   user_score: review_status26.review_score.to_i,
   user_id: "8"
 )
@@ -1035,12 +1035,12 @@ ReviewStatus.create!(
 review_status27 = ReviewStatus.find_by(id: 27)
 
 UserStatus.create!(
-  user_story:  (review_status27.review_story.to_i - 5).abs,
-  user_impact: (review_status27.review_impact.to_i - 5).abs,
-  user_impressed: (review_status27.review_impressed.to_i - 5).abs,
-  user_happy: (review_status27.review_happy.to_i - 5).abs,
-  user_character: (review_status27.review_character.to_i - 5).abs,
-  user_beautiful: (review_status27.review_beautiful.to_i - 5).abs,
+  user_story:  (review_status27.review_story.to_i - 5).abs * 2,
+  user_impact: (review_status27.review_impact.to_i - 5).abs * 2,
+  user_impressed: (review_status27.review_impressed.to_i - 5).abs * 2,
+  user_happy: (review_status27.review_happy.to_i - 5).abs * 2,
+  user_character: (review_status27.review_character.to_i - 5).abs * 2,
+  user_beautiful: (review_status27.review_beautiful.to_i - 5).abs * 2,
   user_score: review_status27.review_score.to_i,
   user_id: "8"
 )
@@ -1065,12 +1065,12 @@ ReviewStatus.create!(
 review_status28 = ReviewStatus.find_by(id: 28)
 
 UserStatus.create!(
-  user_story:  (review_status28.review_story.to_i - 5).abs,
-  user_impact: (review_status28.review_impact.to_i - 5).abs,
-  user_impressed: (review_status28.review_impressed.to_i - 5).abs,
-  user_happy: (review_status28.review_happy.to_i - 5).abs,
-  user_character: (review_status28.review_character.to_i - 5).abs,
-  user_beautiful: (review_status28.review_beautiful.to_i - 5).abs,
+  user_story:  (review_status28.review_story.to_i - 5).abs * 2,
+  user_impact: (review_status28.review_impact.to_i - 5).abs * 2,
+  user_impressed: (review_status28.review_impressed.to_i - 5).abs * 2,
+  user_happy: (review_status28.review_happy.to_i - 5).abs * 2,
+  user_character: (review_status28.review_character.to_i - 5).abs * 2,
+  user_beautiful: (review_status28.review_beautiful.to_i - 5).abs * 2,
   user_score: review_status28.review_score.to_i,
   user_id: "8"
 )
@@ -1095,12 +1095,12 @@ ReviewStatus.create!(
 review_status29 = ReviewStatus.find_by(id: 29)
 
 UserStatus.create!(
-  user_story:  (review_status29.review_story.to_i - 5).abs,
-  user_impact: (review_status29.review_impact.to_i - 5).abs,
-  user_impressed: (review_status29.review_impressed.to_i - 5).abs,
-  user_happy: (review_status29.review_happy.to_i - 5).abs,
-  user_character: (review_status29.review_character.to_i - 5).abs,
-  user_beautiful: (review_status29.review_beautiful.to_i - 5).abs,
+  user_story:  (review_status29.review_story.to_i - 5).abs * 2,
+  user_impact: (review_status29.review_impact.to_i - 5).abs * 2,
+  user_impressed: (review_status29.review_impressed.to_i - 5).abs * 2,
+  user_happy: (review_status29.review_happy.to_i - 5).abs * 2,
+  user_character: (review_status29.review_character.to_i - 5).abs * 2,
+  user_beautiful: (review_status29.review_beautiful.to_i - 5).abs * 2,
   user_score: review_status29.review_score.to_i,
   user_id: "8"
 )
@@ -1125,12 +1125,12 @@ ReviewStatus.create!(
 review_status30 = ReviewStatus.find_by(id: 30)
 
 UserStatus.create!(
-  user_story:  (review_status30.review_story.to_i - 5).abs,
-  user_impact: (review_status30.review_impact.to_i - 5).abs,
-  user_impressed: (review_status30.review_impressed.to_i - 5).abs,
-  user_happy: (review_status30.review_happy.to_i - 5).abs,
-  user_character: (review_status30.review_character.to_i - 5).abs,
-  user_beautiful: (review_status30.review_beautiful.to_i - 5).abs,
+  user_story:  (review_status30.review_story.to_i - 5).abs * 2,
+  user_impact: (review_status30.review_impact.to_i - 5).abs * 2,
+  user_impressed: (review_status30.review_impressed.to_i - 5).abs * 2,
+  user_happy: (review_status30.review_happy.to_i - 5).abs * 2,
+  user_character: (review_status30.review_character.to_i - 5).abs * 2,
+  user_beautiful: (review_status30.review_beautiful.to_i - 5).abs * 2,
   user_score: review_status30.review_score.to_i,
   user_id: "8"
 )
