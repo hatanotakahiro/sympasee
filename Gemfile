@@ -85,4 +85,4 @@ gem 'kaminari'
 
 gem "aws-sdk-s3", require: false
 
-gem "bulma-rails"
+gem 'chartkick'
