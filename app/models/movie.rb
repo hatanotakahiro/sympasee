@@ -4,7 +4,9 @@ class Movie < ApplicationRecord
   belongs_to :user
   has_many :bookmarks
   has_many :reviews
+
   acts_as_paranoid 
+  acts_as_taggable
 
   def review_story_percentage
     unless self.reviews.empty?

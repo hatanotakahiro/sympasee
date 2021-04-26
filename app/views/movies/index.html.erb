@@ -37,7 +37,6 @@
   <div class='movie-contents container-fluid'>
     <%= link_to '新規投稿商品', "#", class: "subtitle" %>
     <div class="row">
-
       <% @movies.each do |m| %>
         <div class='movie-lists, col-3'>
 
@@ -47,18 +46,18 @@
             </div>
 
             <div class='movie-info'>
-              <h3 class='movie-name'>
-                <%= m.movie_title %>
-              </h3>
-              <div class='movie-price'>
-                <span><%= m.long %></span>
-                <div class='star-btn'>
-                  <%= image_tag "star.png", class:"star-icon" %>
-                  <span class='star-count'>0</span>
-                </div>
-              </div>
+              <h4><%= m.movie_title %></h4>
             </div>
           <% end %>
+
+          <div class='tag-list label label-primary'>
+            <% if m.tags.present? %>
+              <%= raw(m.tag_list.map { |t| link_to t, tag_path(t), class: "tag-btn" }.join('&ensp;&ensp;')) %>
+            <% else %>
+              <p>登録しているタグはありません</p>
+            <% end %>
+          </div>
+
 
         </div>
       <% end %>

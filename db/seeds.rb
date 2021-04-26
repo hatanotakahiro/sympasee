@@ -84,6 +84,9 @@ admin.movies.create!(
 movie1 = Movie.find_by(movie_title: "MONSTER HUNTER")
 movie1.movie_image.attach(io: File.open('public/images/movie1.jpeg'), filename: 'movie1.jpeg')
 
+movie1.tag_list.add "映画", "モンスターハンター", "ホラー", "サバイバル"
+movie1.save
+
 admin.movies.create!(
   movie_title:  "約束のネバーランド",
   movie_text: "幸せに満ち溢れた楽園のような孤児院「グレイス＝フィールドハウス」。そこで暮らす孤児たちは、母親代わりでみんなから“ママ”と呼ばれているイザベラのもと、里親に引き取られる年齢になる日を待ちわびていた。エマ（浜辺美波）、レイ（城桧吏）、ノーマン（板垣李光人）の３人も、いつか外の世界で暮らすことで、より幸せな日々がやってくると信じていた、“その日”がくるまでは…。",

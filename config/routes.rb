@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   resources :users do
     resources :user_status
   end
+  get 'tags/:tag', to: 'movies#index', as: :tag
 end

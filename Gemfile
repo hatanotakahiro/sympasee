@@ -86,3 +86,5 @@ gem 'kaminari'
 gem "aws-sdk-s3", require: false
 
 gem 'chartkick'
+
+gem 'acts-as-taggable-on', '~> 6.0'

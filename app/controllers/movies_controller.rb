@@ -4,8 +4,13 @@ class MoviesController < ApplicationController
   before_action :admin?, only: [:new, :create, :edit, :update, :destroy]
   
   def index
-    movies = Movie.includes(:user).order("created_at DESC")
-    @movies = movies.page(params[:page]).per(8)
+    if params[:tag]
+      movies = Movie.tagged_with(params[:tag]).order("created_at DESC")
+      @movies = movies.page(params[:page]).per(8)
+    else
+      movies = Movie.includes(:user).order("created_at DESC")
+      @movies = movies.page(params[:page]).per(8)
+    end
   end
 
   def new
@@ -23,6 +28,7 @@ class MoviesController < ApplicationController
 
   def show
     @reviews = @movie.reviews.includes(:user).order("created_at DESC")
+    @tags = @movie.tag_counts_on(:tags)
   end
 
   def edit
@@ -43,7 +49,7 @@ class MoviesController < ApplicationController
 
   private
   def movie_params
-    params.require(:movie).permit(:movie_title, :movie_text, :long, :release_date, :producer, :character, :movie_image).merge(user_id: current_user.id)
+    params.require(:movie).permit(:movie_title, :movie_text, :long, :release_date, :producer, :character, :movie_image, :tag_list).merge(user_id: current_user.id)
   end
 
   def set_movie

@@ -9,7 +9,7 @@
 
     <% render 'shared/error_messages', model: f.object %>
 
-    <%# 出品画像 %>
+    <%# 作品画像 %>
     <div class="img-upload">
       <div class="weight-bold-text">
         作品画像
@@ -22,8 +22,8 @@
         <%= f.file_field :movie_image, id:"item-image" %>
       </div>
     </div>
-    <%# /出品画像 %>
-    <%# 商品名と商品説明 %>
+    <%# /作品画像 %>
+    <%# 作品名と作品詳細 %>
     <div class="new-items">
       <div class="weight-bold-text">
           作品名
@@ -60,6 +60,12 @@
       </div>
       <div class="movie-form">
         <div class="weight-bold-text">
+          タグ
+        </div>
+        <%= f.text_field :tag_list, value: @movie.tag_list.join(','), class:"movies-tag", id:"movie-tag", placeholder:"タグ１,タグ２", rows:"1" ,maxlength:"50" %>
+      </div>
+      <div class="movie-form">
+        <div class="weight-bold-text">
           作品の公開日
           <span class="indispensable">必須</span>
         </div>
@@ -77,8 +83,7 @@
                       "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
         </div>
       </div>
-    <%# /商品名と商品説明 %>
-
+    <%# /作品名と作品詳細 %>
     <%# 下部ボタン %>
     <div class="sell-btn-contents">
       <%= f.submit "作品を追加する" ,class:"sell-btn" %>
