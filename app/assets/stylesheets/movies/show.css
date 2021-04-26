@@ -61,6 +61,7 @@
 }
 
 .movie-red-btn {
+  width: 40vw;
   text-align: center;
   background-color: #ea352d;
   font-size: 24px;
@@ -216,9 +217,25 @@
   font-size: 23px;
 }
 
+.ave-review-title{
+  font-size: 30px;
+  margin: 20px 0 10px 0;
+}
+
 .ave-review {
   width: 70vw;
   margin: 0 auto;
   display: flex;
   justify-content: center;
+}
+
+.movie-yellow-btn {
+  width: 40vw;
+  text-align: center;
+  background-color: #f5b803;
+  font-size: 24px;
+  font-weight: bold;
+  color: #FFF;
+  margin: 20px 0px;
+  padding: 2vh 10vw;
 }

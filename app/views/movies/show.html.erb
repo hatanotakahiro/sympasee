@@ -46,8 +46,8 @@
           <%= link_to "削除", movie_reviews_path(@movie.id), method: :delete, class:"movie-destroy" %>
       <% end %>
     </div>
-    <div class="row">
-      <%= @movie.reviews.count %>件のレビュー
+    <div class="ave-review-title row">
+      <%= @movie.movie_title %>のレビュー（平均値）
     </div>
     <div class="ave-review row">
       <div class="col-2"></div>
@@ -142,10 +142,10 @@
       <div class="col-2"></div>
     </div>
     <div class="row">
-      <%= link_to "レビューを書く", new_movie_review_path(@movie.id), method: :get, class: "movie-red-btn" %>
+      <%= link_to "レビューの詳細を見る", movie_reviews_path(@movie.id), method: :get, class: "movie-yellow-btn" %>
     </div>
     <div class="row">
-      <%= link_to "レビュー詳細を見る", movie_reviews_path(@movie.id), method: :get, class: "movie-red-btn" %>
+      <%= link_to "レビューを書く", new_movie_review_path(@movie.id), method: :get, class: "movie-red-btn" %>
     </div>
   </div>
 </div>
