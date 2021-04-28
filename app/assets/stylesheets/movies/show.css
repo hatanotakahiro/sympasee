@@ -3,18 +3,13 @@
   margin-left: auto;
   max-width: 90vw;
   padding: 50px 5vw;
-  margin-bottom: 50px;
-}
-
-.margin {
-  height: 4vw;
+  margin-bottom: 30px;
 }
 
 .movie-box {
   background-color: #FFF;
   width: 70vw;
   min-width: 1200px;
-  padding: 10vh 15vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -79,6 +74,10 @@
 .tag-title {
   margin: 10px;
   font-size: 20px;
+}
+
+.tag-list-show{
+  padding-top: 20px;
 }
 
 .show-tag-btn {

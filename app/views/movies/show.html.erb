@@ -1,7 +1,6 @@
 <%= render "shared/header" %>
 <div class='movie-show' style="background: url(../images/red-curtain2.jpeg); background-size: cover; background-attachment: fixed; background-position: center center; padding: 10vh 0;">
-  <div class='margin'></div>
-  <%# 商品の概要 %>
+  <%# 作品の詳細 %>
   <div class="movie-box container-fluid">
     <div class="row">
       <div class="movie-img-content col-5">
@@ -147,14 +146,16 @@
             </td>
           </tr>
         </table>
-        <table class="review-index-title">
-          <tr class="review-index-tr">
-            <th class="review-index-th"><h4>点数つけるとしたら？&ensp;&ensp;</h4></th>
-            <td class="review-index-td1"><h4><%= @movie.avg_score %>点 / 100点（<%= @movie.reviews.count %>件のレビュー）</h4></td>
-          </tr>
-        </table>
       </div>
       <div class="col-2"></div>
+    </div>
+    <div class="row">
+      <table class="review-index-title">
+        <tr class="review-index-tr">
+          <th class="review-index-th"><h4>点数つけるとしたら？&ensp;&ensp;</h4></th>
+          <td class="review-index-td1"><h4><%= @movie.avg_score %>点 / 100点（<%= @movie.reviews.count %>件のレビュー）</h4></td>
+        </tr>
+      </table>
     </div>
     <div class="row">
       <%#= link_to "レビューの詳細を見る", movie_reviews_path(@movie.id), method: :get, class: "movie-yellow-btn" %>
