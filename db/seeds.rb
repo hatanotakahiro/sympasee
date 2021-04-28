@@ -84,7 +84,7 @@ admin.movies.create!(
 movie1 = Movie.find_by(movie_title: "MONSTER HUNTER")
 movie1.movie_image.attach(io: File.open('public/images/movie1.jpeg'), filename: 'movie1.jpeg')
 
-movie1.tag_list.add "映画", "モンスターハンター", "ホラー", "サバイバル"
+movie1.tag_list.add "映画", "モンスターハンター", "ホラー", "サバイバル", "ゲーム"
 movie1.save
 
 admin.movies.create!(
@@ -99,6 +99,9 @@ admin.movies.create!(
 movie2 = Movie.find_by(movie_title: "約束のネバーランド")
 movie2.movie_image.attach(io: File.open('app/assets/images/movie2.jpeg'), filename: 'movie2.jpeg')
 
+movie2.tag_list.add "映画", "日本", "ミステリー", "ホラー", "漫画"
+movie2.save
+
 admin.movies.create!(
   movie_title:  "シン・エヴァンゲリオン劇場版",
   movie_text: "前作『Q』ラストにて地上に不時着したシンジ・アスカ・アヤナミ（『序』『破』に登場したレイとは別個体の、シンジの母ユイの複製体）の3人はヴィレと合流すべく、リリン（人類）の活動可能領域を目指してコア化した大地を歩き続けていた---",
@@ -110,6 +113,9 @@ admin.movies.create!(
 )
 movie3 = Movie.find_by(movie_title: "シン・エヴァンゲリオン劇場版")
 movie3.movie_image.attach(io: File.open('app/assets/images/movie3.jpeg'), filename: 'movie3.jpeg')
+
+movie3.tag_list.add "映画", "アニメ", "日本", "庵野秀明", "神話"
+movie3.save
 
 admin.movies.create!(
   movie_title:  "ウマ娘 プリティーダービー season2",
@@ -123,6 +129,9 @@ admin.movies.create!(
 movie4 = Movie.find_by(movie_title: "ウマ娘 プリティーダービー season2")
 movie4.movie_image.attach(io: File.open('app/assets/images/movie4.jpeg'), filename: 'movie4.jpeg')
 
+movie4.tag_list.add "テレビアニメ", "アニメ", "競馬", "スポーツ", "歴史"
+movie4.save
+
 admin.movies.create!(
   movie_title:  "スター・ウォーズ／スカイウォーカーの夜明け",
   movie_text: "はるか彼方の銀河系で繰り広げられる、スカイウォーカー家を中心とした壮大な＜サーガ＞の結末は、光と闇のフォースをめぐる最終決戦に託された─　果たして、彼らを待ち受ける運命とは？そして、いかなるエンディングを迎えるのか？",
@@ -134,6 +143,9 @@ admin.movies.create!(
 )
 movie5 = Movie.find_by(movie_title: "スター・ウォーズ／スカイウォーカーの夜明け")
 movie5.movie_image.attach(io: File.open('app/assets/images/movie5.jpeg'), filename: 'movie5.jpeg')
+
+movie5.tag_list.add "映画", "有名タイトル", "SF", "シリーズ", "宇宙"
+movie5.save
 
 admin.movies.create!(
   movie_title:  "来る",
@@ -147,6 +159,9 @@ admin.movies.create!(
 movie6 = Movie.find_by(movie_title: "来る")
 movie6.movie_image.attach(io: File.open('app/assets/images/movie6.jpeg'), filename: 'movie6.jpeg')
 
+movie6.tag_list.add "映画", "ホラー", "日本", "ジャパニーズホラー", "サスペンス"
+movie6.save
+
 admin.movies.create!(
   movie_title:  "3idiots",
   movie_text: "日の出の勢いで躍進するインドの未来を担うエリート軍団を輩出する、超難関理系大学ICE。エンジニアを目指す天才が競い合うキャンパスで、型破りな自由人のランチョー、機械より動物好きなファルハーン、なんでも神頼みの苦学生ラジューの“三バカトリオ”が、鬼学長を激怒させ、珍騒動を巻き起こす。 抱腹絶倒の学園コメディに見せつつ、行方不明のランチョーを探すミステリー仕立ての“10年後”が同時進行。根底に流れるのは学歴競争。加熱するインドの教育問題に一石を投じ、真に“今を生きる”ことを問いかける万国普遍のテーマ。",
@@ -158,6 +173,9 @@ admin.movies.create!(
 )
 movie7 = Movie.find_by(movie_title: "3idiots")
 movie7.movie_image.attach(io: File.open('app/assets/images/movie7.png'), filename: 'movie7.png')
+
+movie7.tag_list.add "映画", "学び", "きっと、うまくいく", "インド", "ミュージカル"
+movie7.save
 
 admin.movies.create!(
   movie_title:  "ジュラシック・パーク",
@@ -171,6 +189,9 @@ admin.movies.create!(
 movie8 = Movie.find_by(movie_title: "ジュラシック・パーク")
 movie8.movie_image.attach(io: File.open('app/assets/images/movie8.jpeg'), filename: 'movie8.jpeg')
 
+movie8.tag_list.add "映画", "SF", "恐竜", "スティーヴン・スピルバーグ", "大ヒットタイトル"
+movie8.save
+
 admin.movies.create!(
   movie_title:  "ロード・オブ・ザ・リング/王の帰還",
   movie_text: "とうとうモルドールへとたどり着いたフロド達。しかし、悪の魔の手もまた、彼らへと迫っていた。彼らの旅の行方は果たして。映画史に名を残す名作、ここに完結。",
@@ -182,6 +203,9 @@ admin.movies.create!(
 )
 movie9 = Movie.find_by(movie_title: "ロード・オブ・ザ・リング/王の帰還")
 movie9.movie_image.attach(io: File.open('app/assets/images/movie9.jpg'), filename: 'movie9.jpg')
+
+movie9.tag_list.add "映画", "冒険", "指輪物語", "ファンタジー", "有名タイトル"
+movie9.save
 
 admin.movies.create!(
   movie_title:  "おおかみこどもの雨と雪",
@@ -195,6 +219,9 @@ admin.movies.create!(
 movie10 = Movie.find_by(movie_title: "おおかみこどもの雨と雪")
 movie10.movie_image.attach(io: File.open('app/assets/images/movie10.jpg'), filename: 'movie10.jpg')
 
+movie10.tag_list.add "映画", "アニメ", "日本", "細田守", "感動"
+movie10.save
+
 admin.movies.create!(
   movie_title:  "バイオハザード",
   movie_text: "ある日、アリスは記憶が曖昧な状態で目覚める。さ迷っていると、突然謎の特殊舞台に拘束され、地下施設に連れて行かれる。そこはアメリカ最大の製薬会社アンブレラの地下研究所「ハイブ」だった。研究所では、人類をアンデッド化（ゾンビ化）してしまう恐ろしい生物兵器T-ウィルスが漏洩するバイオハザードが発生---",
@@ -206,6 +233,9 @@ admin.movies.create!(
 )
 movie11 = Movie.find_by(movie_title: "バイオハザード")
 movie11.movie_image.attach(io: File.open('app/assets/images/movie11.jpeg'), filename: 'movie11.jpeg')
+
+movie11.tag_list.add "映画", "SF", "ホラー", "アクション", "ゲーム"
+movie11.save
 
 admin.movies.create!(
   movie_title:  "THE GREATEST SHOWMAN",
@@ -219,6 +249,8 @@ admin.movies.create!(
 movie12 = Movie.find_by(movie_title: "THE GREATEST SHOWMAN")
 movie12.movie_image.attach(io: File.open('app/assets/images/movie12.jpg'), filename: 'movie12.jpg')
 
+movie12.tag_list.add "映画", "ミュージカル", "歴史", "グレイテスト・ショーマン", "歌"
+movie12.save
 
 # ここからレビュー
 movie9.reviews.create!(

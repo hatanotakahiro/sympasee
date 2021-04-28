@@ -2,7 +2,7 @@
 <div class='movie-main'>
   <%# ピックアップタイトルの部分 %>
   <div class="container pickup_title">
-    <h2 class="title"><span>PICKUPタイトル</span></h2>
+    <h2 class="title">PICKUPタイトル</h2>
   </div>
 
   <div id="carousel-2" class="carousel slide" data-interval="5000">
@@ -31,12 +31,18 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
-    <%# ピックアップタイトルの部分 %>
+  <%# ピックアップタイトルの部分 %>
 
   <%# 商品一覧 %>
   <div class='movie-contents container-fluid'>
+    <div class="index-search"> 
+      <%= form_for(@new_movie, url: {controller: 'movies', action: 'search' }) do |f| %>
+        <%= f.text_field :tag_list %>
+        <%= f.submit "タイトル or タグ検索", class: "search_btn" %>
+      <% end %>
+    </div>
     <%= link_to '新規投稿商品', "#", class: "subtitle" %>
-    <div class="row">
+    <div class="row" style="width:100%">
       <% @movies.each do |m| %>
         <div class='movie-lists, col-3'>
 

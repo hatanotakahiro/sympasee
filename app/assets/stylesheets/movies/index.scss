@@ -15,67 +15,41 @@
 
 .title {
   text-align: center;
-  width: 40vw;
+  width: 25vw;
   position: relative;
   margin: 30px;
   color: #fff;
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
   font-family: "YuGothic","Yu Gothic","Meiryo","ヒラギノ角ゴ","sans-serif";
+  height: 50px; /*リボンの高さ*/
+  line-height: 50px;  /*文字の縦位置*/
+  padding: 0 30px;  /*文字の開始位置*/
+  font-size: 25px;  /*文字サイズ*/
+  background-color: #e53939;
 }
 
-.title:before,
-.title:after {
-  position: absolute;
-  z-index: 0;
-  bottom: -10px;
-  display: block;
+
+.title::before,
+.title::after {
   content: '';
-  border: 1em solid #d90606;
-}
-
-.title:before {
-  left: -30px;
-  border-left-width: 15px;
-  border-left-color: transparent;
-}
-
-.title:after {
-  right: -30px;
-  border-right-width: 15px;
-  border-right-color: transparent;
-}
-
-.title span {
-  position: relative;
-  z-index: 1;
-  display: block;
-  padding: 1rem 2rem;
-  color: #fff;
-  background: #fa4141;
-}
-
-.title span:before,
-.title span:after {
   position: absolute;
-  bottom: -10px;
-  display: block;
-  width: 10px;
-  height: 10px;
-  content: '';
-  border-style: solid;
-  border-color: #b70505 transparent transparent transparent;
 }
-
-.title span:before {
+.title::before {
+  top: 100%;
   left: 0;
-  border-width: 10px 0 0 10px;
+  border-right: 20px solid #9b1e03;
+  border-bottom: 20px solid transparent;
 }
-
-.title span:after {
+.title::after {
+  top: 100%;
   right: 0;
-  border-width: 10px 10px 0 0;
+  border-left: 20px solid #9b1e03;
+  border-bottom: 20px solid transparent;
 }
 
+.search_btn{
+  padding: 0 10px;
+}
 /* 画面上部の「人生を変えるフリマアプリ」帯部分 */
 
 .movie-contents.container-fluid {
@@ -310,7 +284,7 @@
 
 .movie-contents>.subtitle {
   font-size: 4vh;
-  margin: 1vh 0;
+  margin: 20px 0;
   font-weight: bold;
   position: relative;
   padding-left: 35px;
@@ -359,10 +333,10 @@
 }
 
 .movie-info {
-  height: 80px;
+  height: 70px;
   background-color: #FFF;
   color: black;
-  padding: 1vw;
+  padding: 10px 10px 0 10px;
 }
 
 .movie-name {
@@ -371,7 +345,7 @@
 
 .tag-list {
   font-size: 13px;
-  padding: 0 0 20px 1vw;
+  padding: 0 0 60px 1vw;
 }
 
 .tag-btn {
@@ -379,13 +353,14 @@
   position: relative;
   display: inline-block;
   padding: 0.25em 0.5em;
+  margin-top: 10px;
   text-decoration: none;
   color: #FFF;
-  background: #4169E1;/*色*/
+  background: #17b3fc;/*色*/
   border-radius: 4px;/*角の丸み*/
   box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.05);
   font-weight: bold;
-  border: solid 2px #0000FF;/*線色*/
+  border: solid 2px #00a2ff;/*線色*/
 }
 
 .tag-btn:active {

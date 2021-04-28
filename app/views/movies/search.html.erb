@@ -1,0 +1,34 @@
+<%= render "shared/header" %>
+<div class='movie-main'>
+
+  <%# 商品一覧 %>
+  <div class='movie-contents container-fluid'>
+    <div class="row" style="width:100%">
+      <% @movies.each do |m| %>
+        <div class='movie-lists, col-3'>
+
+          <%= link_to movie_path(m.id) do %>
+            <div class='movie-img-content, text-center'>
+              <%= image_tag m.movie_image, class: "movie-img" %>
+            </div>
+
+            <div class='movie-info'>
+              <h4><%= m.movie_title %></h4>
+            </div>
+          <% end %>
+
+          <div class='tag-list label label-primary'>
+            <% if m.tags.present? %>
+              <%= raw(m.tag_list.map { |t| link_to t, tag_path(t), class: "tag-btn" }.join('&ensp;&ensp;')) %>
+            <% else %>
+              <p>登録しているタグはありません</p>
+            <% end %>
+          </div>
+
+
+        </div>
+      <% end %>
+    </div> 
+  </div>
+</div>
+<%= render "shared/footer" %>

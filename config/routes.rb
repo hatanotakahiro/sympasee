@@ -10,4 +10,7 @@ Rails.application.routes.draw do
     resources :user_status
   end
   get 'tags/:tag', to: 'movies#index', as: :tag
+
+  get 'movies/search', to: 'movies#search'
+  post 'movies/search', to: 'movies#search'
 end
