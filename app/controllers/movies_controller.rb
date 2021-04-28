@@ -28,8 +28,8 @@ class MoviesController < ApplicationController
   end
 
   def show
-    @reviews = @movie.reviews.includes(:user).order("created_at DESC")
-    @tags = @movie.tag_counts_on(:tags)
+    reviews = Review.where(movie_id: @movie.id).order("created_at DESC")
+    @reviews = reviews.page(params[:page]).per(4)
   end
 
   def edit

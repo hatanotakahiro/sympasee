@@ -93,3 +93,16 @@
 ### Association
 
 - belongs_to :review
+
+
+## like テーブル
+
+| Column      | Type       | Options     |
+| ----------  | ---------- | ----------- |
+| review       | references | null: false, foreign_key: true |
+| user        | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- belongs_to :review

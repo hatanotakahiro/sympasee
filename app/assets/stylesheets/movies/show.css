@@ -1,4 +1,9 @@
-.movie-show {
+.movie-box.container-fluid {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 90vw;
+  padding: 50px 5vw;
+  margin-bottom: 50px;
 }
 
 .margin {
@@ -69,6 +74,30 @@
   color: #FFF;
   margin: 20px 0px;
   padding: 2vh 10vw;
+}
+
+.tag-title {
+  margin: 10px;
+  font-size: 20px;
+}
+
+.show-tag-btn {
+  font-size: 13px;
+  position: relative;
+  display: inline-block;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  color: #FFF;
+  background: #17b3fc;/*色*/
+  border-radius: 4px;/*角の丸み*/
+  box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.05);
+  font-weight: bold;
+  border: solid 2px #00a2ff;/*線色*/
+}
+
+.show-tag-btn:active {
+  /*押したとき*/
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
 }
 
 .or-text {

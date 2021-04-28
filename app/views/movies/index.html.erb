@@ -35,12 +35,14 @@
 
   <%# 商品一覧 %>
   <div class='movie-contents container-fluid'>
-    <div class="index-search"> 
-      <%= form_for(@new_movie, url: {controller: 'movies', action: 'search' }) do |f| %>
-        <%= f.text_field :tag_list %>
-        <%= f.submit "タイトル or タグ検索", class: "search_btn" %>
-      <% end %>
-    </div>
+    <% if user_signed_in? %>
+      <div class="index-search"> 
+        <%= form_for(@new_movie, url: {controller: 'movies', action: 'search' }) do |f| %>
+          <%= f.text_field :tag_list %>
+          <%= f.submit "タイトル or タグ検索", class: "search_btn" %>
+        <% end %>
+      </div>
+    <% end %>
     <%= link_to '新規投稿商品', "#", class: "subtitle" %>
     <div class="row" style="width:100%">
       <% @movies.each do |m| %>
