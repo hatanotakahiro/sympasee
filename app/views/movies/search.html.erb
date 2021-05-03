@@ -1,8 +1,9 @@
 <%= render "shared/header" %>
-<div class='movie-main'>
+<div class='movie-show' style="background: url(../images/red-curtain2.jpeg); background-size: cover; background-attachment: fixed; background-position: center center; padding: 30px 0;">
 
-  <%# 商品一覧 %>
-  <div class='movie-contents container-fluid'>
+  <%# 作品一覧 %>
+  <div class='movie-search-contents container-fluid'>
+    <h5 class="search-subtitle">検索結果</h5>
     <div class="row" style="width:100%">
       <% @movies.each do |m| %>
         <div class='movie-lists, col-3'>

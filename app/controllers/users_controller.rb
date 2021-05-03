@@ -1,4 +1,14 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!, except: [:show]
+
+  def follower
+    @user = current_user
+  end
+
+  def follow
+    @user = current_user
+  end
+
   def edit
   end
   def update

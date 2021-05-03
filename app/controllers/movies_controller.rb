@@ -50,7 +50,7 @@ class MoviesController < ApplicationController
 
   def search
     @movies = Movie.includes(:user).order("created_at DESC")
-    @movies = @movies.tagged_with(movie_params[:tag_list], any: true).order("created_at DESC") | Movie.where('movie_title LIKE ?', "%#{movie_params[:tag_list]}%")
+    @movies = @movies.tagged_with(movie_params[:tag_list], any: true).order("created_at DESC") | Movie.where('movie_title LIKE ?', "%#{movie_params[:tag_list]}%").order("created_at DESC")
   end
 
   private

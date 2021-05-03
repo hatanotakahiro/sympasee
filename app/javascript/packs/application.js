@@ -11,7 +11,7 @@ import "bootstrap";
 require("reviews")
 
 require("jquery")
-require("test.js")
+window.$ = $;
 
 require("chartkick")
 require("chart.js")

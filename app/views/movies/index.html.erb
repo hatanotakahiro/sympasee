@@ -33,7 +33,7 @@
   </div>
   <%# ピックアップタイトルの部分 %>
 
-  <%# 商品一覧 %>
+  <%# 作品一覧 %>
   <div class='movie-contents container-fluid'>
     <% if user_signed_in? %>
       <div class="index-search"> 
@@ -43,7 +43,7 @@
         <% end %>
       </div>
     <% end %>
-    <%= link_to '新規投稿商品', "#", class: "subtitle" %>
+    <h5 class="subtitle">新規投稿商品</h5>
     <div class="row" style="width:100%">
       <% @movies.each do |m| %>
         <div class='movie-lists, col-3'>

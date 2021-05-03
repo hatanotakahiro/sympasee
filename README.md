@@ -19,6 +19,8 @@
 - has_many :reviews
 - has_many :movies
 - has_many :user_statues
+- has_many :relationships
+- has_many :followings
 
 
 ## user_statues テーブル
@@ -95,7 +97,7 @@
 - belongs_to :review
 
 
-## like テーブル
+<!-- ## like テーブル
 
 | Column      | Type       | Options     |
 | ----------  | ---------- | ----------- |
@@ -105,4 +107,4 @@
 ### Association
 
 - belongs_to :user
-- belongs_to :review
+- belongs_to :review -->

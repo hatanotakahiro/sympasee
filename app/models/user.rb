@@ -9,9 +9,30 @@ class User < ApplicationRecord
   has_many :reviews
   has_many :bookmarks
   has_many :user_statues
+
+  has_many :relationships, dependent: :destroy
+  has_many :followings, through: :relationships, source: :follower
+
+  has_many :passive_relationships, class_name: 'Relationship', foreign_key: 'follower_id', dependent: :destroy
+  has_many :followers, through: :passive_relationships, source: :user
+
   acts_as_paranoid
 
   validates :nickname, presence: true
+
+  def follow(other_user)
+    return if self == other_user
+
+    relationships.find_or_create_by!(follower: other_user)
+  end
+
+  def following?(user)
+    followings.include?(user)
+  end
+
+  def unfollow(relathinoship_id)
+    relationships.find(relathinoship_id).destroy!
+  end
 
   def avg_user_story
     unless UserStatus.where(user_id: self.id).blank?

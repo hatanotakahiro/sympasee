@@ -7,10 +7,15 @@ Rails.application.routes.draw do
     end
   end
   resources :users do
-    resources :user_status
+    collection do
+      get 'follow', to: 'users#follow'
+      get 'follower', to: 'users#follower'
+    end
   end
   get 'tags/:tag', to: 'movies#index', as: :tag
 
   get 'movies/search', to: 'movies#search'
   post 'movies/search', to: 'movies#search'
+
+  resources :relationships, only: [:create, :destroy]
 end
