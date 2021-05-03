@@ -42,7 +42,7 @@
     <div class="row">
       <div class='tag-list-show'>
         <% if @movie.tags.present? %>
-          <span class="tag-title">登録タグ：</span><%= raw(@movie.tag_list.map { |t| link_to t, tag_path(t), class: "show-tag-btn" }.join('&ensp;&ensp;')) %>
+          <span class="tag-title">登録タグ：</span><%= raw(@movie.tag_list.map { |t| link_to t, tag_path(t), class: "show-tag-btn text-white" }.join('&ensp;&ensp;')) %>
         <% else %>
           <p>登録しているタグはありません</p>
         <% end %>
@@ -50,7 +50,7 @@
     </div>
     <div class="row">
       <% if user_signed_in? && current_user.admin? %>
-          <%= link_to "商品の編集", edit_movie_path(@movie.id), method: :get, class: "movie-red-btn" %>
+          <%= link_to "作品の編集", edit_movie_path(@movie.id), method: :get, class: "movie-orange-btn" %>
           <%= link_to "削除", movie_reviews_path(@movie.id), method: :delete, class:"movie-destroy" %>
       <% end %>
     </div>
@@ -159,7 +159,7 @@
     </div>
     <div class="row">
       <%#= link_to "レビューの詳細を見る", movie_reviews_path(@movie.id), method: :get, class: "movie-yellow-btn" %>
-      <%= link_to "レビューを書く", new_movie_review_path(@movie.id), method: :get, class: "movie-red-btn" %>
+      <%= link_to "レビューを書く", new_movie_review_path(@movie.id), method: :get, class: "movie-orange-btn text-white" %>
     </div>
   </div>
       <% @reviews.each do |review| %>

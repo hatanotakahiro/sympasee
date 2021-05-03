@@ -1,6 +1,6 @@
 <%= render "shared/second-header"%>
 
-<div class='top-page-header, container-fluid'>
+<div class='sing-up container-fluid'>
   <%= form_with model: @user, url: user_registration_path, class: 'registration-main row', local: true do |f| %>
   <div class='form-wrap row'>
     <div class="col-2"></div>
@@ -67,4 +67,4 @@
   </div>
   <% end %>
 </div>
-<%= render "shared/second-footer"%>
+<%= render "shared/footer" %>

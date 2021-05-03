@@ -60,7 +60,7 @@
 
           <div class='tag-list label label-primary'>
             <% if m.tags.present? %>
-              <%= raw(m.tag_list.map { |t| link_to t, tag_path(t), class: "tag-btn" }.join('&ensp;&ensp;')) %>
+              <%= raw(m.tag_list.map { |t| link_to t, tag_path(t), class: "tag-btn text-white" }.join('&ensp;&ensp;')) %>
             <% else %>
               <p>登録しているタグはありません</p>
             <% end %>
