@@ -2,11 +2,6 @@ class ReviewsController < ApplicationController
   before_action :authenticate_user!, except: [ :index]
   before_action :set_movie
 
-  def index
-    # reviews = Review.where(movie_id: @movie.id).order("created_at DESC")
-    # @reviews = reviews.page(params[:page]).per(4)
-  end
-
   def new
     @review_process = ReviewProcess.new
   end

@@ -1,0 +1,41 @@
+<%= render "shared/header" %>
+<div class="index-review">
+  <div class="user-show-content container-fluid">
+    <div class="row">
+      <% if @user.followers.blank? %>
+        <div class="no-hit-search">
+          <h5>現在、フォロワーはおりません</h5>
+        </div>
+      <% else %>
+        <% @user.followers.each do |user| %>
+          <div class="col-1"></div>
+          <div class="col-4">
+            <%= link_to user_path(user) do %>
+              <div class="row">
+                <div class="col-6 user-show-nickname">
+                  <%= user.nickname %>
+                </div>
+                <div class="col-6 user-show-image">
+                  <%= image_tag user.profile_image.variant(resize: '200x200'), class: "user-image" if user.profile_image.attached? %>
+                  <%= image_tag "user_nil.png" , size: "200x200" unless user.profile_image.attached?  %>
+                </div>
+              </div>
+            <% end %>
+            <div class="row user-show-profile">
+              <h5 class="user-profile-title">プロフィール</h5>
+              <h6><%= user.profile %></h6>
+            </div>
+          </div>
+          <div class="user-show-bar col-7">
+            <%= bar_chart ({ "ストーリー": user.avg_user_story, "衝撃": user.avg_user_impact, "感動": user.avg_user_impressed, "楽しさ": user.avg_user_happy, "登場人物": user.avg_user_character, "映像美": user.avg_user_beautiful }), title: "ユーザーの注目度", xtitle: "注目度", ytitle: "ジャンル", min: 0, max: 10, height: "300px", width: "50vw" %>
+            <div class="user-show-score">
+              点数つけるとしたら？&ensp;&ensp;平均<%= user.avg_user_score.round(0) %>点
+            </div>
+          </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
+<%= render "shared/footer" %>
