@@ -1,0 +1,170 @@
+<%= render "shared/header" %>
+<div class='movie-show' style="background: url(../images/red-curtain2.jpeg); background-size: cover; background-attachment: fixed; background-position: center center; padding: 30px 0; min-height: 70vh;">
+  <%# 作品一覧 %>
+  <div class='movie-contents container-fluid'>
+
+    <h5 class="story-subtitle">ストーリーランキング</h5>
+    <div class="row" style="width:100%">
+      <% @movies.sort_by {|st| -st.avg_story }.first(3).each.with_index(1) do |st, i| %>
+        <div class='movie-lists, col-4'>
+          <h4 class="ranking"><%= "#{i}位" %></h4>
+          <%= link_to movie_path(st.id) do %>
+            <div class='movie-img-content, text-center'>
+              <%= image_tag st.movie_image, class: "movie-img" %>
+            </div>
+
+            <div class='movie-rank-info'>
+              <h4><%= st.movie_title %></h4>
+            </div>
+          <% end %>
+
+          <div class='tag-list label label-primary'>
+            <% if st.tags.present? %>
+              <%= raw(st.tag_list.map { |t| link_to t, tag_path(t), class: "tag-btn text-white" }.join('&ensp;&ensp;')) %>
+            <% else %>
+              <p>登録しているタグはありません</p>
+            <% end %>
+          </div>
+
+        </div>
+      <% end %>
+    </div> 
+
+    <h5 class="story-subtitle">衝撃ランキング</h5>
+    <div class="row" style="width:100%">
+      <% @movies.sort_by {|impact| -impact.avg_impact }.first(3).each.with_index(1) do |impact, i| %>
+        <div class='movie-lists, col-4'>
+          <h4 class="ranking"><%= "#{i}位" %></h4>
+          <%= link_to movie_path(impact.id) do %>
+            <div class='movie-img-content, text-center'>
+              <%= image_tag impact.movie_image, class: "movie-img" %>
+            </div>
+
+            <div class='movie-rank-info'>
+              <h4><%= impact.movie_title %></h4>
+            </div>
+          <% end %>
+
+          <div class='tag-list label label-primary'>
+            <% if impact.tags.present? %>
+              <%= raw(impact.tag_list.map { |t| link_to t, tag_path(t), class: "tag-btn text-white" }.join('&ensp;&ensp;')) %>
+            <% else %>
+              <p>登録しているタグはありません</p>
+            <% end %>
+          </div>
+
+        </div>
+      <% end %>
+    </div> 
+
+    <h5 class="story-subtitle">感動ランキング</h5>
+    <div class="row" style="width:100%">
+      <% @movies.sort_by {|impressed| -impressed.avg_impressed }.first(3).each.with_index(1) do |impressed, i| %>
+        <div class='movie-lists, col-4'>
+          <h4 class="ranking"><%= "#{i}位" %></h4>
+          <%= link_to movie_path(impressed.id) do %>
+            <div class='movie-img-content, text-center'>
+              <%= image_tag impressed.movie_image, class: "movie-img" %>
+            </div>
+
+            <div class='movie-rank-info'>
+              <h4><%= impressed.movie_title %></h4>
+            </div>
+          <% end %>
+
+          <div class='tag-list label label-primary'>
+            <% if impressed.tags.present? %>
+              <%= raw(impressed.tag_list.map { |t| link_to t, tag_path(t), class: "tag-btn text-white" }.join('&ensp;&ensp;')) %>
+            <% else %>
+              <p>登録しているタグはありません</p>
+            <% end %>
+          </div>
+
+        </div>
+      <% end %>
+    </div> 
+
+    <h5 class="story-subtitle">楽しさランキング</h5>
+    <div class="row" style="width:100%">
+      <% @movies.sort_by {|happy| -happy.avg_happy }.first(3).each.with_index(1) do |happy, i| %>
+        <div class='movie-lists, col-4'>
+          <h4 class="ranking"><%= "#{i}位" %></h4>
+          <%= link_to movie_path(happy.id) do %>
+            <div class='movie-img-content, text-center'>
+              <%= image_tag happy.movie_image, class: "movie-img" %>
+            </div>
+
+            <div class='movie-rank-info'>
+              <h4><%= happy.movie_title %></h4>
+            </div>
+          <% end %>
+
+          <div class='tag-list label label-primary'>
+            <% if happy.tags.present? %>
+              <%= raw(happy.tag_list.map { |t| link_to t, tag_path(t), class: "tag-btn text-white" }.join('&ensp;&ensp;')) %>
+            <% else %>
+              <p>登録しているタグはありません</p>
+            <% end %>
+          </div>
+
+        </div>
+      <% end %>
+    </div> 
+
+    <h5 class="story-subtitle">登場人物ランキング</h5>
+    <div class="row" style="width:100%">
+      <% @movies.sort_by {|character| -character.avg_character }.first(3).each.with_index(1) do |character, i| %>
+        <div class='movie-lists, col-4'>
+          <h4 class="ranking"><%= "#{i}位" %></h4>
+          <%= link_to movie_path(character.id) do %>
+            <div class='movie-img-content, text-center'>
+              <%= image_tag character.movie_image, class: "movie-img" %>
+            </div>
+
+            <div class='movie-rank-info'>
+              <h4><%= character.movie_title %></h4>
+            </div>
+          <% end %>
+
+          <div class='tag-list label label-primary'>
+            <% if character.tags.present? %>
+              <%= raw(character.tag_list.map { |t| link_to t, tag_path(t), class: "tag-btn text-white" }.join('&ensp;&ensp;')) %>
+            <% else %>
+              <p>登録しているタグはありません</p>
+            <% end %>
+          </div>
+
+        </div>
+      <% end %>
+    </div> 
+
+    <h5 class="story-subtitle">映像美ランキング</h5>
+    <div class="row" style="width:100%">
+      <% @movies.sort_by {|beautiful| -beautiful.avg_beautiful }.first(3).each.with_index(1) do |beautiful, i| %>
+        <div class='movie-lists, col-4'>
+          <h4 class="ranking"><%= "#{i}位" %></h4>
+          <%= link_to movie_path(beautiful.id) do %>
+            <div class='movie-img-content, text-center'>
+              <%= image_tag beautiful.movie_image, class: "movie-img" %>
+            </div>
+
+            <div class='movie-rank-info'>
+              <h4><%= beautiful.movie_title %></h4>
+            </div>
+          <% end %>
+
+          <div class='tag-list label label-primary'>
+            <% if beautiful.tags.present? %>
+              <%= raw(beautiful.tag_list.map { |t| link_to t, tag_path(t), class: "tag-btn text-white" }.join('&ensp;&ensp;')) %>
+            <% else %>
+              <p>登録しているタグはありません</p>
+            <% end %>
+          </div>
+
+        </div>
+      <% end %>
+    </div> 
+
+  </div>
+</div>
+<%= render "shared/footer" %>
