@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'movies#index'
   resources :movies do
+    collection do
+      get 'rank', to: 'movies#rank'
+    end
     resources :reviews do
       resources :review_status
     end

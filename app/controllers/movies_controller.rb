@@ -1,5 +1,5 @@
 class MoviesController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show, :search]
+  before_action :authenticate_user!, except: [:index, :show, :search, :rank]
   before_action :set_movie, only: [:show, :edit, :update, :destroy]
   before_action :admin?, only: [:new, :create, :edit, :update, :destroy]
   
@@ -12,6 +12,11 @@ class MoviesController < ApplicationController
       @movies = movies.page(params[:page]).per(8)
     end
     @new_movie = Movie.new
+  end
+
+  def rank
+    # @story_ranks = Movie.find(Review.group(:review_story).order('avg(review_story) desc').pluck(:movie_id))
+    @movies = Movie.includes(:user)
   end
 
   def new

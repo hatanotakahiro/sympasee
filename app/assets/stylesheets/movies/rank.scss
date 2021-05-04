@@ -1,19 +1,13 @@
-header {
-  background: #F2904B;
-}
-.sympasee-icon {
-  margin-left: 50px;
-}
-
-.rank-list {
-  width: 40px;
-  font-size: 20px;
+.story-subtitle {
+  font-size: 4vh;
+  margin: 20px 0;
   font-weight: bold;
   position: relative;
+  padding-left: 35px;
   color: rgb(3, 88, 245);
 }
 
-.rank-list:before {
+.story-subtitle:before {
   position: absolute;
   font-family: "Font Awesome 5 Free";
   content: "\f521";
@@ -30,4 +24,15 @@ header {
   top: 50%;
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
+}
+
+.movie-rank-info {
+  height: 70px;
+  background-color: #FFF;
+  color: black;
+  padding: 10px 10px 0 50px;
+}
+
+.ranking{
+  padding-left: 20px;
 }
