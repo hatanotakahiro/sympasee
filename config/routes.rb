@@ -5,9 +5,7 @@ Rails.application.routes.draw do
     collection do
       get 'rank', to: 'movies#rank'
     end
-    resources :reviews do
-      resources :review_status
-    end
+    resources :reviews
   end
   resources :users do
     collection do

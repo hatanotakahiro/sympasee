@@ -17,4 +17,6 @@ class ReviewProcess
     UserStatus.create(user_story: user_story, user_impact: user_impact, user_impressed: user_impressed, user_happy: user_happy, user_character: user_character, user_beautiful: user_beautiful, user_score: review_score, user_id: review.user_id)
   end
 
+  
+
 end

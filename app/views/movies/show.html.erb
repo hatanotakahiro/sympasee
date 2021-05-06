@@ -51,7 +51,7 @@
     <div class="row">
       <% if user_signed_in? && current_user.admin? %>
           <%= link_to "作品の編集", edit_movie_path(@movie.id), method: :get, class: "movie-orange-btn" %>
-          <%= link_to "削除", movie_reviews_path(@movie.id), method: :delete, class:"movie-destroy" %>
+          <%= link_to "削除", movie_path(@movie.id), method: :delete, class:"movie-destroy" %>
       <% end %>
     </div>
     <div class="ave-review-title row">
@@ -149,122 +149,126 @@
       </div>
       <div class="col-2"></div>
     </div>
-    <div class="row">
+    <%# <div class="row">
       <table class="review-index-title">
         <tr class="review-index-tr">
-          <th class="review-index-th"><h4>点数つけるとしたら？&ensp;&ensp;</h4></th>
-          <td class="review-index-td1"><h4><%= @movie.avg_score %>点 / 100点（<%= @movie.reviews.count %>件のレビュー）</h4></td>
-        </tr>
+          <th class="review-index-th"><h4>点数つけるとしたら？&ensp;&ensp;</h4></th> %>
+          <%# <td class="review-index-td1"><h4>= @movie.avg_score点 / 100点（= @movie.reviews.count件のレビュー）</h4></td> %>
+        <%# </tr>
       </table>
-    </div>
+    </div> %>
     <div class="row">
-      <%#= link_to "レビューの詳細を見る", movie_reviews_path(@movie.id), method: :get, class: "movie-yellow-btn" %>
       <%= link_to "レビューを書く", new_movie_review_path(@movie.id), method: :get, class: "movie-orange-btn text-white" %>
     </div>
   </div>
       <% @reviews.each do |review| %>
         <div class="index-review-content-each container-fluid">
-            <table class="table is-fullwidth has-text-centered">
-              <thead align="center">
-                <tr>
-                  <th class="review-index-user">ユーザー</th>
-                  <th class="review-index-score">点数</th>
-                  <th class="review-index-text">内容</th>
-                  <th class="review-index-status">それぞれの評価</th>
-                </tr>
-              </thead>
-              <tbody align="center">
-                <tr>
-                  <td>
-                    <%= link_to user_path(review.user.id) do %>
-                      <%= review.user.nickname %><br>
-                      <%= image_tag review.user.profile_image.variant(resize: '100x100'), class: "user-image" if review.user.profile_image.attached? %>
-                      <%= image_tag "user_nil.png" , size: "100x100" unless review.user.profile_image.attached?  %>
-                    <% end %>
-                  </td>
-                  <td><%= review.review_status.review_score %></td>
-                  <td align="left"><%= review.review_text %></td>
-                  <td>
-                    <div class="review-index-content">
-                      <table>
-                        <tr class="review-index-content-tr">
-                          <th class="review-index-content-th"><h6>ストーリー：</h6></th>
-                          <td class="review-index-content-td1">
-                            <div class="star-rating-content-index">
-                              <div class="star-rating-index-front" style="width: <%= review.review_status.review_story * 10 %>%">★★★★★★★★★★</div>
-                              <div class="star-rating-index-back">★★★★★★★★★★</div>
-                            </div>
-                          </td>
-                          <td class="review-index-td2">
-                            <h6><%= review.review_status.review_story %>点</h6>
-                          </td>
-                        </tr>
-                        <tr class="review-index-content-tr">
-                          <th class="review-index-content-th"><h6>衝撃：</h6></th>
-                          <td class="review-index-content-td1">
-                            <div class="star-rating-content-index">
-                              <div class="star-rating-index-front" style="width: <%= review.review_status.review_impact * 10 %>%">★★★★★★★★★★</div>
-                              <div class="star-rating-index-back">★★★★★★★★★★</div>
-                            </div>
-                          </td>
-                          <td class="review-index-td2">
-                            <h6><%= review.review_status.review_impact %>点</h6>
-                          </td>
-                        </tr>
-                        <tr class="review-index-content-tr">
-                          <th class="review-index-content-th"><h6>感動：</h6></th>
-                          <td class="review-index-content-td1">
-                            <div class="star-rating-content-index">
-                              <div class="star-rating-index-front" style="width: <%= review.review_status.review_impressed * 10 %>%">★★★★★★★★★★</div>
-                              <div class="star-rating-index-back">★★★★★★★★★★</div>
-                            </div>
-                          </td>
-                          <td class="review-index-td2">
-                            <h6><%= review.review_status.review_impressed %>点</h6>
-                          </td>
-                        </tr>
-                        <tr class="review-index-content-tr">
-                          <th class="review-index-content-th"><h6>楽しさ：</h6></th>
-                          <td class="review-index-content-td1">
-                            <div class="star-rating-content-index">
-                              <div class="star-rating-index-front" style="width: <%= review.review_status.review_happy * 10 %>%">★★★★★★★★★★</div>
-                              <div class="star-rating-index-back">★★★★★★★★★★</div>
-                            </div>
-                          </td>
-                          <td class="review-index-td2">
-                            <h6><%= review.review_status.review_happy %>点</h6>
-                          </td>
-                        </tr>
-                        <tr class="review-index-content-tr">
-                          <th class="review-index-content-th"><h6>登場人物：</h6></th>
-                          <td class="review-index-content-td1">
-                            <div class="star-rating-content-index">
-                              <div class="star-rating-index-front" style="width: <%= review.review_status.review_character * 10 %>%">★★★★★★★★★★</div>
-                              <div class="star-rating-index-back">★★★★★★★★★★</div>
-                            </div>
-                          </td>
-                          <td class="review-index-td2">
-                            <h6><%= review.review_status.review_character %>点</h6>
-                          </td>
-                        </tr>
-                        <tr class="review-index-content-tr">
-                          <th class="review-index-content-th"><h6>映像美：</h6></th>
-                          <td class="review-index-content-td1">
-                            <div class="star-rating-content-index">
-                              <div class="star-rating-index-front" style="width: <%= review.review_status.review_beautiful * 10 %>%">★★★★★★★★★★</div>
-                              <div class="star-rating-index-back">★★★★★★★★★★</div>
-                            </div>
-                          </td>
-                          <td class="review-index-td2">
-                            <h6><%= review.review_status.review_beautiful %>点</h6>
-                          </td>
-                        </tr>
-                      </table>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+          <% if (current_user.id == review.user_id) || current_user.admin? %>
+            <div class="row">
+              <%= link_to "削除", movie_review_path(review.movie_id, review.id), class:"review-destroy btn btn-outline-danger" %>
+            </div>
+          <% end %>
+          <table class="table is-fullwidth has-text-centered">
+            <thead align="center">
+              <tr>
+                <th class="review-index-user">ユーザー</th>
+                <th class="review-index-score">点数</th>
+                <th class="review-index-text">内容</th>
+                <th class="review-index-status">それぞれの評価</th>
+              </tr>
+            </thead>
+            <tbody align="center">
+              <tr>
+                <td>
+                  <%= link_to user_path(review.user.id) do %>
+                    <%= review.user.nickname %><br>
+                    <%= image_tag review.user.profile_image.variant(resize: '100x100'), class: "user-image" if review.user.profile_image.attached? %>
+                    <%= image_tag "user_nil.png" , size: "100x100" unless review.user.profile_image.attached?  %>
+                  <% end %>
+                </td>
+                <td><%= review.review_status.review_score %></td>
+                <td align="left"><%= review.review_text %></td>
+                <td>
+                  <div class="review-index-content">
+                    <table>
+                      <tr class="review-index-content-tr">
+                        <th class="review-index-content-th"><h6>ストーリー：</h6></th>
+                        <td class="review-index-content-td1">
+                          <div class="star-rating-content-index">
+                            <div class="star-rating-index-front" style="width: <%= review.review_status.review_story * 10 %>%">★★★★★★★★★★</div>
+                            <div class="star-rating-index-back">★★★★★★★★★★</div>
+                          </div>
+                        </td>
+                        <td class="review-index-td2">
+                          <h6><%= review.review_status.review_story %>点</h6>
+                        </td>
+                      </tr>
+                      <tr class="review-index-content-tr">
+                        <th class="review-index-content-th"><h6>衝撃：</h6></th>
+                        <td class="review-index-content-td1">
+                          <div class="star-rating-content-index">
+                            <div class="star-rating-index-front" style="width: <%= review.review_status.review_impact * 10 %>%">★★★★★★★★★★</div>
+                            <div class="star-rating-index-back">★★★★★★★★★★</div>
+                          </div>
+                        </td>
+                        <td class="review-index-td2">
+                          <h6><%= review.review_status.review_impact %>点</h6>
+                        </td>
+                      </tr>
+                      <tr class="review-index-content-tr">
+                        <th class="review-index-content-th"><h6>感動：</h6></th>
+                        <td class="review-index-content-td1">
+                          <div class="star-rating-content-index">
+                            <div class="star-rating-index-front" style="width: <%= review.review_status.review_impressed * 10 %>%">★★★★★★★★★★</div>
+                            <div class="star-rating-index-back">★★★★★★★★★★</div>
+                          </div>
+                        </td>
+                        <td class="review-index-td2">
+                          <h6><%= review.review_status.review_impressed %>点</h6>
+                        </td>
+                      </tr>
+                      <tr class="review-index-content-tr">
+                        <th class="review-index-content-th"><h6>楽しさ：</h6></th>
+                        <td class="review-index-content-td1">
+                          <div class="star-rating-content-index">
+                            <div class="star-rating-index-front" style="width: <%= review.review_status.review_happy * 10 %>%">★★★★★★★★★★</div>
+                            <div class="star-rating-index-back">★★★★★★★★★★</div>
+                          </div>
+                        </td>
+                        <td class="review-index-td2">
+                          <h6><%= review.review_status.review_happy %>点</h6>
+                        </td>
+                      </tr>
+                      <tr class="review-index-content-tr">
+                        <th class="review-index-content-th"><h6>登場人物：</h6></th>
+                        <td class="review-index-content-td1">
+                          <div class="star-rating-content-index">
+                            <div class="star-rating-index-front" style="width: <%= review.review_status.review_character * 10 %>%">★★★★★★★★★★</div>
+                            <div class="star-rating-index-back">★★★★★★★★★★</div>
+                          </div>
+                        </td>
+                        <td class="review-index-td2">
+                          <h6><%= review.review_status.review_character %>点</h6>
+                        </td>
+                      </tr>
+                      <tr class="review-index-content-tr">
+                        <th class="review-index-content-th"><h6>映像美：</h6></th>
+                        <td class="review-index-content-td1">
+                          <div class="star-rating-content-index">
+                            <div class="star-rating-index-front" style="width: <%= review.review_status.review_beautiful * 10 %>%">★★★★★★★★★★</div>
+                            <div class="star-rating-index-back">★★★★★★★★★★</div>
+                          </div>
+                        </td>
+                        <td class="review-index-td2">
+                          <h6><%= review.review_status.review_beautiful %>点</h6>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       <% end %>
       <%= paginate @reviews %>

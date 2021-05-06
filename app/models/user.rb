@@ -7,8 +7,7 @@ class User < ApplicationRecord
   has_one_attached :profile_image
   has_many :movies
   has_many :reviews
-  has_many :bookmarks
-  has_many :user_statues
+  has_many :user_statues, dependent: :destroy
 
   has_many :relationships, dependent: :destroy
   has_many :followings, through: :relationships, source: :follower

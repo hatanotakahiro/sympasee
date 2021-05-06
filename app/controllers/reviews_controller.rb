@@ -10,10 +10,30 @@ class ReviewsController < ApplicationController
     @review_process = ReviewProcess.new(review_process_params)
     if @review_process.valid?
       @review_process.save
-      redirect_to root_path
+      redirect_to movie_path(@movie.id)
     else
       render :new
     end
+  end
+
+  def show
+    @review = Review.find(params[:id])
+  end
+
+  def destroy
+    @review = Review.find(params[:id])
+
+    user_story = (@review.review_status.review_story.to_i - 5).abs * -2
+    user_impact = (@review.review_status.review_impact.to_i - 5).abs * -2
+    user_impressed = (@review.review_status.review_impressed.to_i - 5).abs * -2
+    user_happy = (@review.review_status.review_happy.to_i - 5).abs * -2
+    user_character = (@review.review_status.review_character.to_i - 5).abs * -2
+    user_beautiful = (@review.review_status.review_beautiful.to_i - 5).abs  * -2
+    user_score = -(@review.review_status.review_score.to_i)
+    UserStatus.create(user_story: user_story, user_impact: user_impact, user_impressed: user_impressed, user_happy: user_happy, user_character: user_character, user_beautiful: user_beautiful, user_score: user_score, user_id: @review.user_id)
+
+    @review.destroy
+    redirect_to movie_path(@movie.id)
   end
 
 private

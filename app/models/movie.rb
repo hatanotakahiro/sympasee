@@ -2,8 +2,7 @@ class Movie < ApplicationRecord
 
   has_one_attached :movie_image
   belongs_to :user
-  has_many :bookmarks
-  has_many :reviews
+  has_many :reviews, dependent: :destroy
 
   acts_as_paranoid 
   acts_as_taggable
