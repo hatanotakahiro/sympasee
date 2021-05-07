@@ -1,7 +1,7 @@
 # 管理者
 admin = User.create!(nickname:  "管理者",
   email: "admin@admin",
-  password:  "katouken",
+  password:  "adminadmin",
   password_confirmation: "katouken",
   admin: true)
 

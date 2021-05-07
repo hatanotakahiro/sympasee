@@ -35,7 +35,7 @@
 
         <% if user_signed_in? %>
           <div class='col-3 text-center'> 
-            <%= link_to "#", class: "text-white" do %>
+            <%= link_to user_path(current_user.id), class: "text-white" do %>
               <%= current_user.nickname %>
               <%= image_tag current_user.profile_image.variant(resize: '70x70'), class: "user-image" if current_user.profile_image.attached? %>
               <%= image_tag "user_nil.png" , size: "70x70" unless current_user.profile_image.attached?  %>

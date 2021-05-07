@@ -1,110 +1,166 @@
-# テーブル設計
+# アプリケーション名
+## Sympasee
+---
+# アプリケーションの概要
+映像作品をレビューし共有できるWebアプリケーションを作成しました。ユーザーは好きな映像作品を作品一覧、検索、ランキングから探してレビューできます。レビューするごとに自分の注目度スターテスが更新されていき、気の合う他のユーザーを見つけフォローなど行うことができます。どの映像作品を見るか迷った際は気の合うユーザーのレビューを参考にすることで良い映像作品と出会いやすくなります。
 
-## users テーブル
+# URL
+http://54.95.42.129/
 
-| Column             | Type     | Options     |
-| ------------------ | -------- | ----------- |
-| nickname           | string   | null: false |
-| email              | string   | null: false, unique:true |
-| encrypted_password | string   | null: false |
-| profile            | string   |
-| profile_image      | 
-| admin              | boolean  |
-| deleted_at         | datetime |
+# テスト用アカウント
 
-### Association
+ユーザー
+メールアドレス: aaa@aaa
+パスワード: aaa111
 
-- has_many :likes
-- has_many :bookmarks
-- has_many :reviews
-- has_many :movies
-- has_many :user_statues
-- has_many :relationships
-- has_many :followings
+管理者
+メールアドレス名: admin@admin
+パスワード: adminadmin
 
+# 利用方法
+### 注意書き
+※WebブラウザGoogle Chromeの最新版を利用してアクセスしてください。
+ただしデプロイ等で接続できないタイミングもございます。その際は少し時間をおいてから接続してください。
+接続先およびログイン情報については、上記の通りです。
+同時に複数の方がログインしている場合に、ログインできない可能性があります。
 
-## user_statues テーブル
+### 利用方法
+①テストアカウントでログイン→トップページ、またはランキングからレビューしたい作品を選ぶ→②作品詳細ページからレビューを入力を選ぶ→③レビューと感想を入力し確定ボタンを押す。④詳細ページ遷移後下にスクロールすると自分のレビューが投稿されていることが確認できる。⑤また、他の人のレビューを確認できユーザー名を押すことでそのレビューしたユーザーの注目度を確認できる。そこでフォローすることもできる。⑥フォローをするとヘッダーのフォローリストから遷移できるページにフォローしたユーザーが追加される。
 
-| Column            | Type       | Options     |
-| ----------------- | ---------- | ----------- |
-| user_story        | integer    | null: false |
-| user_impact       | integer    | null: false |
-| user_impressed    | integer    | null: false |
-| user_happy        | integer    | null: false |
-| user_character    | integer    | null: false |
-| user_beautiful    | integer    | null: false |
-| user_score        | integer    | null: false |
-| user              | references | null: false, foreign_key: true |
-
-### Association
-
-- belongs_to :user
+確認後、ログアウト処理をお願いします。
 
 
-## movie テーブル
-
-| Column       | Type       | Options     |
-| ------------ | ---------- | ----------- |
-| movie_title  | string     | null: false |
-| movie_text   | text       | null: false |
-| movie_image  |            | null: false |
-| long         | string     | null: false |
-| release_date | date       |
-| producer     | string     | null: false |
-| character    | string     | null: false |
-| deleted_at   | datetime   |
-| user        | references | null: false, foreign_key: true |
-
-### Association
-
-- has_many :reviews
-- has_many :bookmarks
-- belongs_to :user
+# 目指した課題解決
+普段アニメをよく見て、より面白い作品を探す方法はないかとレビューサイトを見たりするが、総合評価と私個人の評価がマッチしないことが多い。また、レビューサイトごとに評価が全然違って当てにならない。
+それであったら評価をジャンルごと、そしてどのような人が評価をつけたのかがわかるサイトにしてしまえば、根拠を持って良い作品を探せるのではないかと考えた。
 
 
-## review テーブル
-
-| Column      | Type       | Options     |
-| ----------  | ---------- | ----------- |
-| review_text | integer    | null: false |
-| deleted_at  | datetime   |
-| movie       | references | null: false, foreign_key: true |
-| user        | references | null: false, foreign_key: true |
-
-### Association
-
-- has_many :likes
-- belongs_to :user
-- belongs_to :movie
-- has_one :review_statues
-
-
-## review_statues テーブル
-
-| Column            | Type       | Options     |
-| ----------------- | ---------- | ----------- |
-| review_story      | integer    | null: false |
-| review_impact     | integer    | null: false |
-| review_impressed  | integer    | null: false |
-| review_happy      | integer    | null: false |
-| review_character  | integer    | null: false |
-| review_beautiful  | integer    | null: false |
-| review_score      | integer    | null: false |
-| review            | references | null: false, foreign_key: true |
-
-### Association
-
-- belongs_to :review
+# 洗い出した要件
+| 機能：     トップページ（映像作品一覧ページ）  
+| -------------
+|【表示】
+|管理者が登録した映像作品の一覧を見ることができる。
+|管理者が登録したピックアップ作品を見ることができる。
+|【ボタン】
+|サインアップ/ログインページへ遷移できるボタンがある。
+|ログイン時は、ログアウトできるボタンがある。
+|フォロワーリストへ遷移するボタンがある。
+|フォローリストへ遷移するボタンがある。
+|ランキングへ遷移するボタンがある。
+|管理者のみ作品を追加するページへ遷移できるボタンがある。
+|ログイン時にマイページに遷移できるボタンがある
+|作品一覧から詳細ページへ遷移するボタンがある。
+|ページネーションのボタンがある。
+|
 
 
-<!-- ## like テーブル
+| 機能：     タグ
+| -------------
+|【表示】
+|トップページで作品ごとにジャンルなどが書かれているタグを見ることができる。
+|作品詳細ページで作品ごとにジャンルなどが書かれているタグを見ることができる。
+|【機能詳細】
+|タグをクリックすることで同じタグの作品がトップページに表示される。
+|検索ワードにタグの文字列が入っていると検索にヒットする。
+|
 
-| Column      | Type       | Options     |
-| ----------  | ---------- | ----------- |
-| review       | references | null: false, foreign_key: true |
-| user        | references | null: false, foreign_key: true |
 
-### Association
+| 機能：     検索  
+| -------------
+|【表示】
+|トップページに検索のフォームが表示されている。
+|【機能詳細】
+|タイトルの文字列をあいまい検索する。
+|タグを完全一致検索する。
+|
 
-- belongs_to :user
-- belongs_to :review -->
+
+| 機能：     ランキング  
+| -------------
+|【表示】
+|ストーリー、衝撃、感動などのジャンルごとにそれぞれランキングが1位から3位まで表示されている。
+|【ボタン】
+|作品をクリックすると詳細ページに遷移する。
+|
+
+
+
+
+
+
+| 機能：     映像作品詳細ページ  
+| -------------
+|【表示】
+|映像作品の詳細を見ることができる
+|映像作品のストーリー、衝撃、感動などのジャンルごとにそれぞれレビューの平均値を見ることができる。
+|ユーザーごとのレビューを見ることができる。
+|【ボタン】
+|レビューを入力するページに遷移するボタンがある。
+|管理者とレビューの投稿者のみ投稿したレビューを削除するボタンがある。
+|レビューしたユーザーのユーザーページへ遷移できるボタンがある。
+|管理者のみ作品情報編集ページへ遷移するボタンがある。
+|管理者のみ作品を削除するボタンがある。（論理削除）
+|
+
+| 機能：     作品レビューページ  
+| -------------
+|【表示】
+|作品の点数や感想を入力する欄がある。
+|【機能詳細】
+|ここで入力された値は作品の評価の平均値へ影響し、また、ユーザーの注目度スターテスにも影響する。
+|
+
+| 機能：     ユーザー詳細ページ  
+| -------------
+|【表示】
+|ユーザーのプロフィール画像と自己紹介文を見ることができる。
+|ユーザーが映像作品の何に注目しているかグラフで知ることができる。
+|【ボタン】
+|フォローまたはフォロー解除ボタンがある。
+|
+
+| 機能：     フォローリスト  
+| -------------
+|【表示】
+|ユーザーがフォローしたユーザーの一覧を見ることができる。
+|
+
+
+| 機能：     フォロワーリスト  
+| -------------
+|【表示】
+|他のユーザーがフォローされた場合、フォロワーの一覧を見ることができる。
+|
+
+| 機能：     映像作品追加ページ（管理者のみ）  
+| -------------
+|【表示】
+|映像作品の情報の入力欄がある
+|【ボタン】
+|入力情報を確定するボタンがある
+|
+
+
+| 機能：     映像作品編集ページ（管理者のみ）  
+| -------------
+|【表示】
+|映像作品の情報の編集する欄がある
+|【ボタン】
+|編集情報を確定するボタンがある
+|
+
+
+
+
+# データベース設計
+![ER-図](ER.dio.png)
+
+
+
+# 開発状況
+### 開発環境
+Ruby/Ruby on Rails/MySQL/Github/AWS/Visual Studio Code
+### 開発期間と平均作業時間
+開発期間：4/5〜4/13（8日間）
+1日あたりの平均作業時間：8
+合計：64
