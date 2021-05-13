@@ -163,10 +163,12 @@
   </div>
       <% @reviews.each do |review| %>
         <div class="index-review-content-each container-fluid">
-          <% if (current_user.id == review.user_id) || current_user.admin? %>
-            <div class="row">
-              <%= link_to "削除", movie_review_path(review.movie_id, review.id), class:"review-destroy btn btn-outline-danger" %>
-            </div>
+          <% if user_signed_in? %>
+            <% if (current_user.id == review.user_id) || current_user.admin? %>
+              <div class="row">
+                <%= link_to "削除", movie_review_path(review.movie_id, review.id), class:"review-destroy btn btn-outline-danger" %>
+              </div>
+            <% end %>
           <% end %>
           <table class="table is-fullwidth has-text-centered">
             <thead align="center">
