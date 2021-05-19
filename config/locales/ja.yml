@@ -1,8 +1,15 @@
 ja:
- activerecord:
+  activerecord:
    attributes:
      user:
        nickname: ニックネーム
-     tweet:
-       text: テキスト
-       image: 画像
+     movie:
+       movie_title: 作品名
+       movie_text: 作品の説明
+       long: 長さ
+       producer: 製作者
+       character: 演者
+  activemodel:
+   attributes:
+     review_process:
+       review_text: 感想

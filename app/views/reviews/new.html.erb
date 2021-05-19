@@ -5,6 +5,7 @@
         <h2 class="review-form-text">レビュー入力</h2>
       </div>
       <%= form_with model: @review_process, url: movie_reviews_path, local: true do |f| %>
+        <%= render 'shared/error_messages', model: f.object %>
         <div class="row">
           <div class="movie-img col-5">
             <%= image_tag @movie.movie_image ,class:"movie-box-img" %>

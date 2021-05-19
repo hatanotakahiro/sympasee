@@ -7,6 +7,14 @@ class Movie < ApplicationRecord
   acts_as_paranoid 
   acts_as_taggable
 
+  with_options presence: true do
+    validates :movie_title
+    validates :movie_text
+    validates :long
+    validates :producer
+    validates :character
+  end
+
   def review_story_percentage
     unless self.reviews.empty?
       review_statues = ReviewStatus.where(review_id: self.reviews.ids)
