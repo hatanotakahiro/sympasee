@@ -8,6 +8,7 @@ class Movie < ApplicationRecord
   acts_as_taggable
 
   with_options presence: true do
+    validates :movie_image
     validates :movie_title
     validates :movie_text
     validates :long

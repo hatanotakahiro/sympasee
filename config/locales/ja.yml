@@ -9,6 +9,7 @@ ja:
        long: 長さ
        producer: 製作者
        character: 演者
+       movie_image: 作品画像
   activemodel:
    attributes:
      review_process:
