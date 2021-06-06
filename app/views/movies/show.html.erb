@@ -34,7 +34,11 @@
           <tr>
           <tr>
             <th><%= "公開日" %></th>
-            <td><%= @movie.release_date.strftime("%Y / %m / %d ") %></td>
+            <% if @movie.release_date.blank? %>
+              <td><%= "未定" %></td>
+            <% else %>
+              <td><%= @movie.release_date.strftime("%Y / %m / %d ") %></td>
+            <% end %>
           <tr>
         </table>
       </div>

@@ -5,6 +5,7 @@ FactoryBot.define do
     long {Faker::Lorem.characters(number: 30)}
     producer {Faker::Lorem.characters(number: 50)}
     character {Faker::Lorem.characters(number: 200)}
+    release_date {"1989-11-27"}
 
     association :user
 

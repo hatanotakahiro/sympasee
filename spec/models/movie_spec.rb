@@ -43,7 +43,7 @@ RSpec.describe Movie, type: :model do
         expect(@movie.errors.full_messages).to include("Character can't be blank")
       end
 
-      it 'プロフィール画像がなくても登録できること' do
+      it '映像作品サムネイル画像が空では登録できること' do
         @movie.movie_image = nil
         @movie.valid?
         expect(@movie.errors.full_messages).to include("Movie image can't be blank")
